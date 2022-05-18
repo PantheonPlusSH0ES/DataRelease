@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import h5py
 
 ###### config ######
-CHAIN_PATH = 'final_v2_baseline.h5'
+CHAIN_PATH = 'final_v2_baseline.h5' #this file is currently being uploaded to Zenodo
 BURNIN = 6000
 ####################
 
