@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import h5py
 
 ###### config ######
-CHAIN_PATH = 'final_v2_fit14.h5'
+CHAIN_PATH = 'final_v2_baseline.h5'
 BURNIN = 6000
 ####################
 
