@@ -3,7 +3,7 @@
 ## SH0ES-2022
 
 May 19, 2022:
-We are providing here "high level data products" for the full SH0ES+Panthon+ ladder.  The data is provided in the compact matrix form (linear equations) given in the paper, Riess et al. 2022, section 2.1 and equation 6, y=data vector, L=equation matrix (also includes some data), C=covariance matrix.  These are given as fits files.  Python code is provided to load these and to run an MCMC.  Results from these data files and code is shown in Figure 14 of Riess et al. (2022).  Please contact (ariess@stsci.edu) if you see a problem.
+We are providing here "high level data products" for the full SH0ES+Panthon+ ladder.  The data is provided in the compact matrix form (linear equations) given in the paper, Riess et al. 2022, section 2.1 and equation 6, y=data vector, L=equation matrix (also includes some data), C=covariance matrix.  These are given as fits files.  Python code is provided to load these and to run an MCMC.  Results from these data files and code is shown in Figure 14 of Riess et al. (2022).  lstsq_results.txt constructs a 'prior' that is large enough to make it essentially prior-free. Please contact (ariess@stsci.edu) if you see a problem.
 
 allc_shoes_ceph_topantheonwt6.0_112221.fits=C, covariance matrix
 
