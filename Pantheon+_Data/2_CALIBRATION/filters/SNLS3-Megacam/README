@@ -1,0 +1,11 @@
+May 4 2011 J.Mosher
+
+Copied effective Megacam filters from $SCRATCH/JGUY/SNLS-simulation-filters/filters-center dir.
+Filters were renamed:
+effMEGACAM-g.dat  effMEGACAM-g-wpsf.dat  effMEGACAM-i.dat  effMEGACAM-r.dat  effMEGACAM-z.dat .
+
+These filters are for simulation studies or analyses that do not require high precision. 
+
+
+
+

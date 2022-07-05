@@ -1,0 +1,30 @@
+SN_SED: Hsiao07.dat
+BD17_SED:    $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+MAGSYSTEM:  AB
+FILTSYSTEM: COUNT
+FILTPATH:   $PS1_USERS/dscolnic/Excalibur_dillon/filters/SNLS3-Megacam
+SURVEY: SNLS
+FILTER: SNLS-g effMEGACAM-g.dat 0-0.005+0.0013
+FILTER: SNLS-r effMEGACAM-r.dat 0+0.006-0.0017000000000000001
+FILTER: SNLS-i effMEGACAM-i.dat 0+0.006+0.0015999999999999999
+FILTER: SNLS-z effMEGACAM-z.dat 0+0.007+0.0002
+# 1st filter is rest-frame. 
+# 2nd filter is observer-frame. 
+# 3rd arg is short-hand name for table storage. 
+
+DUPLICATE_LAMSHIFT_GLOBAL: 10
+
+# Define generation grids. 
+REDSHIFT_RANGE:    0.0  0.46 
+REDSHIFT_BINSIZE:  0.02      
+
+# define AV grid. 
+RV:          3.1   A(V)/E(B-V) in LMC 
+AV_RANGE:   -6.0  6.0  
+AV_BINSIZE:  0.5  
+AV_OPTION:   2   
+
+LAMBDA_RANGE: 2100 12500  # for SN templates
+
+
+OUTFILE: kcor_SNLS_v6_1.fits

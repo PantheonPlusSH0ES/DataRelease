@@ -1,0 +1,86 @@
+# Combined kcor file create by
+#   ['/project/rkessler/SN/SNANA/SNANA_CURRENT/util/combine_dataVersions.py', 'COMBINE.INPUT']
+# User = dscolnic
+# Host = midway-login2
+# Mon Jun 12 15:00:06 2017
+
+SN_SED:       Hsiao07.dat
+BD17_SED:     $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+LAMBDA_RANGE: 2100 12500 
+OUTFILE:      kcor_PS1_CFA_COMBINED_v6_1.fits
+
+# Start filters for VERSION = PS1s_CFA3_4SHOOTER2_DS17
+MAGSYSTEM:   BD17
+FILTSYSTEM:  COUNT
+FILTPATH:   PS1/Pantheon/CFA3_native
+SURVEY: CFA3S
+FILTER:  CFA3S-U/a            SNLS3_4shooter2_U.dat  9.6930 
+FILTER:  CFA3S-B/b            SNLS3_4shooter2_B.dat  9.87400-0.0377
+FILTER:  CFA3S-V/c            SNLS3_4shooter2_V.dat  9.47900-0.0087 
+FILTER:  CFA3S-R/d            SNLS3_4shooter2_R.dat  9.15500-0.013699999999999999 
+FILTER:  CFA3S-I/e            SNLS3_4shooter2_I.dat  8.85100-0.004999999999999999
+
+# Start filters for VERSION = PS1s_CFA3_KEPLERCAM_DS17
+MAGSYSTEM:   BD17
+FILTSYSTEM:  COUNT
+FILTPATH:    PS1/Pantheon/PS1_CFA4
+SURVEY: CFA3K
+FILTER:  CFA41-U/f            cfa4_U_p1.dat  9.724 
+FILTER:  CFA41-B/g            cfa4_B_p1+modtran.dat  9.88605-0.0249 
+FILTER:  CFA41-V/h            cfa4_V_p1+modtran.dat  9.47432-0.005700000000000001 
+FILTER:  CFA41-r/i            cfa4_r_p1+modtran.dat  9.35252+0.007
+FILTER:  CFA41-i/j            cfa4_i_p1+modtran.dat  9.25465+0.0049 
+
+# Start filters for VERSION = PS1s_CFA4_p1_DS17
+SURVEY: CFA4p1
+FILTER:  CFA41-U/k            cfa4_U_p1.dat  9.724 
+FILTER:  CFA41-B/l            cfa4_B_p1+modtran.dat  9.88605-0.0057  
+FILTER:  CFA41-V/m            cfa4_V_p1+modtran.dat  9.47432-0.0005000000000000004 
+FILTER:  CFA41-r/n            cfa4_r_p1+modtran.dat  9.35252+0.0029 
+FILTER:  CFA41-i/o            cfa4_i_p1+modtran.dat  9.25465+0.004799999999999999 
+
+# Start filters for VERSION = PS1s_CFA4_p2_DS17
+SURVEY: CFA4p2
+FILTER:  CFA42-B/p            cfa4_B_p2+modtran.dat  9.86124+0.0278 
+FILTER:  CFA42-V/q            cfa4_V_p2+modtran.dat  9.47432+0.0052 
+FILTER:  CFA42-r/r            cfa4_r_p2+modtran.dat  9.35730+0.01 
+FILTER:  CFA42-i/s            cfa4_i_p2+modtran.dat  9.25521+0.010199999999999999 
+
+
+# Start filters for VERSION = PS1s_CFA1_JRK07_DS16
+MAGSYSTEM:   BD17
+FILTSYSTEM:  COUNT
+FILTPATH:    PS1/Pantheon/SNLS3-Landolt
+SURVEY: CFA1
+FILTER:  Bessell-U/B          sux-shifted.dat_5A  9.72400 
+FILTER:  Bessell-B/C          sb-shifted.dat_5A  9.90700+0.0 
+FILTER:  Bessell-V/D          sv-shifted.dat_5A  9.46400+0.0
+FILTER:  Bessell-R/E          sr-shifted.dat_5A  9.16600+0.0 
+FILTER:  Bessell-I/F          si-shifted.dat_5A  8.84600+0.0
+
+# Start filters for VERSION = PS1s_CFA2_JRK07_DS16
+SURVEY: CFA2
+FILTER:  Bessell-U/G          sux-shifted.dat_5A  9.72400
+FILTER:  Bessell-B/H          sb-shifted.dat_5A  9.90700+0.0 
+FILTER:  Bessell-V/I          sv-shifted.dat_5A  9.46400+0.0 
+FILTER:  Bessell-R/J          sr-shifted.dat_5A  9.16600+0.0 
+FILTER:  Bessell-I/K          si-shifted.dat_5A  8.84600+0.0 
+
+# Start filters for VERSION = PS1s_CSPDR2_V_DS16
+MAGSYSTEM:   BD17
+FILTSYSTEM:  COUNT
+FILTPATH:    PS1/PS1s_RS14/CSP_Str11
+SURVEY: CSP
+FILTER:  CSP-u/t              u_texas_WLcorr_atm.txt  10.51952
+FILTER:  CSP-B/u              B_texas_WLcorr_atm.txt  9.87643
+FILTER:  CSP-o/v              V_LC3009_texas_WLcorr_atm.txt  9.47663
+FILTER:  CSP-m/w              V_LC3014_texas_WLcorr_atm.txt  9.47128
+FILTER:  CSP-n/x              V_LC9844_texas_WLcorr_atm.txt  9.47748
+FILTER:  CSP-g/y              g_texas_WLcorr_atm.txt  9.64406
+FILTER:  CSP-r/z              r_texas_WLcorr_atm.txt  9.35160
+FILTER:  CSP-i/A              i_texas_WLcorr_atm.txt  9.25000
+
+
+
+
+DUPLICATE_LAMSHIFT_GLOBAL: 10

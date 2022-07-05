@@ -1,0 +1,16 @@
+DOCUMENTATION:
+    PURPOSE: SDSS-II filter transmissions for Stripe 82
+    REF: 
+    - AUTHOR:  Doi 2010
+      ADS:     https://ui.adsabs.harvard.edu/abs/2010AJ....139.1628D
+    INTENT:  Nominal
+    USAGE_KEY:  FILTER
+    USAGE_CODE: kcor.exe
+    VALIDATE_SCIENCE: used in multiple cosmology analyses (SDSS,JLA,Pantheon)
+    ATMOSPHERE:  model from ??, includes airmass = 1.3
+    LEAKAGE:  small redleak in u-band; see Fig 9f discussion in Doi 2010
+    NOTES:
+    - averaged over 82N and 82S
+    - averaged over focal plane
+    - Final AB offsets are from Betoule et al, 2013 (arXiv:1212.4864)
+DOCUMENTATION_END:

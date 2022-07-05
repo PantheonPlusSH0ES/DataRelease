@@ -1,0 +1,17 @@
+RESTLAMBDA_RANGE: 2800 7000
+COLORLAW_VERSION: 1 
+COLORCOR_PARAMS:  2800 7000 4 -0.47364 0.780336 -0.469881 0.0842865
+
+MAG_OFFSET:    0.27 
+SIGMA_INT:     0.106  
+COLOR_OFFSET:  0.0 
+
+SEDFLUX_INTERP_OPT: 2  # 1=>linear,    2=>spline
+ERRMAP_INTERP_OPT:  1  # 0=snake off;  1=>linear  2=>spline
+ERRMAP_KCOR_OPT:    1  # 1/0 => on/off
+
+MAGERR_FLOOR:   0.005            # model-error floor
+MAGERR_LAMOBS:  0.0  2000  4000  # magerr minlam maxlam
+MAGERR_LAMREST: 0.1   100   200  # magerr minlam maxlam
+
+# TRAINOPT000 

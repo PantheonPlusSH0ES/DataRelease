@@ -1,0 +1,58 @@
+snana  Filter
+# ACS-WFC (most are duplicated on WFC3-UVIS)
+ B   F435W                  
+ G   F475W                  
+ V   F606W                  
+ R   F625W                  
+ X   F775W                  
+ I   F814W                  
+ Z   F850LP                 
+     
+# WFC3-UVIS : http://www.stsci.edu/~WFC3/UVIS/SystemThroughput/
+ S   F225W                  
+ T   F275W                  
+ U   F336W                  
+ W   F350LP                 
+ C   F390W                  
+     
+# WFC3-IR  : http://www.stsci.edu/~WFC3/UVIS/SystemThroughput/
+ Y   F105W                  
+ M   F110W                  
+ J   F125W                  
+ N   F140W                  
+ H   F160W                  
+     
+ L   F098M                  
+ O   F127M                  
+ P   F139M                  
+ Q   F153M                  
+
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+xxx   xxxx xxxxxxxxxxxxxxx
+
+
+# Core 10 filters for CANDELS/CLASH
+# Filter   band
+F475W      G
+F606W      V
+F625W      R
+F775W      X
+F814W      I
+F850LP     Z   
+F275W      T
+F350LP     W
+F125W      J
+F160W      H   
+
+
+------------------------------------------------------------
+Filters from Older Instruments 
+
+# NICMOS-NIC2
+F110W                   
+F160W
+
+# WFPC2 
+F814W
+F850LP

@@ -1,0 +1,30 @@
+Mar 5, 2012
+This legacy HST_GOODS/ directory used to be called HST/.
+It's name has been changed because HST/ now contains
+all HST filters, including the newer ones for HSTMCT.
+The HST/ filters were prepared by S.Rodney.
+
+Beware that the filter names in HST/ are slightly
+different than in here. For example, 
+  HST_GOODS/F110W_NIC2.dat -> HST/NICMOS_NIC2_F110W.dat
+
+-Rick K.
+
+
+
+# -----------------------------------
+HST Filters:
+
+Derived from fits files from Adam Reiss and editted into ascii
+files by David Cinabro.  Check out throughput.ps to see the
+through puts and note that they agree well with documentation
+that can be found on the HST site and filtertrans.dat for the
+correspondence between HST filter names and the numbers used
+in snana.  
+
+	snana requires the throughputs vs wavelengths to be evenly
+spaced in wavelength.  filterfix.f is a simple fortran program that
+reads the original filter throughputs and evenly spaces the output
+by interpolating the original data.
+
+	David 27 May 2008

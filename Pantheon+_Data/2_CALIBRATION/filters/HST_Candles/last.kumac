@@ -1,0 +1,10 @@
+*** Begin of history file: Fri Apr 11 08:27:09 2014
+vec/read vlam,vt WFC3_IR_F140W.dat
+vec/pl vt%vlam
+opt grid
+vec/pl vt%vlam
+vec/pl vt(700:940)%vlam(700:940)
+vec/pl vt(780:940)%vlam(780:940)
+vec/pl vt(780:910)%vlam(780:910)
+q
+*** End   of history file: Fri Apr 11 08:46:34 2014

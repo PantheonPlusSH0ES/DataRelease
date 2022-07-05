@@ -1,0 +1,38 @@
+*** Begin of history file: Wed Apr 22 20:19:42 2020
+vec/read lam_g,trans_g g_tel_ccd_atm_ext_1.2.dat
+vec/read lam_V,trans_V V_LC9844_tel_ccd_atm_ext_1.2.dat
+vec/pl trans_g%lam_g
+opt nsta
+opt grid
+zone 1 2
+vec/pl trans_g%lam_g
+vec/pl trans_V%lam_V
+vec/pl trans_g%lam_g
+usage vec/plot
+vec/pl trans_V%lam_V !  s
+vec/pl trans_V%lam_V
+sigma vbla=vmax(trans_V)
+vec/print vbla
+sigma trans_V = 0.663*trans_V
+sigma vbla=vmax(trans_g)
+vec/print vbla
+sigma trans_g = 0.7179*trans_g
+set pmci 3
+vec/pl trans_g%lam_g
+set pmci 2
+vec/pl trans_V%lam_V ! s
+sigma trans_g = trans_g/(0.7179**2)
+sigma trans_V = trans_V/(0.663**2)
+set pmci 3
+vec/pl trans_g%lam_g
+set pmci 2
+vec/pl trans_V%lam_V ! s
+set yhti 100
+set pmci 3
+vec/pl trans_g%lam_g
+set pmci 2
+vec/pl trans_V%lam_V ! s
+set asiz .6
+atit 'wavelength (A)     "#'   'transmission   "#'
+q
+*** End   of history file: Wed Apr 22 23:04:46 2020

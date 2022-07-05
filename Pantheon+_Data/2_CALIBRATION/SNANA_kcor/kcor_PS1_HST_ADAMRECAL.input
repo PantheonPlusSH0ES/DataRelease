@@ -1,0 +1,64 @@
+# Combined kcor file create by
+#   ['/project/rkessler/SN/SNANA/SNANA_CURRENT/util/combine_dataVersions.py', 'COMBINE.INPUT']
+# User = dscolnic
+# Host = midway-login2
+# Mon Jun  5 17:19:38 2017
+
+SN_SED:       Hsiao07.extrap.dat
+BD17_SED:     bd17.dat
+LAMBDA_RANGE: 300 40000 
+OUTFILE:      kcor_PS1_HST_COMBINED_ADAMRECAL.fits
+
+# Start filters for VERSION = CANDELs
+MAGSYSTEM:   AB
+FILTSYSTEM:  COUNT
+FILTPATH:    PS1/Pantheon/HST/HST_Candles
+SURVEY: CANDELS
+FILTER:  ACS_WFC_F435W-B/a    ACS_WFC_F435W.dat  0.000 
+FILTER:  ACS_WFC_F475W-G/b    ACS_WFC_F475W.dat  0.000 
+FILTER:  ACS_WFC_F606W-V/c    ACS_WFC_F606W.dat  0.000 
+FILTER:  ACS_WFC_F625W-R/d    ACS_WFC_F625W.dat  0.000 
+FILTER:  ACS_WFC_F775W-X/e    ACS_WFC_F775W.dat  0.000 
+FILTER:  ACS_WFC_F814W-I/f    ACS_WFC_F814W.dat  0.000 
+FILTER:  ACS_WFC_F850LP-Z/g   ACS_WFC_F850LP.dat  0.000 
+FILTER:  WFC3_UVIS_F225W-S/h  WFC3_UVIS_F225W.dat  0.000 
+FILTER:  WFC3_UVIS_F275W-T/i  WFC3_UVIS_F275W.dat  0.000 
+FILTER:  WFC3_UVIS_F336W-U/j  WFC3_UVIS_F336W.dat  0.000 
+FILTER:  WFC3_UVIS_F390W-C/k  WFC3_UVIS_F390W.dat  0.000 
+FILTER:  WFC3_UVIS_F350LP-W/l WFC3_UVIS_F350LP.dat  0.000 
+FILTER:  WFC3_IR_F105W-Y/m    WFC3_IR_F105W.dat  0.000 
+FILTER:  WFC3_IR_F110W-M/n    WFC3_IR_F110W.dat  0.000 
+FILTER:  WFC3_IR_F125W-J/o    WFC3_IR_F125W.dat  0.000 
+FILTER:  WFC3_IR_F140W-N/p    WFC3_IR_F140W.dat  0.000 
+FILTER:  WFC3_IR_F160W-H/q    WFC3_IR_F160W.dat  0.000 
+FILTER:  WFC3_IR_F098M-L/r    WFC3_IR_F098M.dat  0.000 
+FILTER:  WFC3_IR_F127M-O/s    WFC3_IR_F127M.dat  0.000 
+FILTER:  WFC3_IR_F139M-P/t    WFC3_IR_F139M.dat  0.000 
+FILTER:  WFC3_IR_F153M-Q/u    WFC3_IR_F153M.dat  0.000 
+
+# Start filters for VERSION = PS1s_HST_GOODS_DS17
+MAGSYSTEM:   AB
+FILTSYSTEM:  COUNT
+FILTPATH:    PS1/Pantheon/HST/HST_GOODS
+SURVEY: HST
+FILTER:  0/v                  F110W_NIC2.dat  0.0-0.068
+FILTER:  1/w                  F160W_NIC2.dat  0.0-0.023
+FILTER:  2/x                  F606W_ACS.dat  0.0 
+FILTER:  3/y                  F675W_WFPC2.dat  0.0 
+FILTER:  4/z                  F775W_ACS.dat  0.0 
+FILTER:  5/A                  F814W_WFPC2.dat  0.0 
+FILTER:  6/B                  F850LP_ACS.dat  0.0 
+
+# Start filters for VERSION = PS1s_HST_Suz_DS17
+FILTER:  0/C                  F110W_NIC2.dat  0.0 
+FILTER:  4/D                  F775W_ACS.dat  0.0 
+FILTER:  6/E                  F850LP_ACS.dat  0.0 
+
+# Start filters for VERSION = HST_1997ff
+FILTER:  a/F                  NIC3.F110r  0.0-0.068
+FILTER:  b/G                  NIC3.F160r  0.0-0.023
+FILTER:  c/H                  wfpc2.f814w.092003r.dat  0.0 
+FILTER:  0/I                  F110W_NIC2.dat  0.0 
+FILTER:  1/J                  newh_nirc2.dat  0.0 
+FILTER:  4/K                  F775W_ACS.dat  0.0 
+FILTER:  6/L                  F850LP_ACS.dat  0.0 

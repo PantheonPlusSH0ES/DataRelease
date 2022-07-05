@@ -1,0 +1,27 @@
+# Auto generated kcor-input file created by 
+#  /home/s1/rkessler/sdss/util/SDSS_build_CCDfilters.pl 
+
+SN_SED:    Hsiao07.dat   # spectral template for SN
+
+BD17_SED:  $PS1_USERS/dscolnic/Excalibur_dillon/calspec/alpha_lyr_stis_010.dat
+
+
+
+
+MAGSYSTEM:   BD17
+FILTSYSTEM:  COUNT
+FILTPATH: /project2/rkessler/SURVEYS/PS1MD/ROOT/filters/SWIFT
+SURVEY: SWIFTNEW
+FILTER: UVOT-U   U_UVOT_rev.txt   0.0
+FILTER: UVOT-B   B_UVOT_rev.txt   0.0-0.0125
+FILTER: UVOT-V   V_UVOT_rev.txt   0.0+0.026799999999999997
+
+FILTER: UVOT-X   U_UVOT_rev.txt   0.0
+FILTER: UVOT-N   U_UVOT_rev.txt   0.0
+FILTER: UVOT-W   U_UVOT_rev.txt   0.0
+
+
+LAMBDA_RANGE: 2100 11300  # for SN templates
+
+OUTFILE:  kcor_SWIFT_v6_1.fits 
+

@@ -1,0 +1,11 @@
+CALIB_fitopts/
+  - zeropoint and effective wavelength systematic offsets for 9 correlated realizations
+  - applied in lightcurve fitting
+
+SALT2_B21trained_withsys/
+  - trained SALT2 model SALT2.MODEL000
+  - 9 systematic variants with zeropoint and wavelength offsets.
+
+SALT2_trainopts/
+  - these are the inputs that generated 9 variants in SALT2_B21trained_withsys/ above
+

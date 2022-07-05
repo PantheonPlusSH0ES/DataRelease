@@ -1,0 +1,18 @@
+DOCUMENTATION:
+    PURPOSE: DECam filter transmissions for DES-SN
+    REF: 
+    - AUTHOR:  Burke et al, 2018 (FGCM calibration)
+      ADS:     https://ui.adsabs.harvard.edu/abs/2018AJ....155...41B
+    INTENT:  Nominal
+    USAGE_KEY:  FILTER
+    USAGE_CODE: kcor.exe
+    VALIDATE_SCIENCE: used in DES-SN3YR cosmology analysis
+    ATMOSPHERE:  includes airmass = 1.3
+    LEAKAGE:  none, based on vendor measurement of small filter piece
+    NOTES
+    - trans functions from Y3A2
+    - used in calib-input files in $SNDATA_ROOT/kcor/DES/DES-SN3YR
+    VERSIONS:
+    - AUTHOR: E.Rykoff, J.Lasker 
+      DATE:  2018
+DOCUMENTATION_END:

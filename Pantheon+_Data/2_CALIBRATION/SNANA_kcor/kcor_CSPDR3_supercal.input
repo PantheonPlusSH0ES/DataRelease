@@ -1,0 +1,57 @@
+# =================================================================
+#
+#   name in snoopy code               name in public filter page
+#  r_tel_ccd_atm_ext_1.2_new.dat -> r_tel_ccd_atm_ext_1.2.dat
+#  i_tel_ccd_atm_ext_1.2_new.dat -> i_tel_ccd_atm_ext_1.2.dat
+#  V_tel_ccd_atm_ext_1.2.dat     -> V_LC9844_tel_ccd_atm_ext_1.2.dat 
+#  J_old_retrocam_swope_atm.dat  -> Jrc1_SWO_TAM_scan_atm.dat
+#  J_SWO_TAM_scan_atm.dat        -> Jrc2_SWO_TAM_scan_atm.dat 
+#
+# SNooPy model V should be V_tel_ccd_atm_ext_1.2.dat  VegaB=0.0096 
+#
+# -----------------------------
+
+SN_SED: Hsiao07.dat
+BD17_SED:    $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+#VEGA_SED:    alpha_lyr_stis_005.dat
+
+MAGSYSTEM:  BD17
+FILTSYSTEM: COUNT
+FILTPATH:   $SNDATA_ROOT/filters/CSP/CSP_TAMU_20180316
+SURVEY: CSP
+FILTER: CSP-u  u_tel_ccd_atm_ext_1.2.dat       10.518
+FILTER: CSP-g  g_tel_ccd_atm_ext_1.2.dat        9.644
+FILTER: CSP-r  r_tel_ccd_atm_ext_1.2.dat        9.352
+FILTER: CSP-i  i_tel_ccd_atm_ext_1.2.dat        9.250
+
+FILTER: CSP-B  B_tel_ccd_atm_ext_1.2.dat           9.896 
+FILTER: CSP-V  V_LC9844_tel_ccd_atm_ext_1.2.dat    9.494  # V for snoopy model
+FILTER: CSP-o  V_LC3009_tel_ccd_atm_ext_1.2.dat    9.488  # V1
+FILTER: CSP-m  V_LC3014_tel_ccd_atm_ext_1.2.dat    9.492  # V0
+FILTER: CSP-n  V_LC9844_tel_ccd_atm_ext_1.2.dat    9.494  # V
+
+FILTER: CSP-Y  Y_SWO_TAM_scan_atm.dat       8.632
+FILTER: CSP-y  Y_DUP_TAM_scan_atm.dat       8.620 # Ydw 
+FILTER: CSP-J  Jrc1_SWO_TAM_scan_atm.dat    8.419 
+FILTER: CSP-j  Jrc2_SWO_TAM_scan_atm.dat    8.426
+FILTER: CSP-H  H_SWO_TAM_scan_atm.dat       8.125
+FILTER: CSP-h  H_DUP_TAM_scan_atm.dat       8.126  # Hdw
+
+# - - - - - - - - - - -
+
+
+# - - - - - - - - - 
+# Define generation grids. 
+REDSHIFT_RANGE:    0.0  0.1 
+REDSHIFT_BINSIZE:  0.01
+
+# define AV grid. 
+RV:          3.1   A(V)/E(B-V) in LMC 
+AV_RANGE:   -6.0  6.0  
+AV_BINSIZE:  0.5
+AV_OPTION:   2  
+
+
+LAMBDA_RANGE: 2100 20000  # for SN templates
+
+OUTFILE: kcor_CSPDR3_supercal.fits

@@ -1,0 +1,35 @@
+BD17_SED:    $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+SN_SED:    Hsiao07.dat   # spectral template for SN
+MAGSYSTEM:  AB
+FILTSYSTEM: COUNT
+SURVEY: PS1MD
+FILTPATH: $PS1_USERS/dscolnic/Excalibur_dillon/filters/PS1s_RS14_PS1_tonry
+FILTER: PS1-g   g_filt_tonry.txt  -0.011-0.0232
+FILTER: PS1-r   r_filt_tonry.txt   -0.012-0.0257
+FILTER: PS1-i   i_filt_tonry.txt   -0.008-0.0184
+FILTER: PS1-z   z_filt_tonry.txt   -0.008-0.0129
+FILTER: PS1-y   y_filt_tonry.txt   0.0
+
+
+DUPLICATE_LAMSHIFT_GLOBAL: 10
+
+# Define K-corrections 
+# 1st filter is rest-frame. 
+# 2nd filter is observer-frame. 
+# 3rd arg is short-hand name for table storage. 
+
+
+# Define generation grids. 
+REDSHIFT_RANGE:    0.0  0.46 
+REDSHIFT_BINSIZE:  0.02      
+
+# define AV grid. 
+RV:          3.1   A(V)/E(B-V) in LMC 
+AV_RANGE:   -6.0  6.0  
+AV_BINSIZE:  0.5  
+AV_OPTION:   2   
+
+LAMBDA_RANGE: 1800 13300  # for SN templates
+
+OUTFILE:  kcor_PS1_v6_1.fits
+

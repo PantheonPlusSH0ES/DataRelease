@@ -1,0 +1,8 @@
+There are ten total SALT2 surfaces here.
+ SALT2.MODEL000 is the baseline model.
+Each SALT2.MODEL has all the components for a SALT2 fit.
+The SALT2.M0DEL00x are systematic variations based on https://arxiv.org/abs/2112.03864
+
+What is: 
+CALIB_TRAIN/
+OUTPUT_TRAIN/

@@ -1,0 +1,18 @@
+========================================================
+From:  	"saurabh jha" <saurabh@physics.rutgers.edu>
+Date:  	Tue, August 4, 2009 10:20 am
+
+The 4shooter (UBVRI Harris filter passbands for CfA3) are given 
+in the *last* column of the file attached: cfa2.passbands.dat
+There was no change between the last CfA2 objects (Jha et al. 2006) 
+to the first CfA3 objects.
+Note that these are ENERGY units, so divide the sensitivity by lambda.
+
+The Keplercam (UBVri) bandpasses are at
+http://www.cfa.harvard.edu/supernova/CfA3/keplercam.passbands.txt
+There is no U response, so we probably have to stick with the U  
+response from the file above.
+
+We don't have the Minicam filter responses, so probably we should use  
+the Keplercam ones or toss those 5 light curves.
+========================================================

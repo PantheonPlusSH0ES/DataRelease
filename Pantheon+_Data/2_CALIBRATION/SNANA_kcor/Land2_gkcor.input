@@ -1,0 +1,30 @@
+SN_SED: Hsiao07.dat
+BD17_SED:    $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+MAGSYSTEM:  BD17
+FILTSYSTEM: COUNT
+FILTPATH:   PS1/PS1s_RS14/SNLS3-Landolt
+SURVEY: LOWZ
+FILTER: Bessell-U sux-shifted.dat_5A 9.72400
+FILTER: Bessell-B sb-shifted.dat_5A 9.90700+0.0
+FILTER: Bessell-V sv-shifted.dat_5A 9.46400+0.0
+FILTER: Bessell-R sr-shifted.dat_5A 9.16600+0.0
+FILTER: Bessell-I si-shifted.dat_5A 8.84600+0.0
+# 1st filter is rest-frame. 
+# 2nd filter is observer-frame. 
+# 3rd arg is short-hand name for table storage. 
+
+
+# Define generation grids. 
+REDSHIFT_RANGE:    0.0  0.46 
+REDSHIFT_BINSIZE:  0.02      
+
+# define AV grid. 
+RV:          3.1   A(V)/E(B-V) in LMC 
+AV_RANGE:   -6.0  6.0  
+AV_BINSIZE:  0.5  
+AV_OPTION:   2   
+
+LAMBDA_RANGE: 2100 12500  # for SN templates
+
+
+OUTFILE: kcor_Land2.fits

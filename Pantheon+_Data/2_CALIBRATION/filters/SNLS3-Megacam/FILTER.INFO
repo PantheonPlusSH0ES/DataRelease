@@ -1,0 +1,9 @@
+FILTER_SUBDIR: filters-{SNID}
+FILETRANS_SN: effective-filter-MEGACAM-*-with-psf-correction.dat
+FILETRANS_REF: effective-filter-MEGACAM-*.dat
+
+
+# options
+# DEFAULT  => use filenames above
+# SAMEFILT => : copy same filter response for each SN (ignore above)
+OPTION: DEFAULT  # SAMEFILT

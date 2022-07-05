@@ -1,0 +1,60 @@
+
+
+# specify spectral template for supernova
+SN_SED: Hsiao07.dat
+
+# specify primary spectrum
+BD17_SED:    $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+
+
+# specify filters :
+MAGSYSTEM: BD17
+FILTSYSTEM: COUNT   ("ENERGY" => Trans -> Trans/lambda)
+FILTPATH: $PS1_USERS/dscolnic/Excalibur_dillon/filters/KAIT_2018
+SURVEY: KAIT
+
+FILTER: KAIT3-A   B_kait3.txt   9.882-0.0019
+FILTER: KAIT3-B   V_kait3.txt   9.478+0.0051
+FILTER: KAIT3-C   R_kait3_cut.txt   9.185-0.0006999999999999999
+FILTER: KAIT3-D   I_kait3.txt   8.845+0.0002000000000000001
+
+FILTER: nickel1-I   B_nickel1.txt   9.866+0.0039 
+FILTER: nickel1-J   V_nickel1.txt   9.487+0.0039
+FILTER: nickel1-K   R_nickel1.txt   9.193-0.0011999999999999997
+FILTER: nickel1-L   I_nickel1.txt   8.819+0.0017
+
+FILTER: KAIT4-E   B_kait4.txt	   9.848-0.00039999999999999975
+FILTER: KAIT4-F   V_kait4.txt	   9.487+0.0055
+FILTER: KAIT4-G   R_kait4.txt	   9.198-0.0014
+FILTER: KAIT4-H   I_kait4.txt	   8.855-0.00039999999999999975
+
+FILTER: nickel2-M   B_nickel2.txt   9.927-0.0435 
+FILTER: nickel2-N   V_nickel2.txt   9.500+0.0053
+FILTER: nickel2-O   R_nickel2.txt   9.193-0.0033
+FILTER: nickel2-P   I_nickel2.txt   8.819+0.0291
+
+FILTER: KAIT1-a   B_kait1_shifted.txt   9.865+0.001
+FILTER: KAIT1-b   V_kait1_shifted.txt   9.476+0.0046
+FILTER: KAIT1-c   R_kait1_shifted.txt   9.112-0.0006
+FILTER: KAIT1-d   I_kait1_shifted.txt   8.802+0.0048000000000000004
+
+
+FILTER: KAIT2-e   B_kait2_shifted.txt   9.869-0.002
+FILTER: KAIT2-f   V_kait2_shifted.txt   9.478+0.0059
+FILTER: KAIT2-g   R_kait2_shifted.txt   9.184-0.0007999999999999999
+FILTER: KAIT2-h   I_kait2_shifted.txt   8.842-0.0002999999999999999
+
+
+
+
+# define lambda range for SN templates; 
+# template lambda binning is used internally
+LAMBDA_RANGE: 2100 13450
+
+# define output file for kcor grid
+
+OUTFILE: kcor_KAIT_Mo_v6_1.fits
+
+
+
+

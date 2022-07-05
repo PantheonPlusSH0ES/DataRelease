@@ -1,0 +1,37 @@
+SN_SED: Hsiao07.dat
+BD17_SED: $PS1_USERS/dscolnic/Excalibur_dillon/calspec/c26202_stiswfcnic_002.dat
+
+MAGSYSTEM:  BD17
+FILTSYSTEM: COUNT
+FILTPATH: $PS1_USERS/dscolnic/Excalibur_dillon/filters/ASASSN
+
+#16.6763 +0.212+0.556*(16.6763- 16.3680  )+0.034*(16.6763- 16.3680  )^2=17.063
+#16.3680+0.005+0.462*(16.6763- 16.3680  )+0.013*(16.6763- 16.3680  )^2=16.52
+#16.3680-0.001+0.004*(16.6763- 16.3680  )+0.007*(16.6763- 16.3680  )^2=16.37
+#16.2632 -0.005+0.011*(16.6763- 16.3680  )+0.010*(16.6763- 16.3680  )^2=16.26
+
+SURVEY: ASASSN
+FILTER: ASASSN-a astrodon_B.dat 17.06-0.0264
+FILTER: ASASSN-b astrodon_V.dat 16.52-0.0344
+FILTER: ASASSN-d astrodon_r.dat 16.37-0.0054
+FILTER: ASASSN-c astrodon_i.dat 16.26+0.0112
+
+FILTER: ASASSN-g bssl-bx-004.txt 17.06-0.0681
+FILTER: ASASSN-j bssl-vx-022.txt 16.52-0.02169
+FILTER: ASASSN-i SDSS.rp.txt 16.37-0.00029
+FILTER: ASASSN-h SDSS.ip.txt 16.26+0.0173
+
+# Define generation grids. 
+REDSHIFT_RANGE:    0.0  0.46 
+REDSHIFT_BINSIZE:  0.02      
+
+# define AV grid. 
+RV:          3.1   A(V)/E(B-V) in LMC 
+AV_RANGE:   -6.0  6.0  
+AV_BINSIZE:  0.5  
+AV_OPTION:   2   
+
+LAMBDA_RANGE: 2100 12500  # for SN templates
+
+
+OUTFILE: kcor_ASASSN_v6_1.fits

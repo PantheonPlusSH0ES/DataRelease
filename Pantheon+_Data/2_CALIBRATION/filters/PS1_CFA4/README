@@ -1,0 +1,38 @@
+Here are preliminary passbands from Claire.  The Vri are stable across the 
+bakeout but the B changes.  The Oct2010 B corresponds to period 2 in the 
+CfA4 photometry and June 2012 B (after the bakeout which more or less 
+returned the B passband to the period conditions) to period 1.  You can use 
+either V date since they're basically the same.
+
+Let me know if you have questions.
+
+Cheers,
+Malcolm
+
+Dan Scolnic converted everything to SNANA format.
+IDL> $cp cfa2_V.dat cfa4_V.dat
+IDL> readcol, 'rfunction.txt', r1, r2
+IDL> writecol, 'cfa4_r.dat', r1*10.0, r2
+IDL> readcol, 'ifunction.txt', r1, r2         
+IDL> writecol, 'cfa4_i.dat', r1*10.0, r2      
+IDL> readcol, 'VH_smooth_June.dat', r1, r2
+IDL> writecol, 'cfa4_V.dat', r1*10.0, r2  
+IDL> readcol, 'BHOct2010.txt', r1, r2     
+IDL> writecol, 'cfa4_B_p2.dat', r1*10.0, r2
+
+
+
+Hi Armin,
+
+Here are preliminary passbands from Claire.  The Vri are stable across the 
+bakeout but the B changes.  The Oct2010 B corresponds to period 2 in the 
+CfA4 photometry and June 2012 B (after the bakeout which more or less 
+returned the B passband to the period conditions) to period 1.  You can use 
+either V date since they're basically the same.
+
+Let me know if you have questions.
+
+Cheers,
+Malcolm
+
+

@@ -1,0 +1,12 @@
+May 04 2011 - J.Mosher
+
+Filters 
+sb-shifted.dat  si-shifted.dat  sr-shifted.dat  sux-shifted.dat  sv-shifted.dat
+copied from 
+ /data/dp62.a/data/SALT2/data/Instruments/SNLS3-Landolt-model
+ to match those specified in SNLS3-Landolt-model/FilterWheel file.
+
+These were reinterpolated to a fixed grid, and negative fluxes set to 0.0 for use in kcor. 
+
+NOV 03 2011 - filters *_5A from new SALT2 release (JG). 
+

@@ -1,0 +1,12 @@
+LOSS Telescope System Transmission Curves
+-----------------------------------------
+
+Directory consists of 16 text files, each
+containing a transmission curve for the
+telescope system and filter described in 
+the filename. The format for each file is
+two columns: wavelength(AA)  transmission
+
+The files for kait1, kait3, and nickel1
+are those from 2010ApJS..190..418G
+

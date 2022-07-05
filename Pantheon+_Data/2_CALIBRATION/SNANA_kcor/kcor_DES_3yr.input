@@ -1,0 +1,27 @@
+# specify spectral template for SNIa
+SN_SED: $SNDATA_ROOT/snsed/Hsiao07.dat
+BD17_SED:    $PS1_USERS/dscolnic/Excalibur_dillon/calspec/bd_17d4708_stisnic_007.dat
+
+# specify filters :  
+MAGSYSTEM: AB
+FILTSYSTEM: COUNT
+FILTPATH:   $PS1_USERS/dscolnic/Excalibur_dillon/filters/DES-SN3YR_DECam
+SURVEY: DES
+FILTER:  DES-g   DECam_g.dat   0.0-0.003+0.0033
+FILTER:  DES-r   DECam_r.dat   0.0-0.003-0.015
+FILTER:  DES-i   DECam_i.dat   0.0-0.002-0.0047
+FILTER:  DES-z   DECam_z.dat   0.0+0.001-0.0021999999999999997
+#first number is calspec recalibration, second is supercal
+
+# define lambda range for SN templates; 
+# template lambda binning is used internally
+LAMBDA_RANGE: 2100 12000
+
+# define output file for kcor grid
+OUTFILE: kcor_DES_3yr_v6_1.fits
+
+
+
+
+
+

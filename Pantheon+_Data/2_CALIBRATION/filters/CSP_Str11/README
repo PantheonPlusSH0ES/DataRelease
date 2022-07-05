@@ -1,0 +1,9 @@
+Dan Scolnic did this from 
+  http://csp.obs.carnegiescience.edu/data/filters on April 27 2015
+
+Oct 18 2021:  R.Kessler, G.Taylor
+In r_texas_WLcorr_atm.txt file, fix this line
+   7180.  -0.004337063     # bug found by G.Taylor
+to be
+   7180.  0.0
+

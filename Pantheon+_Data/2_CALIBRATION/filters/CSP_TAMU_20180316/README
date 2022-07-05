@@ -1,0 +1,70 @@
+April 3 2020 R.Kessler: Download filters from 
+   https://csp.obs.carnegiescience.edu/news-items/new_filters
+
+For making kcor files for SNANA, be careful that
+there are three V bands and two J bands.
+
+Everything below is from CSP team.
+
+# - - - - - - - - - - - - - - - - - - - - 
+
+Updated:  03/16/2018
+
+The following files contain the scans performed by the TAMU group
+(Jean-Philippe Rheault, Jennifer Marshall, Darren Depoy, and Steven Villanueva)
+on the Swope Site#3 CCD.  The files correspond to:
+
+{filter}_texas_WLcorr.txt:         Raw optical Telescope+Camera+Filter scans.  
+{filter}_texas_SWO.txt:            raw NIR filter scans for Swope (RetroCam)
+{filter}_texas_DUP.txt:            raw NIR filter scans for Dupont (WIRC)
+
+{filter}_SWO_TAM_scan_atm.dat:     Final NIR filter scans for Swope (RetroCam)
+{filter}_DUP_TAM_scan_atm.dat:     Final NIR filter scans for Dupont (WIRC)
+{filter}_tel_ccd_atm_ext_1.2.dat:  Final Swope optical scans
+These final fitlers have atmosphere corresponding to 1.2 airmass.
+Use these for doing S-corrections, synthetic photometry, etc., etc.
+
+In case they are useful, here are the scans TAMU made of individual components:
+Telescope.txt:                     Telescope throughput.
+Telescope+Camera.txt:              Telescope and Camera together.
+
+Here are the atmospheric components:
+atm_ext_ctio.dat:                  Atmospheric extinction
+atm_ext_lines.dat:                 Atmospheric telluric lines
+
+The K filter was abandoned by CSP, but here is a guesstimate of the trhoughput.
+kfilter                            Ks filter from Contreras et al. (2010)
+
+Note there are 3 V filters and 2 J filters:
+
+V_LC_3014:   In use up until Jan 13 2006
+V_LC_3099:   Jan 14 2006 until Jan 24 2006
+V_LC_9844:   Jan 25 2006 until present.
+Jrc1:        In use up until Jan 15 2009
+Jrc2:        Jan 15 2009 until present
+
+The final filter zero-points are:
+
+filter		zp
+-----------------------------------
+u                      12.986
+g                      15.111
+r                      14.903
+i                      14.545
+B                      14.328
+V-9844                 14.439
+V-3009                 14.388
+V-3014                 14.437
+Y (RetroCam+Swope)     13.921
+Jrc1 (RetroCam+Swope)  13.836
+Jrc2 (RetroCam+Swope)  13.836
+H (RetroCam+Swope)     13.510
+Y (WIRC+duPont)        13.770
+J (WIRC+duPont)        13.866
+H (WIRC+duPont)        13.502
+Ks (Contreras+2010)    11.968
+
+Zero-points are in the sense that 
+m = -2.5log10(F) + zp
+and
+F = (1/hc) \int S_X f_\lambda \lambda d\lambda

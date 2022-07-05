@@ -1,0 +1,22 @@
+FAIL_SUMMARY:
+   NJOB_FAIL(TOTAL):           0  # 
+
+#    STATE   TRAINOPT  NEVT  CPU          
+MERGE: 
+  - ['DONE', 'TRAINOPT000', 0, 138]
+  - ['DONE', 'TRAINOPT001', 0, 132]
+  - ['DONE', 'TRAINOPT002', 0, 161]
+  - ['DONE', 'TRAINOPT003', 0, 165]
+  - ['DONE', 'TRAINOPT004', 0, 127]
+  - ['DONE', 'TRAINOPT005', 0, 128]
+  - ['DONE', 'TRAINOPT006', 0, 115]
+  - ['DONE', 'TRAINOPT007', 0, 148]
+  - ['DONE', 'TRAINOPT008', 0, 122]
+  - ['DONE', 'TRAINOPT009', 0, 160]
+
+UNIT_TIME:      hours  
+WALL_TIME:      2.77   
+TMIN_PENDING:   0.01  
+TMAX_PENDING:   0.01  
+CPU_SUM:        23.267  
+EFFIC_CPU:      0.840   # CPU/core/T_wall 
