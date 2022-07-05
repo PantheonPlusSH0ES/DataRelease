@@ -1,0 +1,4351 @@
+ALIAS:
+  ###########################################
+
+  HIGHZ_C_SK_POP: &highz_c_sk_pop
+      GENMAG_SMEAR_MODELNAME: C11
+      GENPEAK_SALT2BETA:   3.8
+      GENRANGE_SALT2BETA:   3.4 4.2
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:    -0.099
+      GENSIGMA_SALT2c:    0.003   0.119
+      GENRANGE_SALT2c:   -0.4   0.4
+      GENPEAK_SALT2x1:    0.964
+      GENSIGMA_SALT2x1:   1.467   0.235
+      GENRANGE_SALT2x1:   -4   4
+
+
+  HIGHZ_G_SK_POP: &highz_g_sk_pop
+      GENMAG_SMEAR_MODELNAME: G10
+      GENPEAK_SALT2BETA:   3.1
+      GENRANGE_SALT2BETA:   2.7 3.5
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:    -0.054
+      GENSIGMA_SALT2c:    0.043   0.101
+      GENRANGE_SALT2c:   -0.4   0.4
+      GENPEAK_SALT2x1:    0.973
+      GENSIGMA_SALT2x1:   1.472   0.222
+      GENRANGE_SALT2x1:   -4   4
+
+  LOWZ_C_SK_POP: &lowz_c_sk_pop
+      GENMAG_SMEAR_MODELNAME: C11
+      GENPEAK_SALT2BETA:   3.8
+      GENRANGE_SALT2BETA:   3.4 4.2
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:    -0.069
+      GENSIGMA_SALT2c:    0.003   0.148
+      GENRANGE_SALT2c:   -0.4   0.4
+      #GENPEAK_SALT2x1:    0.419
+      #GENSIGMA_SALT2x1:   3.024   0.742
+      #GENRANGE_SALT2x1:   -4   4
+      GENPEAK_SALT2x1:     0.55
+      GENRANGE_SALT2x1:   -5.0  +4.0     # x1 (stretch) range
+      GENSIGMA_SALT2x1:    1.0  0.45      # bifurcated sigmas
+      GENPROB2_SALT2x1:     0.45
+      GENPEAK2_SALT2x1:   -1.5     # x1 (stretch) range
+      GENSIGMA2_SALT2x1:    0.5  0.5      # bifurcated sigmas
+
+  LOWZ_G_SK_POP: &lowz_g_sk_pop
+      GENMAG_SMEAR_MODELNAME: G10
+      GENPEAK_SALT2BETA:   3.1
+      GENRANGE_SALT2BETA:   2.7 3.5
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:    -0.055
+      GENSIGMA_SALT2c:    0.023   0.15
+      GENRANGE_SALT2c:   -0.4   0.4
+      #GENPEAK_SALT2x1:    0.436
+      #GENSIGMA_SALT2x1:   3.118   0.724
+      #GENRANGE_SALT2x1:   -4   4
+      GENPEAK_SALT2x1:     0.55
+      GENRANGE_SALT2x1:   -5.0  +4.0     # x1 (stretch) range	
+      GENSIGMA_SALT2x1:    1.0  0.45      # bifurcated sigmas
+      GENPROB2_SALT2x1:     0.45
+      GENPEAK2_SALT2x1:   -1.5     # x1 (stretch) range
+      GENSIGMA2_SALT2x1:    0.5  0.5      # bifurcated sigmas
+
+
+  HST_C_SK_POP: &hst_c_sk_pop
+      GENMAG_SMEAR_MODELNAME: C11
+      GENPEAK_SALT2BETA:   3.8
+      GENRANGE_SALT2BETA:   3.4 4.2
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:    -0.10
+      GENSIGMA_SALT2c:    0.003   0.134
+      GENRANGE_SALT2c:   -0.25    0.50
+      GENPEAK_SALT2x1:   0.664
+      GENSIGMA_SALT2x1:  1.467   0.235
+      GENRANGE_SALT2x1:   -4   4
+
+  HST_G_SK_POP: &hst_g_sk_pop
+      GENMAG_SMEAR_MODELNAME: G10
+      GENPEAK_SALT2BETA:   3.1
+      GENRANGE_SALT2BETA:   2.7 3.5
+      GENPEAK_SALT2ALPHA:   0.15
+      GENMEAN_SALT2c:     -0.077
+      GENRANGE_SALT2c:   -0.4   0.4
+      GENSIGMA_SALT2c:    0.029   0.121
+      GENMEAN_SALT2x1:     0.37
+      GENRANGE_SALT2x1:   -4.0  +4.0
+      GENSIGMA_SALT2x1:    0.963   0.514
+
+
+  CALIB_C_SK_POP: &calib_c_sk_pop
+      GENMAG_SMEAR_MODELNAME: C11
+      GENPEAK_SALT2BETA:   3.8
+      GENRANGE_SALT2BETA:   3.4 4.2
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:     -0.069
+      GENSIGMA_SALT2c:     0.0  0.1
+      GENRANGE_SALT2c:   -0.4   0.4
+      GENMEAN_SALT2x1:     0.37
+      GENRANGE_SALT2x1:   -4.0  +4.0
+      GENSIGMA_SALT2x1:    0.963   0.514
+
+  CALIB_G_SK_POP: &calib_g_sk_pop
+      GENMAG_SMEAR_MODELNAME: G10
+      GENPEAK_SALT2BETA:   3.1
+      GENRANGE_SALT2BETA:   2.7 3.5
+      GENPEAK_SALT2ALPHA:   0.15
+      GENPEAK_SALT2c:     -0.055
+      GENRANGE_SALT2c:   -0.4   0.4
+      GENSIGMA_SALT2c:    0.023   0.1
+      GENMEAN_SALT2x1:     0.37
+      GENRANGE_SALT2x1:   -4.0  +4.0
+      GENSIGMA_SALT2x1:    0.963   0.514
+      
+
+  ###########################################
+
+  GLOBAL: &global
+      FORMAT_MASK: 48
+      RESET_CIDOFF: 2
+      RANSEED_REPEAT: 10 12345
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+  GLOBALLONG: &globallong
+      FORMAT_MASK: 48
+      RESET_CIDOFF: 2
+      RANSEED_REPEAT: 20 12345
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+  GLOBAL4X: &global4x
+      FORMAT_MASK: 48
+      RESET_CIDOFF: 2
+      RANSEED_REPEAT: 20 12345
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+  GLOBALSIMDATA: &globalsimdata
+      FORMAT_MASK: 48
+      RESET_CIDOFF: 2
+      RANSEED_CHANGE: 10 12345
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+  ###########################################
+
+  ZERO_VPEC: &zero_vpec
+    GENSIGMA_VPEC: 0
+    VPEC_ERR: 0
+
+  ###########################################
+
+  LOWZ_NGEN_1DBIASCOR: &lowz_ngen_1dbiascor
+      NGEN_UNIT: 1.5 
+  DES_NGEN_1DBIASCOR: &des_ngen_1dbiascor
+      NGEN_UNIT: .8
+  PS1_NGEN_1DBIASCOR: &ps1_ngen_1dbiascor
+      NGEN_UNIT: 1.0
+  SDSS_NGEN_1DBIASCOR: &sdss_ngen_1dbiascor
+      NGEN_UNIT: .5
+  SNLS_NGEN_1DBIASCOR: &snls_ngen_1dbiascor
+      NGEN_UNIT: 3.0
+  HST_NGEN_1DBIASCOR: &hst_ngen_1dbiascor
+      NGEN_UNIT: 10.0
+  FOUND_NGEN_1DBIASCOR: &found_ngen_1dbiascor
+      NGEN_UNIT: 2.0
+  CALIB_NGEN_1DBIASCOR: &calib_ngen_1dbiascor
+      NGEN_UNIT: .01 #data sized is 0.00121
+
+  ###########################################
+
+  LOWZ_NGEN_SIMDATA: &lowz_ngen_simdata
+      NGEN_UNIT: 1.57
+  DES_NGEN_SIMDATA: &des_ngen_simdata
+      NGEN_UNIT: 0.57
+  PS1_NGEN_SIMDATA: &ps1_ngen_simdata
+      NGEN_UNIT: .57
+  SDSS_NGEN_SIMDATA: &sdss_ngen_simdata
+      NGEN_UNIT: .37
+  SNLS_NGEN_SIMDATA: &snls_ngen_simdata
+      NGEN_UNIT: .48
+  HST_NGEN_SIMDATA: &hst_ngen_simdata
+      NGEN_UNIT: .72
+  FOUND_NGEN_SIMDATA: &found_ngen_simdata
+      NGEN_UNIT: .72
+  CALIB_NGEN_SIMDATA: &calib_ngen_simdata
+      NGEN_UNIT: .00014 #data sized is 0.00121
+
+      
+  ###########################################
+
+  LOWZ_NGEN_5DBIASCOR: &lowz_ngen_5dbiascor
+      NGEN_UNIT: 220 #doing 2x in ranseed_repeat
+  DES_NGEN_5DBIASCOR: &des_ngen_5dbiascor
+      NGEN_UNIT: 120
+  PS1_NGEN_5DBIASCOR: &ps1_ngen_5dbiascor
+      NGEN_UNIT: 160
+  SDSS_NGEN_5DBIASCOR: &sdss_ngen_5dbiascor
+      NGEN_UNIT: 80
+  SNLS_NGEN_5DBIASCOR: &snls_ngen_5dbiascor
+      NGEN_UNIT: 160
+  HST_NGEN_5DBIASCOR: &hst_ngen_5dbiascor
+      NGEN_UNIT: 1600
+  FOUND_NGEN_5DBIASCOR: &found_ngen_5dbiascor
+      NGEN_UNIT: 320
+  CALIB_NGEN_5DBIASCOR: &calib_ngen_5dbiascor
+      NGEN_UNIT: 0.2 #data sized is 0.00121
+
+  ################################################
+
+  LOWZ_BASE: &lowz_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/sn_ia_salt2_g10_lowz.input
+  DES_BASE: &des_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/sn_ia_salt2_g10_des3yr.input
+  PS1_BASE: &ps1_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/SIMGEN_MASTER_PS1_data.INPUT
+  SDSS_BASE: &sdss_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/SIMGEN_MASTER_SDSS_data.INPUT
+  SNLS_BASE: &snls_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/SIMGEN_MASTER_SNLS_data.INPUT
+  HST_BASE: &hst_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/sim_HST_newlib.input
+  FOUND_BASE: &found_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/SIMGEN_MASTER_FOUND_data.INPUT
+  CALIB_BASE: &calib_base
+      BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/siminputs/SIMGEN_MASTER_CALIB.input
+
+  ###########################################
+
+  G10_BIASCOR_GRID: &g10_biascor_grid
+      GENSIGMA_SALT2ALPHA: 1E8  1E8
+      GENRANGE_SALT2ALPHA: 0.12 0.20
+      GENGRID_SALT2ALPHA: 2
+      GENSIGMA_SALT2BETA: 1E8  1E8
+      GENRANGE_SALT2BETA: 2.6  3.6
+      GENGRID_SALT2BETA: 2
+  
+  C11_BIASCOR_GRID: &c11_biascor_grid
+      GENSIGMA_SALT2ALPHA: 1E8  1E8
+      GENRANGE_SALT2ALPHA: 0.12 0.20
+      GENGRID_SALT2ALPHA: 2
+      GENSIGMA_SALT2BETA: 1E8  1E8
+      GENRANGE_SALT2BETA: 3.3  4.3
+      GENGRID_SALT2BETA: 2
+
+  ###########################################
+
+  DUSTSIMSTUFF: &dustsimstuff
+      GENMAG_SMEAR: .0001
+      GENRATIO_EBV0_HOST: 0.0001
+
+  ###########################################
+
+  MWSTUFF: &mwstuff
+      RV_MWCOLORLAW: 3.1
+      OPT_MWCOLORLAW: 99 #was 99 but now extends into the NIR for HST                  
+      OPT_MWEBV: 2     
+      MWEBV_SCALE: 0.86                              
+      MWEBV_SHIFT: 0.0         
+
+  HSTMWSTUFF: &hstmwstuff
+      RV_MWCOLORLAW: 3.1
+      OPT_MWCOLORLAW: 89 #extends into the NIR for HST
+      OPT_MWEBV: 2
+      MWEBV_SCALE: 0.86
+      MWEBV_SHIFT: 0.0
+
+  ###########################################
+
+  FITINPLAMBDA: &fitinplambda
+    RESTLAMBDA_FITRANGE: 3000.0 7000.0
+
+  FITINPLAMBDASALT3: &fitinplambdasalt3
+    RESTLAMBDA_FITRANGE: 2800.0 8700.0
+
+  FILTLIST_FITSALT3_FOUND: &filtlist_fitsalt3_found
+     FILTLIST_FIT: griz
+
+  SNLCINP_SALT3_FOUND: &snlcinp_salt3_found
+     EPCUT_SNRMIN: 'g  -8.00  r  -8.00  i  -8.00 z -8.00'
+     FUDGE_MAG_ERROR: 'g .015 r .015 i .015 z .015'
+
+  SETPKMJD: &setpkmjd
+      OPT_SETPKMJD: 20
+
+  KAITDS15_SETPKMJD: &kaitds15_setpkmjd
+      OPT_SETPKMJD: 6 #because 2012ht was dropping out with 20
+
+
+  OPT_SNCID_LIST: &opt_sncid_list
+    OPT_SNCID_LIST: 1
+ 
+  ###########################################
+
+  CALIB_STUFF: &calib_stuff
+      GENRANGE_REDSHIFT: 0.0031 0.01
+      DNDZ: FLAT 
+
+  LCPLOT: &lcplot
+      MXLC_PLOT: 999
+      SNTABLE_LIST: 'FITRES(text:key) LCPLOT(text:csv)' 
+
+  SIMLCPLOT: &simlcplot
+      SNTABLE_LIST: 'FITRES(text:key)'
+
+  ###########################################
+  APPENDFITRES: &appendfitres
+      APPEND_TABLE_VARLIST: RA DEC HOST_RA HOST_DEC HOST_ANGSEP TGAPMAX TrestMIN TrestMAX
+
+  APPENDGALTYPE: &appendgaltype
+      APPEND_TABLE_TEXTFILE: "$overrides/ADAM_GALTYPES_Aug182021.TXT $overrides/nominal/HOSTGAL_SFR.txt $overrides/nominal/HOSTGAL_SFR_ERR.txt $overrides/nominal/HOSTGAL_sSFR.txt $overrides/nominal/HOSTGAL_sSFR_ERR.txt" 
+
+
+
+  HEADER_OVERRIDE_NOM: &header_override_nom #YOU HAVE TO DEFINE export overrides=$PS1_USERS/dscolnic/PANTHEON+/header_overrides
+      HEADER_OVERRIDE_FILE: $overrides/nominal/HOSTGAL_LOGMASS.txt,$overrides/nominal/HOSTGAL_sSFR.txt,$overrides/nominal/VPEC.txt,$overrides/nominal/VPEC_ERR.txt,$overrides/nominal/REDSHIFT_CMB.txt,$overrides/nominal//REDSHIFT_CMB_ERR.txt
+
+  HEADER_OVERRIDE_PRETONY: &header_override_pretony
+      HEADER_OVERRIDE_FILE: $overrides/nominal/HOSTGAL_LOGMASS.txt,$overrides/nominal/HOSTGAL_LOGMASS_ERR.txt,$PS1_USERS/dscolnic/PANTHEON+/vpec/per_vpec.txt
+
+  HEADER_OVERRIDE_NOERIK: &header_override_noerik
+      HEADER_OVERRIDE_FILE: $overrides/vpecnoeric/HOSTGAL_LOGMASS.txt,$overrides/vpecnoeric/HOSTGAL_sSFR.txt,$overrides/vpecnoeric/VPEC.txt,$overrides/vpecnoeric/VPEC_ERR.txt,$overrides/vpecnoeric/REDSHIFT_CMB.txt
+
+  HEADER_OVERRIDE_TONYNOM: &header_override_tonynom
+      HEADER_OVERRIDE_FILE: $overrides/nominal/HOSTGAL_LOGMASS.txt,$overrides/nominal/HOSTGAL_sSFR.txt,$overrides/post_Anthony/VPEC.txt,$overrides/post_Anthony/VPEC_ERR.txt,$overrides/post_Anthony/REDSHIFT_CMB.txt
+
+
+
+  HEADER_OVERRIDE_MASSSYS: &header_override_masssys
+      HEADER_OVERRIDE_FILE: $PS1_USERS/dscolnic/PANTHEON+/header_overrides/nominal/HOSTGAL_LOGMASS.txt,$PS1_USERS/dscolnic/PANTHEON+/header_overrides/nominal/HOSTGAL_LOGMASS_ERR.txt,$PS1_USERS/dscolnic/PANTHEON+/header_overrides/nominal/VPEC.txt,$PS1_USERS/dscolnic/PANTHEON+/header_overrides/nominal/VPEC_ERR.txt
+
+
+  MINOS: &minos
+      USE_MINOS: T
+
+  RESTORE_WRONG_VPEC: &restore_wrong_vpec
+      RESTORE_WRONG_VPEC: F
+  RESTORE_WRONG_VPEC_F: &restore_wrong_vpec_F
+      RESTORE_WRONG_VPEC: F
+  RESTORE_WRONG_VPEC_SDSS: &restore_wrong_vpec_sdss
+      RESTORE_WRONG_VPEC: T
+
+
+  SNTABLELIST: &sntablelist
+      SNTABLE_LIST: FITRES(text:key) LCPLOT(text:csv)
+      MXLC_PLOT: 999
+
+  SIMSNTABLELIST: &simsntablelist
+      SNTABLE_LIST: FITRES(text:key) 
+
+  SALT3MODEL: &salt3model
+      #GENMODEL: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/models/SALT3.K20
+      #GENMODEL: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/models/SALT3.JLA_orig_nosc
+      GENMODEL: $SNDATA_ROOT/models/SALT3/SALT3.K21 
+  SALT3FIT: &salt3fit
+     #FITMODEL_NAME: '/project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/models/SALT3.K20'
+     #FITMODEL_NAME: '/project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/models/SALT3.JLA_orig_nosc'
+     FITMODEL_NAME: $SNDATA_ROOT/models/SALT3/SALT3.K21
+
+  SALT2EXCAL: &salt2excal
+     FITMODEL_NAME: $PANTHEONPLUS/submit_trainSALT2/out_train_v7_1_bd17fix/SALT2.MODEL000
+
+  FOUNDKCOR: &foundkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_Foundation_v6_1.fits
+  LOWZKCOR: &lowzkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1//kcor_PS1_CFA_COMBINED_v6_1.fits
+  DESKCOR: &deskcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_DES_3yr_v6_1.fits
+  CSPKCOR: &cspkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_CSPDR3_v6_1.fits
+  PS1KCOR: &ps1kcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_PS1_v6_1.fits
+  SDSSKCOR: &sdsskcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_SDSS_v6_1.fits
+  SNLSKCOR: &snlskcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_SNLS_v6_1.fits
+  SWIFTKCOR: &swiftkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_SWIFT_v6_1.fits
+  ASASSNKCOR: &asassnkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_ASASSN_v6_1.fits
+  KAITMOKCOR: &kaitmokcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_KAIT_Mo_v6_1.fits
+  KAITKCOR: &kaitkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_KAIT_Stahl_v6_1.fits
+  HSTKCOR: &hstkcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_PS1_HST_COMBINED_ADAMRECAL.fits
+  NOCFAKCOR: &nocfakcor
+     KCOR_FILE: $PANTHEONPLUS/kcor/v6_1/kcor_Land2.fits
+
+
+  ###########################################
+  ###########################################
+
+DATAPREP:
+
+  DATALOWZ: #There are some calibrators in here. CfA3 and CSP has been removed
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/PS1_LOWZ_COMBINED_TEXT_DS17
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+
+  DATADES3YR:  # 3yr spec sample
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/DES3YR_DES_COMBINED_TEXT
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+  DATAPS1: 
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/Pantheon_PS1MD
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+  DATASDSS:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/JLA2014_SDSS_DS17
+      TYPES:
+        IA: [120, 118]
+        NONIA: [0, 5, 101, 102, 103, 104, 105, 106, 110, 114, 111, 115, 112, 113, 117, 119]
+      BLIND: False
+
+  DATASNLS:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/JLA2014_SNLS_DS17
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYSNLS:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/JLA2014_SNLS_DS17
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATAHST:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/PS1_HST_COMBINED_TEXT_DS17
+      BLIND: False
+
+#  PRETONYHST:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/PS1_HST_COMBINED_TEXT_DS17
+#      BLIND: False
+
+  DATAFOUNDBIG:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/Foundation_DJ17
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYFOUNDBIG:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/Foundation_DJ17
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATACSPDR3: #DR3 has everything
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/CSPDR3_anthony
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYCSPDR3: #DR3 has everything
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/CSPDR3_DARCY
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATASWIFTNEW:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/SWIFT
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYSWIFTNEW:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/SWIFT_PP
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30, 31]
+#      BLIND: False
+
+#  DATASWIFTDS15:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/SWIFT_DS15
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+#  PRETONYSWIFTDS15:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/SWIFT_DS15
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATALOSS: #LOSS + KAIT
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/LOSS
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYLOSS: #LOSS + KAIT
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/LOSS_PP
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATAKAITDS15: #Calibrators
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/KAIT_DS15
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYKAITDS15: #Calibrators
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/KAIT_DS15
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATAADAMCSP:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/CSP_data2
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYADAMCSP:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/CSP_data2
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  #DATAADAM: #OBSOLETE
+  #  OPTS:
+  #    RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/Landolt_Adam
+  #    TYPES:
+  #      IA: [1, 101]
+  #      NONIA: [120, 130, 20, 30]
+  #    BLIND: False
+
+  DATACfA3:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/CfA3_DJ20
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYCfA3:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/CfA3_DJ20
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATANOCFA:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/PS1s_LOWZ_JRK07_NOCFA_DS15
+      TYPES:
+        IA: [1, 101]
+        NONIA: [120, 130, 20, 30]
+      BLIND: False
+
+#  PRETONYNOCFA:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/PS1s_LOWZ_JRK07_NOCFA_DS15
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+#  DATAFOUNDCALTWO:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/Foundation_All
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+#  PRETONYFOUNDCALTWO:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/Foundation_All
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+#  DATAFOUNDCALONE:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/Found_19
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+  DATAASASSN:
+    OPTS:
+      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge/ANTHONY_AUG19/ASASSN
+      TYPES:
+        IA: [1]
+        NONIA: [120]
+      BLIND: False
+
+
+#  PRETONYFOUNDCALONE:
+#    OPTS:
+#      RAW_DIR: $PS1_USERS/dscolnic/PANTHEON+/lcmerge_S18/Found_19
+#      TYPES:
+#        IA: [1, 101]
+#        NONIA: [120, 130, 20, 30]
+#      BLIND: False
+
+###########################################################################################
+###########################################################################################
+###########################################################################################
+###########################################################################################
+
+SIM:  
+  # ----------- 1D Biscor Sized Simulations ----------------------------------------
+
+  SIMLOWZ_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMLOWZ_7D_G10
+  SIMLOWZ_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMLOWZ_7D_C11
+  SIMLOWZ_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMLOWZ_4D_BS20
+  SIMLOWZ_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMLOWZ_4D_BS20EXP
+  SIMLOWZ_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMLOWZ_4D_BS20-BEST
+  SIMLOWZ_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMLOWZ_4D_BS20-BEST
+  SIMLOWZ_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMLOWZ_4D_BS20-BC1
+  SIMLOWZ_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMLOWZ_4D_BS20-BC4
+
+
+  SIMPS1_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMPS1_7D_G10
+  SIMPS1_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMPS1_7D_C11
+  SIMPS1_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMPS1_4D_BS20
+  SIMPS1_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMPS1_4D_BS20EXP
+  SIMPS1_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMPS1_4D_BS20-BEST
+  SIMPS1_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMPS1_4D_BS20-BC1
+  SIMPS1_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMPS1_4D_BS20-BC4
+
+  SIMDES_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMDES_7D_G10
+  SIMDES_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMDES_7D_C11
+  SIMDES_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMDES_4D_BS20
+  SIMDES_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMDES_4D_BS20EXP
+  SIMDES_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMDES_4D_BS20-BEST
+  SIMDES_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMDES_4D_BS20-BC1
+  SIMDES_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMDES_4D_BS20-BC4
+
+
+  SIMSDSS_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMSDSS_7D_G10
+  SIMSDSS_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMSDSS_7D_C11
+  SIMSDSS_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMSDSS_4D_BS20
+  SIMSDSS_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMSDSS_4D_BS20EXP
+  SIMSDSS_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMSDSS_4D_BS20-BEST
+  SIMSDSS_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMSDSS_4D_BS20-BC1
+  SIMSDSS_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMSDSS_4D_BS20-BC4
+
+  SIMSNLS_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMSNLS_7D_G10
+  SIMSNLS_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMSNLS_7D_C11
+  SIMSNLS_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMSNLS_4D_BS20
+  SIMSNLS_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMSNLS_4D_BS20EXP
+  SIMSNLS_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMSNLS_4D_BS20-BEST
+  SIMSNLS_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMSNLS_4D_BS20-BC1
+  SIMSNLS_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMSNLS_4D_BS20-BC4
+
+
+  SIMHST_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMHST_7D_G10
+  SIMHST_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMHST_7D_C11
+  SIMHST_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMHST_4D_BS20
+  SIMHST_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMHST_4D_BS20EXP
+  SIMHST_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMHST_4D_BS20-BEST
+  SIMHST_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMHST_4D_BS20-BC1
+  SIMHST_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMHST_4D_BS20-BC4
+
+
+  SIMFOUNDBIG_7D_G10:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMFOUNDBIG_7D_G10
+  SIMFOUNDBIG_7D_C11:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMFOUNDBIG_7D_C11
+  SIMFOUNDBIG_4D_BS20:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/1_SIM/SIMFOUNDBIG_4D_BS20
+  SIMFOUNDBIG_4D_BS20EXP:
+    EXTERNAL: $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/1_SIM/SIMFOUNDBIG_4D_BS20EXP
+  SIMFOUNDBIG_4D_BS20-BEST:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BEST/1_SIM/SIMFOUNDBIG_4D_BS20-BEST
+  SIMFOUNDBIG_4D_BS20-BC1:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC1/1_SIM/SIMFOUNDBIG_4D_BS20-BC1
+  SIMFOUNDBIG_4D_BS20-BC4:
+    EXTERNAL: $PIPPIN_OUTPUT/P21-BC4/1_SIM/SIMFOUNDBIG_4D_BS20-BC4
+
+
+  # -----------      Lightcurve Fitting  ----------------------------------------
+
+
+LCFIT:
+
+  LFITsimnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+    MASK: SIMLOWZ
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/lowz.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *simlcplot
+      <<: *lowzkcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/LFITsimnosys_SIMLOWZ_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/LFITsimnosys_SIMLOWZ_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/LFITsimnosys_SIMLOWZ_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/LFITsimnosys_SIMLOWZ_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/LFITsimnosys_SIMLOWZ_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/LFITsimnosys_SIMLOWZ_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/LFITsimnosys_SIMLOWZ_4D_BS20-BC4
+
+#  LFITsimnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+#    MASK: SIMSALT3LOWZ
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/lowz.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *salt3fit
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  LFITsimnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+#    MASK: SIMSALT3LOWZ
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/lowz.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *salt3fit
+#      <<: *fitinplambdasalt3
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+
+#  LFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+#    MASK: PRETONYLOWZ
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/lowz.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+  LFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+    MASK: DATALOWZ
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *lowzkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  LFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+#    MASK: DATALOWZ
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_tonynom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+
+#  LFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+#    MASK: DATALOWZ
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+#  LFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOWZ.nml
+#    MASK: DATALOWZ
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+  PFITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+    MASK: SIMPS1
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *simlcplot
+      <<: *ps1kcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/PFITnosys_SIMPS1_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/PFITnosys_SIMPS1_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/PFITnosys_SIMPS1_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/PFITnosys_SIMPS1_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/PFITnosys_SIMPS1_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/PFITnosys_SIMPS1_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/PFITnosys_SIMPS1_4D_BS20-BC4
+
+#  PFITnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+#    MASK: SIMSALT3PS1
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  PFITnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+#    MASK: SIMSALT3PS1
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+
+
+#  PFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+#    MASK: PRETONYPS1
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+  PFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+    MASK: DATAPS1
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *ps1kcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  PFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+#    MASK: DATAPS1
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_tonynom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+#  PFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+#    MASK: DATAPS1
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  PFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/PS1.nml
+#    MASK: DATAPS1
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+  DFITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+    MASK: SIMDES
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *simlcplot
+      <<: *deskcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/DFITnosys_SIMDES_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/DFITnosys_SIMDES_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/DFITnosys_SIMDES_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/DFITnosys_SIMDES_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/DFITnosys_SIMDES_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/DFITnosys_SIMDES_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/DFITnosys_SIMDES_4D_BS20-BC4
+
+#  DFITnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+#    MASK: SIMSALT3DES
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  DFITnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+#    MASK: SIMSALT3DES
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+
+
+#  DFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+#    MASK: PRETONYDES
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+  DFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+    MASK: DATADES
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *deskcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+      cutwin_redshift:  0.05, 0.8
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  DFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+#    MASK: DATADES
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  DFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+#    MASK: DATADES
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  DFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/DES.nml
+#    MASK: DATADES
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+  SDFITsimnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+    MASK: SIMSDSS
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *simlcplot
+      <<: *sdsskcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SDFITsimnosys_SIMSDSS_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SDFITsimnosys_SIMSDSS_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SDFITsimnosys_SIMSDSS_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/SDFITsimnosys_SIMSDSS_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/SDFITsimnosys_SIMSDSS_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/SDFITsimnosys_SIMSDSS_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/SDFITsimnosys_SIMSDSS_4D_BS20-BC4
+
+#  SDFITsimnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: SIMSALT3SDSS
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  SDFITsimnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: SIMSALT3SDSS
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+
+#  SDFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: PRETONYSDSS
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+  SDFITdatanosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+    MASK: DATASDSS
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SDSS_Dan.LIST
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *sdsskcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+  SDFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+    MASK: DATASDSS
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SDSS_Dan.LIST
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *sdsskcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SDFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: DATASDSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SDSS_Dan.LIST
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SDFITsimdatawithsys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: DATASIMSDSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+#  SDFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: DATASDSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SDSS_Dan.LIST
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SDFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: DATASDSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SDSS_Dan.LIST
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+#  SDFITsimdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: DATASIMSDSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SDFITsimdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SDSS.nml
+#    MASK: DATASIMSDSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+  SNFITsimnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+    MASK: SIMSNLS
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *simlcplot
+      <<: *snlskcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SNFITsimnosys_SIMSNLS_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SNFITsimnosys_SIMSNLS_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SNFITsimnosys_SIMSNLS_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/SNFITsimnosys_SIMSNLS_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/SNFITsimnosys_SIMSNLS_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/SNFITsimnosys_SIMSNLS_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/SNFITsimnosys_SIMSNLS_4D_BS20-BC4
+
+#  SNFITsimnosysLOOSECUTWIN:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: SIMSNLS_4D_BS20
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#      <<: *snlskcor
+#      cutwin_Trestmin: -9999.0   5.0
+#      SNCUT_SNRMAX: r 4. i 7.0
+#    FITINP:
+#      <<: *salt2excal
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+#    EXTERNAL_DIRS:
+#      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/SNFITsimnosysLOOSECUTWIN_SIMSNLS_4D_BS20
+#      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/SNFITsimnosysLOOSECUTWIN_SIMSNLS_4D_BS20-BEST
+#      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/SNFITsimnosysLOOSECUTWIN_SIMSNLS_4D_BS20-BC1
+#      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/SNFITsimnosysLOOSECUTWIN_SIMSNLS_4D_BS20-BC4
+
+#  SNFITsimnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: SIMSALT3SNLS
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  SNFITsimnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: SIMSALT3SNLS
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+
+#  SNFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: PRETONYSNLS
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 5
+
+  SNFITdatanosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+    MASK: DATASNLS
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SNLS.LIST
+      FILTER_UPDATE_PATH: $SNDATA_ROOT/filters/JLA/JLA-Megacam #different filter cal for each SN by design from JLA
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *snlskcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+      SNCUT_SNRMAX: r 4. i 9.0 z 2.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+  SNFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+    MASK: DATASNLS
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SNLS.LIST
+      FILTER_UPDATE_PATH: $SNDATA_ROOT/filters/JLA/JLA-Megacam #different filter cal for each SN by design from JLA
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *snlskcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+      SNCUT_SNRMAX: r 4. i 9.0 z 2.0
+      cutwin_redshift:  0.01, 0.8
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SNFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: DATASNLS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SNLS.LIST
+#      FILTER_UPDATE_PATH: $SNDATA_ROOT/filters/JLA/JLA-Megacam #different filter cal for each SN by design from JLA
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SNFITsimdatawithsys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: DATASIMSNLS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+#  SNFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: DATASNLS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SNLS.LIST
+#      FILTER_UPDATE_PATH: $SNDATA_ROOT/filters/JLA/JLA-Megacam #different filter cal for each SN by design from JLA
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SNFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: DATASNLS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      #SNCID_LIST_FILE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/JLA-SNLS.LIST
+#      FILTER_UPDATE_PATH: $SNDATA_ROOT/filters/JLA/JLA-Megacam #different filter cal for each SN by design from JLA
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+#  SNFITsimdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: DATASIMSNLS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  SNFITsimdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SNLS.nml
+#    MASK: DATASIMSNLS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+  FFITdatanosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+    MASK: DATAFOUNDBIG
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *foundkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  FFITdatanosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDBIG
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  FFITdatanosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDBIG
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      <<: *snlcinp_salt3_found
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *filtlist_fitsalt3_found
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+
+#  FFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: PRETONYFOUNDBIG
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+  FFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+    MASK: DATAFOUNDBIG
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *foundkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+#  FFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDBIG
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+#  FFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDBIG
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+#  FFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDBIG
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      <<: *snlcinp_salt3_found
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *filtlist_fitsalt3_found
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+
+
+  FFITsimnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+    MASK: SIMFOUNDBIG
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *simsntablelist
+      <<: *simlcplot
+      <<: *foundkcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC4
+
+#  FFITsimnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: SIMSALT3FOUNDBIG
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *simsntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  FFITsimnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: SIMSALT3FOUNDBIG
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *simsntablelist
+#      <<: *simlcplot
+#      <<: *snlcinp_salt3_found
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *filtlist_fitsalt3_found
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+
+
+  HFITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+    MASK: SIMHST_
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *hstmwstuff
+      <<: *sntablelist
+      <<: *simlcplot
+      <<: *hstkcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+    EXTERNAL_DIRS:
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/HFITnosys_SIMHST_7D_G10
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/HFITnosys_SIMHST_7D_C11
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3/2_LCFIT/HFITnosys_SIMHST_4D_BS20
+      - $PIPPIN_OUTPUT/PLUS_7DSIMS_FINAL3EXPTIME/2_LCFIT/HFITnosys_SIMHST_4D_BS20EXP
+      - $PIPPIN_OUTPUT/P21-BEST/2_LCFIT/HFITnosys_SIMHST_4D_BS20-BEST
+      - $PIPPIN_OUTPUT/P21-BC1/2_LCFIT/HFITnosys_SIMHST_4D_BS20-BC1
+      - $PIPPIN_OUTPUT/P21-BC4/2_LCFIT/HFITnosys_SIMHST_4D_BS20-BC4
+
+
+#  HFITnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+#    MASK: SIMSALT3HST
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *hstmwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  HFITnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+#    MASK: SIMSALT3HST
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *hstmwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+
+#  HFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+#    MASK: PRETONYHST
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *hstmwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 6
+
+  HFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+    MASK: DATAHST
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *hstmwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *hstkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 6
+
+#  HFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+#    MASK: DATAHST
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *hstmwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 6
+
+#  HFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+#    MASK: DATAHST
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *hstmwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 6
+
+#  HFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/HST.nml
+#    MASK: DATAHST
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *hstmwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 6
+
+
+#  CFITnosys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CALIB.nml
+#    MASK: SIMCALIB
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+#    EXTERNAL_DIRS:
+#      - $PIPPIN_OUTPUT/PLUS_7DSIMS/2_LCFIT/CFITnosys_SIMCALIB_7D_G10
+#      - $PIPPIN_OUTPUT/PLUS_7DSIMS/2_LCFIT/CFITnosys_SIMCALIB_7D_C11
+#      - $PIPPIN_OUTPUT/PLUS_7DSIMS/2_LCFIT/CFITnosys_SIMCALIB_4D_BS20
+
+
+#  CFITdatawithsys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CALIB.nml
+#    MASK: DATACALIB
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      <<: *opt_sncid_list
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  CFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CALIB.nml
+#    MASK: DATACALIB
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+
+#  CFITnosysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CALIB.nml
+#    MASK: SIMSALT3CALIB
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+
+#  CFITnosysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CALIB.nml
+#    MASK: SIMSALT3CALIB
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *simlcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 20
+
+
+################ CALIBRATORS FITTING ########################################
+
+  SWIFTNEWFITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFTNEW.nml
+    MASK: DATASWIFTNEW
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *header_override_nom
+      <<: *lcplot
+      <<: *swiftkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 2
+
+
+#  SWIFTNEWFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFTNEW.nml
+#    MASK: PRETONYSWIFTNEW
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *header_override_pretony
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 2
+
+
+  SWIFTNEWFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFTNEW.nml
+    MASK: DATASWIFTNEW
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *sntablelist
+      <<: *header_override_nom
+      <<: *lcplot
+      <<: *swiftkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  SWIFTNEWFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFTNEW.nml
+#    MASK: DATASWIFTNEW
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *header_override_nom
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  SWIFTNEWFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFTNEW.nml
+#    MASK: DATASWIFTNEW
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *header_override_nom
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+#  SWIFTNEWFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFTNEW.nml
+#    MASK: DATASWIFTNEW
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *sntablelist
+#      <<: *header_override_nom
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+#  SWIFTDS15FITnosys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFT_DS15.nml
+#    MASK: DATASWIFTDS15
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  SWIFTDS15FITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFT_DS15.nml
+#    MASK: PRETONYSWIFTDS15
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  SWIFTDS15FITdatawithsys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFT_DS15.nml
+#    MASK: DATASWIFTDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  SWIFTDS15FITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFT_DS15.nml
+#    MASK: DATASWIFTDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  SWIFTDS15FITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFT_DS15.nml
+#    MASK: DATASWIFTDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  SWIFTDS15FITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/SWIFT_DS15.nml
+#    MASK: DATASWIFTDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/swift.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+  CSPDR3FITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSPDR3.nml
+    MASK: DATACSPDR3
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *cspkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  CSPDR3FITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSPDR3_DARCY.nml
+#    MASK: PRETONYCSPDR3
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+
+  CSPDR3FITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSPDR3.nml
+    MASK: DATACSPDR3
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *cspkcor
+      cutwin_Trestmin: -9999.0   5.0
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 8
+
+#  CSPDR3FITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSPDR3.nml
+#    MASK: DATACSPDR3
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 8
+
+#  CSPDR3FITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSPDR3.nml
+#    MASK: DATACSPDR3
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 8
+
+#  CSPDR3FITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSPDR3.nml
+#    MASK: DATACSPDR3
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 8
+
+
+  LOSSFITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOSS.nml
+    MASK: DATALOSS
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/loss.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *kaitmokcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 2
+
+#  LOSSFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOSS.nml
+#    MASK: PRETONYLOSS
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/loss.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 2
+
+  LOSSFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOSS.nml
+    MASK: DATALOSS
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/loss.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *kaitkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  LOSSFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOSS.nml
+#    MASK: DATALOSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/loss.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  LOSSFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOSS.nml
+#    MASK: DATALOSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/loss.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  LOSSFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/LOSS.nml
+#    MASK: DATALOSS
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/loss.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+  KAITDS15FITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/KAIT_DS15.nml
+    MASK: DATAKAITDS15
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/kaitw.txt'
+      <<: *minos
+      <<: *kaitds15_setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *kaitmokcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  KAITDS15FITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/KAIT_DS15.nml
+#    MASK: PRETONYKAITDS15
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/kaitw.txt'
+#      <<: *minos
+#      <<: *kaitds15_setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+  KAITDS15FITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/KAIT_DS15.nml
+    MASK: DATAKAITDS15
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/kaitw.txt'
+      <<: *minos
+      <<: *kaitds15_setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *kaitmokcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  KAITDS15FITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/KAIT_DS15.nml
+#    MASK: DATAKAITDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/kaitw.txt'
+#      <<: *minos
+#      <<: *kaitds15_setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  KAITDS15FITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/KAIT_DS15.nml
+#    MASK: DATAKAITDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/kaitw.txt'
+#      <<: *minos
+#      <<: *kaitds15_setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  KAITDS15FITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/KAIT_DS15.nml
+#    MASK: DATAKAITDS15
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/kaitw.txt'
+#      <<: *minos
+#      <<: *kaitds15_setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+  CfA3_DJ20FITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CFA3_DJ20.nml
+    MASK: DATACfA3
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/cfa3.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *lowzkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  CfA3_DJ20FITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CFA3_DJ20.nml
+#    MASK: PRETONYCfA3
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/cfa3.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+
+  CfA3_DJ20FITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CFA3_DJ20.nml
+    MASK: DATACfA3
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/cfa3.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *lowzkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  CfA3_DJ20FITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CFA3_DJ20.nml
+#    MASK: DATACfA3
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/cfa3.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  CfA3_DJ20FITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CFA3_DJ20.nml
+#    MASK: DATACfA3
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/cfa3.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+#  CfA3_DJ20FITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CFA3_DJ20.nml
+#    MASK: DATACfA3
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/cfa3.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+
+
+  NOCFAFITnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/NOCFA.nml
+    MASK: DATANOCFA
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/jrk.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *nocfakcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 2
+
+#  NOCFAFITpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/NOCFA.nml
+#    MASK: PRETONYNOCFA
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/jrk.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+  NOCFAFITdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/NOCFA.nml
+    MASK: DATANOCFA
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/jrk.txt'
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *nocfakcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 9
+
+#  NOCFAFITdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/NOCFA.nml
+#    MASK: DATANOCFA
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/jrk.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 9
+
+#  NOCFAFITdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/NOCFA.nml
+#    MASK: DATANOCFA
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/jrk.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 9
+
+#  NOCFAFITdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/NOCFA.nml
+#    MASK: DATANOCFA
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      #SNCID_IGNORE_FILE: '$PS1_USERS/dscolnic/PANTHEON+/primarysnidignorelists/jrk.txt'
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 9
+
+  ADAMnosys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSP_data2.nml
+    MASK: DATAADAM
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *cspkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+      FUDGE_MAG_ERROR: 'ALL 0.02'
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  ADAMpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSP_data2.nml
+#    MASK: PRETONYADAM
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+  ADAMdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSP_data2.nml
+    MASK: DATAADAM
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *cspkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  ADAMdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSP_data2.nml
+#    MASK: DATAADAM
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  ADAMdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSP_data2.nml
+#    MASK: DATAADAM
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  ADAMdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/CSP_data2.nml
+#    MASK: DATAADAM
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+#  FOUNDTWOnosys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALTWO
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  FOUNDTWOpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: PRETONYFOUNDCALTWO
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+#  FOUNDTWOdatawithsys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALTWO
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      <<: *opt_sncid_list
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  FOUNDTWOdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALTWO
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  FOUNDTWOdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALTWO
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  FOUNDTWOdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALTWO
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      <<: *snlcinp_salt3_found
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *filtlist_fitsalt3_found
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+
+#  FOUNDONEnosys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALONE
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+
+#  FOUNDONEpretony:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: PRETONYFOUNDCALONE
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_pretony
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 1
+
+
+#  FOUNDONEdatawithsys:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALONE
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      cutwin_Trestmin: -9999.0   5.0
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      <<: *opt_sncid_list
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  FOUNDONEdataANTHONY:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALONE
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ANTHONY.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  FOUNDONEdatawithsysSALT3:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALONE
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#    FITINP:
+#      <<: *fitinplambda
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#  FOUNDONEdatawithsysSALT3newbands:
+#    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/FOUND.nml
+#    MASK: DATAFOUNDCALONE
+#    FITOPTS:
+#      - $PS1_USERS/dscolnic/PANTHEON+/covmat/ALL.fitopts
+#    SNLCINP:
+#      <<: *minos
+#      <<: *setpkmjd
+#      <<: *mwstuff
+#      <<: *header_override_nom
+#      <<: *sntablelist
+#      <<: *lcplot
+#      <<: *snlcinp_salt3_found
+#    FITINP:
+#      <<: *fitinplambdasalt3
+#      <<: *filtlist_fitsalt3_found
+#      <<: *salt3fit
+#    OPTS:
+#      <<: *appendfitres
+#      <<: *appendgaltype
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+  ASASSNdatawithsys:
+    BASE: $PS1_USERS/dscolnic/PANTHEON+/lcfitting/ASASSN.nml
+    MASK: DATAASASSN
+    FITOPTS:
+      - $PS1_USERS/dscolnic/PANTHEON+/kcor/fitopt_v6_1/ALL.fitopts
+    SNLCINP:
+      <<: *minos
+      <<: *setpkmjd
+      <<: *mwstuff
+      <<: *header_override_nom
+      <<: *sntablelist
+      <<: *lcplot
+      <<: *asassnkcor
+      cutwin_Trestmin: -9999.0   5.0
+      cutwin_Trestmax: 5.   99999.
+    FITINP:
+      <<: *salt2excal
+      <<: *fitinplambda
+    OPTS:
+      <<: *appendfitres
+      <<: *appendgaltype
+      <<: *opt_sncid_list
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 4
+
+#############################################################################
+#############################################################################
+#############################################################################
+#############################################################################
+
+#############################################################################
+
+AGGREGATION:
+  AGG:
+
+MERGE:
+  MERGE:
+
+#############################################################################
+#############################################################################
+#############################################################################
+
+
+BIASCOR:
+
+
+  REALDATABS20NOM:
+    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+    DATA: [HFITdatawithsys_DATAHST, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN, NOCFAFITdatawithsys_DATANOCFA]
+    SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosys_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+    MUOPTS:
+      SCAT_G10:
+        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_G10, LFITsimnosys_SIMLOWZ_7D_G10,DFITnosys_SIMDES_7D_G10,PFITnosys_SIMPS1_7D_G10,SDFITsimnosys_SIMSDSS_7D_G10,SNFITsimnosys_SIMSNLS_7D_G10,FFITsimnosys_SIMFOUNDBIG_7D_G10]
+        OPTS:
+          u5: 1
+          u2: 1
+          opt_biascor: 0
+        SCALE: .7
+      SCAT_C11:
+        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_C11, LFITsimnosys_SIMLOWZ_7D_C11,DFITnosys_SIMDES_7D_C11,PFITnosys_SIMPS1_7D_C11,SDFITsimnosys_SIMSDSS_7D_C11,SNFITsimnosys_SIMSNLS_7D_C11,FFITsimnosys_SIMFOUNDBIG_7D_C11]
+        OPTS:
+          u5: 1
+          u2: 1
+          opt_biascor: 0
+        SCALE: .7
+      SPECEFF_EXPTIME:
+        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20EXP, LFITsimnosys_SIMLOWZ_4D_BS20EXP,DFITnosys_SIMDES_4D_BS20EXP,PFITnosys_SIMPS1_4D_BS20EXP,SDFITsimnosys_SIMSDSS_4D_BS20EXP,SNFITsimnosys_SIMSNLS_4D_BS20EXP,FFITsimnosys_SIMFOUNDBIG_4D_BS20EXP]
+        SCALE: 1.0
+      SCAT_BS20BEST:
+        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BEST, LFITsimnosys_SIMLOWZ_4D_BS20-BEST,DFITnosys_SIMDES_4D_BS20-BEST,PFITnosys_SIMPS1_4D_BS20-BEST,SDFITsimnosys_SIMSDSS_4D_BS20-BEST,SNFITsimnosys_SIMSNLS_4D_BS20-BEST,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BEST]
+        SCALE: .6
+      SCAT_BS20BC1:
+        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BC1, LFITsimnosys_SIMLOWZ_4D_BS20-BC1,DFITnosys_SIMDES_4D_BS20-BC1,PFITnosys_SIMPS1_4D_BS20-BC1,SDFITsimnosys_SIMSDSS_4D_BS20-BC1,SNFITsimnosys_SIMSNLS_4D_BS20-BC1,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC1]
+        SCALE: .6
+      SCAT_BS20BC4:
+        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BC4, LFITsimnosys_SIMLOWZ_4D_BS20-BC4,DFITnosys_SIMDES_4D_BS20-BC4,PFITnosys_SIMPS1_4D_BS20-BC4,SDFITsimnosys_SIMSDSS_4D_BS20-BC4,SNFITsimnosys_SIMSNLS_4D_BS20-BC4,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC4]
+        SCALE: .6
+      MASSSTEPLOC:
+        OPTS: 
+          u5: 1
+          p7: 10.2
+        SCALE: 1.
+      #BETAEVOL:
+      #  OPTS:
+      #    u4: 1
+      #  SCALE: 0.
+      #MASSSTEPFIT:
+      #  OPTS:
+      #    u5: 1.
+      #  SCALE: 1.
+
+    OPTS:
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 8
+      interp_biascor_logmass: 0
+      logmass_min: -15
+      nbin_logmass: 2
+      logmass_max: 35
+      opt_biascor: 4336
+      u2: 3
+      u5: 1 #dont fit for mass step
+      chi2max: 24
+      iflag_duplicate: 0
+      ndump_nobiascor: 500
+    CONSISTENT_SAMPLE: True
+
+#  REALDATABS20NOMzmax8:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN, NOCFAFITdatawithsys_DATANOCFA]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosys_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+#    MUOPTS:
+#      SCAT_G10:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_G10, LFITsimnosys_SIMLOWZ_7D_G10,DFITnosys_SIMDES_7D_G10,PFITnosys_SIMPS1_7D_G10,SDFITsimnosys_SIMSDSS_7D_G10,SNFITsimnosys_SIMSNLS_7D_G10,FFITsimnosys_SIMFOUNDBIG_7D_G10]
+#        OPTS:
+#          u5: 1
+#          u2: 1
+#          opt_biascor: 0
+#        SCALE: .7
+#      SCAT_C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_C11, LFITsimnosys_SIMLOWZ_7D_C11,DFITnosys_SIMDES_7D_C11,PFITnosys_SIMPS1_7D_C11,SDFITsimnosys_SIMSDSS_7D_C11,SNFITsimnosys_SIMSNLS_7D_C11,FFITsimnosys_SIMFOUNDBIG_7D_C11]
+#        OPTS:
+#          u5: 1
+#          u2: 1
+#          opt_biascor: 0
+#        SCALE: .7
+##      SNLS_CUTWIN:
+##        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosysLOOSECUTWIN_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+##        SCALE: 1.0
+#      SCAT_BS20BEST:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BEST, LFITsimnosys_SIMLOWZ_4D_BS20-BEST,DFITnosys_SIMDES_4D_BS20-BEST,PFITnosys_SIMPS1_4D_BS20-BEST,SDFITsimnosys_SIMSDSS_4D_BS20-BEST,SNFITsimnosys_SIMSNLS_4D_BS20-BEST,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BEST]
+#        SCALE: .6
+#      SCAT_BS20BC1:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BC1, LFITsimnosys_SIMLOWZ_4D_BS20-BC1,DFITnosys_SIMDES_4D_BS20-BC1,PFITnosys_SIMPS1_4D_BS20-BC1,SDFITsimnosys_SIMSDSS_4D_BS20-BC1,SNFITsimnosys_SIMSNLS_4D_BS20-BC1,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC1]
+#        SCALE: .6
+#      SCAT_BS20BC4:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BC4, LFITsimnosys_SIMLOWZ_4D_BS20-BC4,DFITnosys_SIMDES_4D_BS20-BC4,PFITnosys_SIMPS1_4D_BS20-BC4,SDFITsimnosys_SIMSDSS_4D_BS20-BC4,SNFITsimnosys_SIMSNLS_4D_BS20-BC4,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC4]
+#        SCALE: .6
+#      MASSSTEPLOC:
+#        OPTS: 
+#          u5: 1
+#          p7: 10.2
+#        SCALE: 1.
+#      #BETAEVOL:
+#      #  OPTS:
+#      #    u4: 1
+#      #  SCALE: 0.
+#      #MASSSTEPFIT:
+#      #  OPTS:
+#      #    u5: 1.
+#      #  SCALE: 1.
+
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 11
+#      interp_biascor_logmass: 0
+#      logmass_min: -15
+#      nbin_logmass: 2
+#      logmass_max: 35
+#      opt_biascor: 4336
+#      zmax: 0.8
+#      u2: 3
+#      u5: 1 #dont fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 500
+#    CONSISTENT_SAMPLE: True
+
+
+#  REALDATAG10NOM:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN, NOCFAFITdatawithsys_DATANOCFA]
+#    #SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosys_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_G10, LFITsimnosys_SIMLOWZ_7D_G10,DFITnosys_SIMDES_7D_G10,PFITnosys_SIMPS1_7D_G10,SDFITsimnosys_SIMSDSS_7D_G10,SNFITsimnosys_SIMSNLS_7D_G10,FFITsimnosys_SIMFOUNDBIG_7D_G10]
+#    MUOPTS:
+#      SCAT_BS20:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosys_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+#        OPTS:
+#          interp_biascor_logmass: 0
+#          logmass_min: -15
+#          nbin_logmass: 2
+#          logmass_max: 35
+#          opt_biascor: 4336
+#          u2: 3
+#          u5: 0 #dont fit for mass step
+#        SCALE: .7
+#      SCAT_C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_C11, LFITsimnosys_SIMLOWZ_7D_C11,DFITnosys_SIMDES_7D_C11,PFITnosys_SIMPS1_7D_C11,SDFITsimnosys_SIMSDSS_7D_C11,SNFITsimnosys_SIMSNLS_7D_C11,FFITsimnosys_SIMFOUNDBIG_7D_C11]
+#        SCALE: .7
+#      SNLS_CUTWIN:
+#        SIMFILE_BIASCOR:  [HFITnosys_SIMHST_7D_G10, LFITsimnosys_SIMLOWZ_7D_G10,DFITnosys_SIMDES_7D_G10,PFITnosys_SIMPS1_7D_G10,SDFITsimnosys_SIMSDSS_7D_G10,SNFITsimnosys_SIMSNLS_7D_G10,FFITsimnosys_SIMFOUNDBIG_7D_G10]
+#        SCALE: 1.0
+#      SCAT_BS20BEST:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BEST, LFITsimnosys_SIMLOWZ_4D_BS20-BEST,DFITnosys_SIMDES_4D_BS20-BEST,PFITnosys_SIMPS1_4D_BS20-BEST,SDFITsimnosys_SIMSDSS_4D_BS20-BEST,SNFITsimnosys_SIMSNLS_4D_BS20-BEST,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BEST]
+#        OPTS:
+#          interp_biascor_logmass: 0
+#          logmass_min: -15
+#          nbin_logmass: 2
+#          logmass_max: 35
+#          opt_biascor: 4336
+#          u2: 3
+#          u5: 0 #dont fit for mass step
+#        SCALE: .6
+#      SCAT_BS20BC1:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BC1, LFITsimnosys_SIMLOWZ_4D_BS20-BC1,DFITnosys_SIMDES_4D_BS20-BC1,PFITnosys_SIMPS1_4D_BS20-BC1,SDFITsimnosys_SIMSDSS_4D_BS20-BC1,SNFITsimnosys_SIMSNLS_4D_BS20-BC1,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC1]
+#        OPTS:
+#          interp_biascor_logmass: 0
+#          logmass_min: -15
+#          nbin_logmass: 2
+#          logmass_max: 35
+#          opt_biascor: 4336
+#          u2: 3
+#          u5: 0 #dont fit for mass step
+#        SCALE: .6
+#      SCAT_BS20BC4:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20-BC4, LFITsimnosys_SIMLOWZ_4D_BS20-BC4,DFITnosys_SIMDES_4D_BS20-BC4,PFITnosys_SIMPS1_4D_BS20-BC4,SDFITsimnosys_SIMSDSS_4D_BS20-BC4,SNFITsimnosys_SIMSNLS_4D_BS20-BC4,FFITsimnosys_SIMFOUNDBIG_4D_BS20-BC4]
+#        OPTS:
+#          interp_biascor_logmass: 0
+#          logmass_min: -15
+#          nbin_logmass: 2
+#          logmass_max: 35
+#          opt_biascor: 4336
+#          u2: 3
+#          u5: 0 #dont fit for mass step
+#        SCALE: .6
+#      MASSSTEPLOC:
+#        OPTS: 
+#          u5: 1
+#          p7: 10.2
+#        SCALE: 1.
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 12
+#      u5: 1
+#      u2: 1
+#      opt_biascor: 0
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 500
+#    CONSISTENT_SAMPLE: True
+
+
+
+#  REALDATABS20NOMzmin01:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN, NOCFAFITdatawithsys_DATANOCFA]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosys_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+#    MUOPTS:
+#      G10:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_G10, LFITsimnosys_SIMLOWZ_7D_G10,DFITnosys_SIMDES_7D_G10,PFITnosys_SIMPS1_7D_G10,SDFITsimnosys_SIMSDSS_7D_G10,SNFITsimnosys_SIMSNLS_7D_G10,FFITsimnosys_SIMFOUNDBIG_7D_G10]
+#        OPTS:
+#          u5: 1
+#          u2: 1
+#          opt_biascor: 0
+#        SCALE: 0.5
+#      #C11:
+#      #  SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_C11, LFITsimnosys_SIMLOWZ_7D_C11,DFITnosys_SIMDES_7D_C11,PFITnosys_SIMPS1_7D_C11,SDFITsimnosys_SIMSDSS_7D_C11,SNFITsimnosys_SIMSNLS_7D_C11,FFITsimnosys_SIMFOUNDBIG_7D_C11]
+#      #  OPTS:
+#      #    u5: 1
+#      #    u2: 1
+#      #    opt_biascor: 0
+#      #  SCALE: 0.
+#      MASSSTEPLOC:
+#        OPTS: 
+#          u5: 1
+#          p7: 10.2
+#        SCALE: 1.
+#      #BETAEVOL:
+#      #  OPTS:
+#      #    u4: 1
+#      #  SCALE: 0.
+#      MASSSTEPFIT:
+#        OPTS:
+#          u5: 1.
+#        SCALE: 0.
+
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 24
+#      interp_biascor_logmass: 0
+#      logmass_min: -15
+#      nbin_logmass: 2
+#      logmass_max: 35
+#      opt_biascor: 4336
+#      u2: 3
+#      u5: 0 #dont fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 500
+#      zmin: 0.01
+#    CONSISTENT_SAMPLE: True
+
+
+#  REALDATADARCYBS20NOM:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_4D_BS20, LFITsimnosys_SIMLOWZ_4D_BS20,DFITnosys_SIMDES_4D_BS20,PFITnosys_SIMPS1_4D_BS20,SDFITsimnosys_SIMSDSS_4D_BS20,SNFITsimnosys_SIMSNLS_4D_BS20,FFITsimnosys_SIMFOUNDBIG_4D_BS20]
+#    MUOPTS:
+#      G10:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_G10, LFITsimnosys_SIMLOWZ_7D_G10,DFITnosys_SIMDES_7D_G10,PFITnosys_SIMPS1_7D_G10,SDFITsimnosys_SIMSDSS_7D_G10,SNFITsimnosys_SIMSNLS_7D_G10,FFITsimnosys_SIMFOUNDBIG_7D_G10]
+#        OPTS:
+#          u2: 1
+#          opt_biascor: 0
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_7D_C11, LFITsimnosys_SIMLOWZ_7D_C11,DFITnosys_SIMDES_7D_C11,PFITnosys_SIMPS1_7D_C11,SDFITsimnosys_SIMSDSS_7D_C11,SNFITsimnosys_SIMSNLS_7D_C11,FFITsimnosys_SIMFOUNDBIG_7D_C11]
+#        OPTS:
+#          u2: 1
+#          opt_biascor: 0
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 49
+#      interp_biascor_logmass: 0
+#      logmass_min: -15
+#      nbin_logmass: 2
+#      logmass_max: 35
+#      opt_biascor: 240
+#      u2: 3
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 500
+#      sigint_fix: 0.102
+#      datafile_override: '/project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/darcy_VPEC_correction_05082021_trimmed.txt'    
+#      CONSISTENT_SAMPLE: True
+
+
+#
+#  REALDATA_DARCYVPEC_5D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#      datafile_override: '/project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/darcy_VPEC_correction_05082021_trimmed.txt'
+#    CONSISTENT_SAMPLE: False
+
+#  REALDATAzmin5D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      zmin: 0.023
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#    CONSISTENT_SAMPLE: False
+
+#  REALDATAzmin045D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, CFITnosys_SIMCALIB_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, CFITnosys_SIMCALIB_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      zmin: 0.04
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#    CONSISTENT_SAMPLE: False
+
+
+#  REALDATAcmax5D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      cmax: 0.45
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#    CONSISTENT_SAMPLE: False
+
+
+#  REALDATA_NOCALIBRATORS_5D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_foranthony.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG,ASASSNdatawithsys_DATAASASSN]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#      cid_reject_file: $PANTHEONPLUS/salt2muinputs/outliers_feb10_nocalibrators.txt   #   
+#    CONSISTENT_SAMPLE: False
+
+
+#  REALDATA5D_CALIBPAPER:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_sim.input #this is on purpose!!!!!!
+#    DATA: [CSPDR3FITdatawithsys_DATACSPDR3, CfA3_DJ20FITdatawithsys_DATACfA3, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsysSALT3_DATAFOUNDBIG]
+#    SIMFILE_BIASCOR: [LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.5
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#    CONSISTENT_SAMPLE: False
+
+
+#  SIMDATA5D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_sim.input
+#    DATA: [HFITdatawithsys_SIMDATAHST_G10, CFITdatawithsys_SIMDATACALIB_G10, LFITdatawithsys_SIMDATALOWZ_G10,DFITdatawithsys_SIMDATADES_G10,PFITdatawithsys_SIMDATAPS1_G10,SDFITsimdatawithsys_SIMDATASIMSDSS_G10,SNFITsimdatawithsys_SIMDATASIMSNLS_G10,FFITdatawithsys_SIMDATAFOUNDBIG_G10]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, CFITnosys_SIMCALIB_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, CFITnosys_SIMCALIB_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#      BETAEVOL:
+#        OPTS:
+#          u4: 1
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 99
+#      u5: 0 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      ndump_nobiascor: 100
+#    CONSISTENT_SAMPLE: False
+
+
+#  UNBINNED_TESTS:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTDS15FITdatawithsys_DATASWIFTDS15, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, CFITnosys_SIMCALIB_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      ZDEP:
+#        OPTS:
+#          p11: -1.15
+#      CDEP:
+#        OPTS:
+#          p2: 4.8
+#          u2: 0
+#      XDEP:
+#        OPTS:
+#          p1: .2
+#          u1: 0
+#      GDEP:
+#        OPTS:
+#          p5: .15
+#          u5: 0
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      p2: 3.
+#      u2: 0
+#      p1: .15
+#      u1: 0
+#      p5: .05
+#      u5: 0
+#      zmin: .023
+#    CONSISTENT_SAMPLE: True
+
+#  SIMDATA_UNBINNED_TESTS:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_sim.input
+#    DATA: [LFITdatawithsys_SIMDATALOWZ_G10,DFITdatawithsys_SIMDATADES_G10,PFITdatawithsys_SIMDATAPS1_G10,SDFITsimdatawithsys_SIMDATASIMSDSS_G10,SNFITsimdatawithsys_SIMDATASIMSNLS_G10,FFITdatawithsys_SIMDATAFOUNDBIG_G10]
+#    SIMFILE_BIASCOR: [LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      ZDEP:
+#        OPTS:
+#          p11: -1.15
+#      CDEP:
+#        OPTS:
+#          p2: 4.8
+#          u2: 0
+#      XDEP:
+#        OPTS:
+#          p1: .2
+#          u1: 0
+#      GDEP:
+#        OPTS:
+#          p5: .15
+#          u5: 0
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 79
+#      u5: 0 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      p2: 3.
+#      u2: 0
+#      p1: .15
+#      u1: 0
+#      p5: .05
+#      u5: 0
+#      zmin: .023
+#    CONSISTENT_SAMPLE: True
+
+
+
+#  DATA5DC11:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTDS15FITdatawithsys_DATASWIFTDS15, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, CFITnosys_SIMCALIB_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, CFITnosys_SIMCALIB_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 30
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#    CONSISTENT_SAMPLE: False
+
+
+#  REALDATA_STRINGENT_5D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data_stringent.input
+#    DATA: [HFITdatawithsys_DATAHST, FOUNDONEdatawithsys_DATAFOUNDCALONE, FOUNDTWOdatawithsys_DATAFOUNDCALTWO, KAITDS15FITdatawithsys_DATAKAITDS15, LOSSFITdatawithsys_DATALOSS, SWIFTDS15FITdatawithsys_DATASWIFTDS15, SWIFTNEWFITdatawithsys_DATASWIFTNEW, CSPDR3FITdatawithsys_DATACSPDR3, ADAMdatawithsys_DATAADAMCSP, CfA3_DJ20FITdatawithsys_DATACfA3, NOCFAFITdatawithsys_DATANOCFA, LFITdatawithsys_DATALOWZ, DFITdatawithsys_DATADES3YR, PFITdatawithsys_DATAPS1, SDFITdatawithsys_DATASDSS, SNFITdatawithsys_DATASNLS, FFITdatawithsys_DATAFOUNDBIG]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_G10, CFITnosys_SIMCALIB_5D_G10, LFITsimnosys_SIMLOWZ_5D_G10,DFITnosys_SIMDES_5D_G10,PFITnosys_SIMPS1_5D_G10,SDFITsimnosys_SIMSDSS_5D_G10,SNFITsimnosys_SIMSNLS_5D_G10,FFITsimnosys_SIMFOUNDBIG_5D_G10]
+#    MUOPTS:
+#      C11:
+#        SIMFILE_BIASCOR: [HFITnosys_SIMHST_5D_C11, CFITnosys_SIMCALIB_5D_C11, LFITsimnosys_SIMLOWZ_5D_C11,DFITnosys_SIMDES_5D_C11,PFITnosys_SIMPS1_5D_C11,SDFITsimnosys_SIMSDSS_5D_C11,SNFITsimnosys_SIMSNLS_5D_C11,FFITsimnosys_SIMFOUNDBIG_5D_C11]
+#      MASSSTEPLOC:
+#        OPTS:
+#          p7: 10.2
+#    OPTS:
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 29
+#      u5: 1 #fit for mass step
+#      chi2max: 24
+#      iflag_duplicate: 0
+#      cmin: -0.15
+#      cmax: 0.15
+#      x1min: -1.5
+#      x1max: 1.5
+#      ndump_nobiascor: 100
+#    CONSISTENT_SAMPLE: False
+
+
+#  PRETONY1D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0_data.input
+#    DATA: [HFITpretony_PRETONYHST, FOUNDONEpretony_PRETONYFOUNDCALONE, FOUNDTWOpretony_PRETONYFOUNDCALTWO, KAITDS15FITpretony_PRETONYKAITDS15, LOSSFITpretony_PRETONYLOSS, SWIFTDS15FITpretony_PRETONYSWIFTDS15, SWIFTNEWFITpretony_PRETONYSWIFTNEW, CSPDR3FITpretony_PRETONYCSPDR3, ADAMpretony_PRETONYADAMCSP, CfA3_DJ20FITpretony_PRETONYCfA3, NOCFAFITpretony_PRETONYNOCFA, LFITpretony_PRETONYLOWZ, DFITpretony_PRETONYDES3YR, PFITpretony_PRETONYPS1, SDFITpretony_PRETONYSDSS, SNFITpretony_PRETONYSNLS, FFITpretony_PRETONYFOUNDBIG]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_1D_G10, CFITnosys_SIMCALIB_1D_G10, LFITsimnosys_SIMLOWZ_1D_G10,DFITnosys_SIMDES_1D_G10,PFITnosys_SIMPS1_1D_G10,SDFITsimnosys_SIMSDSS_1D_G10,SNFITsimnosys_SIMSNLS_1D_G10,FFITsimnosys_SIMFOUNDBIG_1D_G10]
+#    OPTS:
+#      opt_biascor: 1
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 30
+#      u5: 1 #fit for mass step
+#      chi2max: 2000
+#    CONSISTENT_SAMPLE: False
+
+
+#  SIM1D:
+#    BASE: /project2/rkessler/SURVEYS/PS1MD/USERS/dscolnic/PANTHEON+/salt2muinputs/SALT2muH0.input
+#    DATA: [HFITnosys_SIMHST_1D_G10, CFITnosys_SIMCALIB_1D_G10, LFITsimnosys_SIMLOWZ_1D_G10,DFITnosys_SIMDES_1D_G10,PFITnosys_SIMPS1_1D_G10,SDFITsimnosys_SIMSDSS_1D_G10,SNFITsimnosys_SIMSNLS_1D_G10,FFITsimnosys_SIMFOUNDBIG_1D_G10]
+#    SIMFILE_BIASCOR: [HFITnosys_SIMHST_1D_G10, CFITnosys_SIMCALIB_1D_G10, LFITsimnosys_SIMLOWZ_1D_G10,DFITnosys_SIMDES_1D_G10,PFITnosys_SIMPS1_1D_G10,SDFITsimnosys_SIMSDSS_1D_G10,SNFITsimnosys_SIMSNLS_1D_G10,FFITsimnosys_SIMFOUNDBIG_1D_G10]
+#    OPTS:
+#      opt_biascor: 1
+#      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 10
+#      u5: 0 #dont fit for mass step in sims without mass...
+
+#############################################################################
+#############################################################################
+#############################################################################
+
+
+CREATE_COV:
+
+  FIRST_ROUND:
+    MASK: REALDATABS20NOM
+    OPTS:
+      SUBTRACT_VPEC: False
+      BATCH_MEM: 16GB
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+      BINNED: False
+      FITOPT_SCALES:
+        VPEC_DARCY_MARG: 1.
+        VPEC_DARCY_SMOOTHED: 1.
+        VPEC_2MRS: 1.
+        VPEC_2MRS_SMOOTHED: 1.
+      COVOPTS:
+        - "[VPEC_DARCY] [=VPEC_DARCY_MARG,=DEFAULT]"
+        - "[VPEC_DARCY_SMOOTHED] [=VPEC_DARCY_SMOOTHED,=DEFAULT]"
+        - "[VPEC_2MRS] [=VPEC_2MRS,=DEFAULT]"
+        - "[VPEC_2MRS_SMOOTHED] [=VPEC_2MRS_SMOOTHED,=DEFAULT]"
+
+  ALL_INDIV_BS20:
+    MASK: REALDATABS20NOM
+    OPTS:
+      SUBTRACT_VPEC: False
+      BATCH_MEM: 16GB
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+      BINNED: False
+      CALIBRATORS: [1998dh,2002cr,2012cg,2019np,2005cf,2006D,2002fk,ASASSN-15so,2009ig,2011by,1990N,2001el,1997do,2007af,2011fe,1997bp,1997bq,1997bq_B,1997bq_JB,2017cbv,2017cbv2,2017cbv_wee,2003du,1999cp,1998aq,2013dy,2013aa,2005W,2013cs,2007sr,2005df,2005df_ANU,2008fv,2008fv_comb,2008fv1,2008fv2,2008fv2_rev,2017erp,2002dp,2009Y,1994ae,1995al,2018gv,1981B,2012fr,2001bg,2015F,2006bh,2012ht,2021hpr,1999dq,2021pit]
+      EXTRA_COVS:
+        - "DUP_SIGINT 1 $PANTHEONPLUS/v6_9_duplicate_cid.cov"
+        - "VPEC_2MRS_DIAG .7 $PANTHEONPLUS/2mrs_stat_v2.cov"
+        #- "VPEC_2MRS_OFFDIAG .7 $PANTHEONPLUS/2mrs_smoothed_v1.cov"
+        - "VPEC_DARCY_DIAG .7 $PANTHEONPLUS/darcy_stat_v2.cov"
+        - "VPEC_DARCY_OFFDIAG .7 $PANTHEONPLUS/darcy_smoothed_v2.cov"
+      COVOPTS:
+        - "[NOSYS] [=DEFAULT,=DUP_SIGINT]"
+        - "[CALIB] [+cal,=DEFAULT]"
+        - "[NODUPSIGINT] [=DEFAULT,=DEFAULT]"
+        - "[G10] [=DEFAULT,=SCAT_G10]"
+        - "[C11] [=DEFAULT,=SCAT_C11]"
+        - "[BS20] [=DEFAULT,+BS20]"
+        - "[SCAT] [=DEFAULT,+SCAT]"
+        - "[MWEBV] [=MWEBV,=DEFAULT]"
+        - "[VPEC_ZSHIFT] [=VPEC_ZSHIFT,=DEFAULT]"
+        - "[VPEC_DARCY_DIAG] [=DEFAULT,=VPEC_DARCY_DIAG]"
+        - "[VPEC_DARCY_OFFDIAG] [=DEFAULT,=VPEC_DARCY_OFFDIAG]"
+        - "[VPEC_2MRS_DIAG] [=DEFAULT,=VPEC_2MRS_DIAG]"
+        #- "[VPEC_2MRS_OFFDIAG] [=DEFAULT,=VPEC_2MRS_OFFDIAG]"
+        - "[VPEC_ALL_NOZSHIFT] [=DEFAULT,+VPEC]"
+        - "[MASSSTEP] [=DEFAULT,+MASS]"
+        - "[SPECEFF_EXPTIME] [=DEFAULT,=SPECEFF_EXPTIME]"
+        - "[COLORLAW] [=COLORLAW,=DEFAULT]"
+        - "[JLA_SALT2] [=JLA_SALT2_CAL,=DEFAULT]"
+        - "[CALSPEC] [=CALSPEC,=DEFAULT]"
+        - "[CSP_CAL] [=CSP_CAL,=DEFAULT]"
+
+  ALL_INDIV_G10:
+    MASK: REALDATAG10NOM
+    OPTS:
+      SUBTRACT_VPEC: False
+      BATCH_MEM: 16GB
+      BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 3
+      BINNED: False
+      CALIBRATORS: [1998dh,2002cr,2012cg,2019np,2005cf,2006D,2002fk,ASASSN-15so,2009ig,2011by,1990N,2001el,1997do,2007af,2011fe,1997bp,1997bq,1997bq_B,1997bq_JB,2017cbv,2017cbv2,2017cbv_wee,2003du,1999cp,1998aq,2013dy,2013aa,2005W,2013cs,2007sr,2005df,2005df_ANU,2008fv,2008fv_comb,2008fv1,2008fv2,2008fv2_rev,2017erp,2002dp,2009Y,1994ae,1995al,2018gv,1981B,2012fr,2001bg,2015F,2006bh,2012ht,2021hpr,1999dq,2021pit]
+      EXTRA_COVS:
+        - "DUP_SIGINT 1 $PANTHEONPLUS/v6_9_duplicate_cid.cov"
+        - "VPEC_2MRS_DIAG .7 $PANTHEONPLUS/2mrs_stat_v2.cov"
+        #- "VPEC_2MRS_OFFDIAG .7 $PANTHEONPLUS/2mrs_smoothed_v1.cov"
+        - "VPEC_DARCY_DIAG .7 $PANTHEONPLUS/darcy_stat_v2.cov"
+        - "VPEC_DARCY_OFFDIAG .7 $PANTHEONPLUS/darcy_smoothed_v2.cov"
+      COVOPTS:
+        - "[NOSYS] [=DEFAULT,=DUP_SIGINT]"
+
+
+
+#  ALL_BINNED_BS20:
+#    MASK: REALDATABS20
+#    OPTS:
+#      SUBTRACT_VPEC: False
+#      BATCH_MEM: 16GB
+#      BINNED: True
+#      CALIBRATORS: [1998dh,2002cr,2012cg,2019np,2005cf,2006D,2002fk,ASASSN-15so,2009ig,2011by,1990N,2001el,1997do,2007af,2011fe,1997bp,1997bq,2017cbv,2003du,1999cp,1998aq,2013dy,2013aa,2005W,2013cs,2007sr,2005df,2008fv,2017erp,2002dp,2009Y,1994ae,1995al,2018gv,1981B,2012fr,2001bg,2015F,2006bh,2012ht]
+#      EXTRA_COVS:
+#        - "DUP_SIGINT 1 $PANTHEONPLUS/v6_0_duplicate_cid.cov"
+#        #- "CALIB_COV 1 $PANTHEONPLUS/covmat/calibration_covariance_version50_median_mu.txt"
+#      COVOPTS:
+#        - "[NOSYS] [=DEFAULT,=DUP_SIGINT]"
+#        - "[CALIB] [+cal,=DEFAULT]"
+
+
+COSMOFIT:
+  COSMOMC:
+    OMOL_COSMOMC_SN:
+      MASK_CREATE_COV: ALL_INDIV_BS20
+      OPTS:
+        INI: sn_omol
+        COVOPTS: [ALL,NOSYS]
+        NUM_WALKERS: 8
+    FLAT_OMOL_SN:
+      MASK_CREATE_COV: ALL_INDIV_BS20
+      OPTS:
+        INI: sn_flatomol
+        COVOPTS: [ALL,NOSYS]
+        NUM_WALKERS: 8
+
+  WFIT:
+    OMOL_WFIT_SN:
+      MASK_CREATE_COV: ALL_INDIV_BS20
+      OPTS:
+        BATCH_INFO: sbatch $SBATCH_TEMPLATES/SBATCH_Midway2b.TEMPLATE 40
+        WFITOPT_GLOBAL: "-hsteps 61 -wsteps 101 -omsteps 81"
+        WFITOPTS:
+          - /flat/ -wmin -1.0001 -wmax -0.9999 
+
+
+#    OMW_SN:
+#      MASK_CREATE_COV: ALL_INDIV_BS20
+#      OPTS:
+#        COVOPTS: [ALL,NOSYS,CALIB]
+#        INI: sn_omw
+#        NUM_WALKERS: 8
+
+#  OMW_CMB:
+#    OPTS:
+#      INI: cmb_omw
+
+#  OMW_SN_CMB:
+#    MASK_CREATE_COV: ALL_INDIV
+#    OPTS:
+#      INI: sn_cmb_omw
+#      COVOPTS: [ALL,NOSYS]
+#      NUM_WALKERS: 4
+
+#    PRIOR_SN:
+#      MASK_CREATE_COV: ALL_INDIV_BS20
+#      OPTS:
+#        INI: sn_prior_omw
+#        NUM_WALKERS: 8
+
+#  WWA_SN_CMB:
+#    MASK_CREATE_COV: ALL_INDIV
+#    OPTS:
+#      INI: sn_cmb_wwa
+#      COVOPTS: [ALL,NOSYS]
+#      NUM_WALKERS: 4
+
+#  WWA_SN_CMB_BAO:
+#    MASK_CREATE_COV: ALL_INDIV
+#    OPTS:
+#      INI: sn_cmb_bao_wwa
+#      COVOPTS: [ALL,NOSYS]
+#      NUM_WALKERS: 4
+
+ANALYSE:
+#  OMW:
+#    MASK_COSMOMC: OMW
+#  PRIOR_OMW:
+#    MASK_COSMOMC: PRIOR
+#  OMW:
+#    MASK_COSMOFIT: OMW
+#  OMOL:
+#    MASK_COSMOMC: OMOL
+#  WWA:
+#    MASK_COSMOMC: WWA
+
+
+  DSO_SDSS:
+    MASK_LCFIT:
+      - SDFITdatanosys_DATASDSS
+      - SDFITsimnosys_SIMSDSS_7D_G10
+      - SDFITsimnosys_SIMSDSS_7D_C11
+      - SDFITsimnosys_SIMSDSS_4D_BS20
+    OPTS:
+      ADDITIONAL_SCRIPTS: 
+        - $PANTHEONPLUS/plot_histogram_highmass.py
+        - $PANTHEONPLUS/plot_histogram_lowmass.py
+
+  DSO_PS1:
+    MASK_LCFIT:
+      - PFITdatawithsys_DATAPS1
+      - PFITnosys_SIMPS1_7D_G10
+      - PFITnosys_SIMPS1_7D_C11
+      - PFITnosys_SIMPS1_4D_BS20
+    OPTS:
+      ADDITIONAL_SCRIPTS: 
+        - $PANTHEONPLUS/plot_histogram_highmass.py
+        - $PANTHEONPLUS/plot_histogram_lowmass.py
+
+  DSO_SNLS:
+    MASK_LCFIT:
+      - SNFITdatanosys_DATASNLS
+      - SNFITsimnosys_SIMSNLS_7D_G10
+      - SNFITsimnosys_SIMSNLS_7D_C11
+      - SNFITsimnosys_SIMSNLS_4D_BS20
+    OPTS:
+      ADDITIONAL_SCRIPTS: 
+        - $PANTHEONPLUS/plot_histogram_highmass.py
+        - $PANTHEONPLUS/plot_histogram_lowmass.py
+
+  DSO_DES:
+    MASK_LCFIT:
+      - DFITdatawithsys_DATADES
+      - DFITnosys_SIMDES_7D_G10
+      - DFITnosys_SIMDES_7D_C11
+      - DFITnosys_SIMDES_4D_BS20
+    OPTS:
+      ADDITIONAL_SCRIPTS: 
+        - $PANTHEONPLUS/plot_histogram_highmass.py
+        - $PANTHEONPLUS/plot_histogram_lowmass.py
+
+  DSO_HST:
+    MASK_LCFIT:
+      - HFITdatawithsys_DATAHST
+      - HFITnosys_SIMHST_7D_G10
+      - HFITnosys_SIMHST_7D_C11
+      - HFITnosys_SIMHST_4D_BS20
+    OPTS:
+      ADDITIONAL_SCRIPTS: 
+        - $PANTHEONPLUS/plot_histogram_highmass.py
+        - $PANTHEONPLUS/plot_histogram_lowmass.py
+
+  DSO_FOUND:
+    MASK_LCFIT:
+      - FFITdatanosys_DATAFOUNDBIG
+      - FFITsimnosys_SIMFOUNDBIG_7D_G10
+      - FFITsimnosys_SIMFOUNDBIG_7D_C11
+      - FFITsimnosys_SIMFOUNDBIG_4D_BS20
+    OPTS:
+      ADDITIONAL_SCRIPTS: 
+        - $PANTHEONPLUS/plot_histogram_highmass.py
+        - $PANTHEONPLUS/plot_histogram_lowmass.py
+
+
+#  DSO_LOWZ:
+#    MASK_LCFIT:
+#      - CfA3_DJ20FITnosys_DATACfA3
+#      - KAITDS15FITdatawithsys_DATAKAITDS15
+#      - LOSSFITdatawithsys_DATALOSS
+#      - SWIFTNEWFITdatawithsys_DATASWIFTNEW
+#      - CSPDR3FITdatawithsys_DATACSPDR3
+#      - ADAMdatawithsys_DATAADAMCSP
+#      - NOCFAFITdatawithsys_DATANOCFA
+#      - ASASSNdatawithsys_DATAASASSN
+#      - LFITdatawithsys_DATALOWZ
+#      - LFITsimnosys_SIMLOWZ_4D_BS20
+#      - LFITsimnosys_SIMLOWZ_7D_C11
+#      - LFITsimnosys_SIMLOWZ_7D_G10
+#    OPTS:
+#      ADDITIONAL_SCRIPTS:
+#        - $PANTHEONPLUS/combine_sims_histogram_withz.py
+#        - $PANTHEONPLUS/combine_sims_histogram_withz_highmass.py
+#        - $PANTHEONPLUS/combine_sims_histogram_withz_lowmass.py
+
+
