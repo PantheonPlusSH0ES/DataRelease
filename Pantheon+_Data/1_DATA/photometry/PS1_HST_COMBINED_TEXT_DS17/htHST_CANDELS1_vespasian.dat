@@ -1,0 +1,31 @@
+SURVEY:  PS1_HST_COMBINED(CANDELS)
+SNID: vespasian 
+IAUC: UNKNOWN
+SNTYPE: 0
+FILTERS: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKL  # BGVRXIZSTUCWYMJNHLOPQ -> abcdefghijklmnopqrstu
+RA:   322.427500 deg
+DECL:    -7.696583 deg
+MAGREF:  AB
+MWEBV:   0.012    MW E(B-V)
+REDSHIFT_HELIO: 1.206 +- 0.007 
+REDSHIFT_CMB: 1.2036274 +- 0.007 
+VPEC: -3.8886 +- 250.0 
+HOSTGAL_LOGMASS: 10.0 +- 99.0
+REDSHIFT_STATUS: OK
+SEARCH_PEAKMJD: 55710.300
+SEARCH_PEAKMJDERR: 5.0
+PIXSIZE:  0.2  # arcSeconds
+
+
+NOBS: 8
+NVAR: 7
+VARLIST:  MJD  FLT FIELD   FLUXCAL   FLUXCALERR    MAG     MAGERR
+OBS: 55715.81        e   vespasian    0.916    1.056      27.596    1.252   25.662
+OBS: 55736.78        e   vespasian   10.157    1.050      24.983    0.112   25.662
+OBS: 55747.67        e   vespasian    8.074    0.970      25.232    0.130   25.662
+OBS: 55715.80        g   vespasian    2.228    0.976      26.630    0.475   24.857
+OBS: 55736.77        g   vespasian   14.909    0.960      24.566    0.070   24.857
+OBS: 55746.82        g   vespasian   11.119    1.252      24.885    0.122   24.857
+OBS: 55762.20        g   vespasian    7.178    0.972      25.360    0.147   24.857
+OBS: 55776.58        g   vespasian    3.460    0.937      26.152    0.294   24.857
+END:

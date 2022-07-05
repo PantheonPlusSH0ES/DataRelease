@@ -1,0 +1,11 @@
+# Combined data files with command:
+#    /project/rkessler/SN/SNANA/SNANA_CURRENT/util/combine_dataVersions.py COMBINE.INPUT 
+# Host      = midway-login2
+# User      = dscolnic
+# Directory = /project/rkessler/SN/SNDATA_ROOT/INTERNAL/PS1/HST
+# Time      = Wed Apr 12 23:43:00 2017
+
+  10 data files from CANDELs                      BGVRXIZSTUCWYMJNHLOPQ -> abcdefghijklmnopqrstu 
+  29 data files from PS1s_HST_GOODS_DS17          0123456 -> vwxyzAB 
+   8 data files from PS1s_HST_Suz_DS17            046 -> CDE 
+   1 data files from HST_1997ff                   abc0146 -> FGHIJKL 

@@ -1,0 +1,209 @@
+May 06, 2008: taken from README file
+Oct 08, 2008: add a few more for SDSS_HOLTZ08
+Nov 14, 2008: add  more from new 105s
+Nov 02, 2009: update 3451: r & i
+Mar 18, 2012: add some based on 4-sigma from script
+
+# ============= TYPE = 120 ===========
+IGNORE:   1032  53668.387   g
+IGNORE:   1032  53668.387   r
+IGNORE:   1032  53668.387   i
+
+IGNORE:   1371  53640.253   g
+IGNORE:   1371  53640.253   r
+IGNORE:   1371  53640.253   i
+
+IGNORE:   2031  53657.207   r
+
+IGNORE:   2246  53676.484   i
+IGNORE:   2246  53686.371   i
+IGNORE:   2246  53686.371   r
+IGNORE:   2246  53704.355   g  error seems too small
+
+IGNORE:   2372  53693.348   i  chi2=20, error seems too small
+IGNORE:   2943  53685.285   i
+IGNORE:   3377  53687.441   i  chi2=15, g&r masked off by PHOTFLAG
+IGNORE:   3451  53626.219   r  chi2=18
+IGNORE:   3451  53626.219   i  chi2=30
+
+IGNORE:   4241  53699.289   g  chi2=26, error seems too small
+IGNORE:   5391  53700.379   g  chi2=16
+IGNORE:   6127  53698.164   g
+IGNORE:   6773  53693.074   i
+IGNORE:   6699  53703.129   i  chi2=16
+IGNORE:   7947  53693.102   g  chi2=9  (TYPE=119, both g,i have large chi2)
+IGNORE:   7947  53693.102   i  chi2=14
+
+IGNORE:   8495  53671.254   g  early epoch removed because of r,i
+IGNORE:   8495  53671.254   r  chi2=11
+IGNORE:   8495  53671.254   i  chi2=4
+IGNORE:   9045  53668.223   g  chi2=11, error seems too small
+
+
+
+
+# ============= TYPE=105 ===========
+IGNORE:   2808  53704.359   r  chi2=19
+IGNORE:   3225  53704.281   i  chi2=13
+IGNORE:   4059  53676.465   i  chi2=20 (no g-band)
+IGNORE:   4181  53671.430   r  chi2=24
+IGNORE:   6535  53679.183   i  chi2=12 (photflag=32)
+IGNORE:   7099  53702.176   i  chi2=12 (no g,r SMP)
+IGNORE:   7102  53704.113   g  chi2=12 (error seems rather small)
+IGNORE:   8195  53702.144   i  chi2=17 (error much smaller than for g,r)
+IGNORE:   9155  53671.230   g  chi2=17 (error much smaller tha for r,i)
+IGNORE:   5785  53634.191   i   
+IGNORE:   6861  53679.254   g   
+IGNORE:   6861  53687.242   g
+IGNORE:   8254  53668.230   g
+
+
+# ========== TYPE = 50 ===========
+
+IGNORE:  3669  53685.203  i   chi2=15
+IGNORE:  3669  53693.203  i   chi2=15
+IGNORE:  3669  53693.203  r   chi2=3
+IGNORE:  3669  53693.203  g   chi2=6.5
+
+IGNORE:  4313  53622.426  i  chi2=14 (PHOTFLAG=32)
+IGNORE:  4639  53705.301  i  chi2=13
+
+# ========== TYPE = 104 ===========
+
+IGNORE:  4651  53696.348  i  chi2=14, PHOTFLAG rejects g-band, i-err is small
+IGNORE:  5199  53704.183  g  chi2=13, error smaller than r,i errors
+IGNORE:  8138  53666.367  r  chi2=14, error smaller than g,i
+IGNORE: 11306  53670.418  i  chi2=13 
+# Oct 16, 2008 bdilday
+# add some more, derived from fits to v6!
+# Nov 2, 2009: more updates from RK
+#
+#
+#       required <============ | ====> OPTIONAL INFO
+#          cid   mjd      filt | type  trest       chi2 pflag 
+# -----------------------------------------------------------
+IGNORE:  12979 54024.3789   r    120    33         28      0
+IGNORE:  12979 54024.3789   i    120    37         24      0
+IGNORE:  12979 54047.3164   g    120    54          0      
+IGNORE:  12979 54047.3164   r    120    54         10      
+IGNORE:  12979 54008.304    g    120    19         20     32
+IGNORE:  12855 54048.1562   i    120    45.50     36.56   16
+IGNORE:  13323 54041.1406   g     30    35.38    113.72  153
+IGNORE:  13376 54006.3086   z    113    7        
+IGNORE:  14782 54026.1328   i    120     4.71    154.84  158
+IGNORE:  14782 54034.1875   i    120    12.00     92.28  152
+IGNORE:  13495 54053.4141   r    104    40.33    288.36  152
+IGNORE:  13518 54021.379    g    120    18.5      13     
+IGNORE:  13518 54021.379    r    120    18.5      0.8
+IGNORE:  13518 54021.379    i    120    18.5      40    
+IGNORE:  13578 54006.285    r    120     5        28
+IGNORE:  13727 54032.1250   i    120    23.61     85.84  152
+IGNORE:  13820 54034.2188   g     30    21.61     36.81  156
+IGNORE:  13840 54026.1289   i    105    17.17     54.49  158
+IGNORE:  13861 54057.1484   r     30    38.15     50.51  152
+IGNORE:  13908 54006.2812   r    104     2.06     44.43  152
+IGNORE:  13908 54021.3750   r    104    13.84     94.38  152
+IGNORE:  13909 54021.3789   r    104     8.85     47.01  152
+IGNORE:  13970 54021.3906   i    104    13.12     50.72  152
+IGNORE:  14024 54032.1289   i    120    18.54    115.43  152
+IGNORE:  14157 54061.394    r    120    40        30
+IGNORE:  14157 54064.383    r    120    42        17
+IGNORE:  14212 54039.1641   r    120    22.24     39.32  153
+IGNORE:  14317 54041.1211   i    105    21.32     51.75  153
+IGNORE:  14574 54053.4102   g     30    33.93     53.71  144
+IGNORE:  14574 54053.4102   r     30    33.93    228.97  148
+IGNORE:  14574 54053.4102   i     30    33.93     45.64  152
+IGNORE:  14763 54021.4258   i    104     6.70     41.10  152
+IGNORE:  14979 54053.4102   i    120    24.55     44.99  156
+IGNORE:  15129 54032.129    i    120      7       33
+IGNORE:  15170 54021.4922   r    120    -1.57     93.83  152
+IGNORE:  15213 54021.4766   i    120    -2.13     67.99  152
+IGNORE:  15254 54034.1836   i    120     0.96    107.30  152
+IGNORE:  15440 54053.3711   r    120    16.41     91.01  152
+IGNORE:  15466 54041.1250   g    120     3.11    216.46  153
+IGNORE:  15525 54021.4727   i    104    -4.40     93.16  152
+IGNORE:  15584 54053.3789   i    120    13.52     52.25  152
+IGNORE:  15648 54041.1172   i    120    -0.89     35.23  153
+IGNORE:  15722 54021.4844   i    105     3.11     64.08  184
+IGNORE:  15822 54026.1289   r    104   -12.05    576.57  158
+IGNORE:  15822 54034.1797   r    104    -5.04    157.55  152
+IGNORE:  15822 54057.0742   r    104    14.88     47.74  152
+IGNORE:  16111 54032.1602   i     30   -11.26    281.58  154
+IGNORE:  16152 54053.3906   i     30     2.21     49.54  184
+IGNORE:  16452 54034.2109   i     30    -6.63    101.91  152
+IGNORE:  16466 54034.2031   r    105   -12.58    235.53  152
+IGNORE:  16466 54057.0977   r    105     5.30     40.55  152
+*******************************
+with chi**2 threshold= 35.00, 49 outliers from 38 unique SNe 
+
+# above pts came from previous version (v3b?)
+
+IGNORE: 13072   53996.242   g    120    5.37    159.84     0  
+IGNORE: 13327   54054.203   g    120   46.74    187.53    26  
+IGNORE: 14984   54041.117   i    120   14.68    622.23   281  
+IGNORE: 15674   54031.191   r    120   -5.79    269.26   256  
+
+
+# Oct 16, 2008 bdilday
+# Nov 02, 2009 RK add a few more (17811,19318)
+#
+#    required <============ | ====> OPTIONAL INFO
+#         cid      mjd filt | type  trest    chi2   pflag
+# -----------------------------------------------------------
+IGNORE: 17811  54406.273  i   120   42       33      256
+IGNORE: 19025  54424.109  i   120   29.39    78.76   152
+IGNORE: 19318  54396.336  g   120   1        24
+IGNORE: 19318  54396.336  r   120   1        24
+IGNORE: 19318  54396.336  i   120   1        21
+IGNORE: 20687  54412.285  i   120   -6.76   101.16   156
+#       required <============ | ====> OPTIONAL INFO
+#          cid   mjd      filt | type  trest       chi2 pflag 
+# -----------------------------------------------------------
+IGNORE:  18767 54404.312  r      104    21          17   1
+IGNORE:  18767 54404.312  i      104    21           5   1
+IGNORE:  18767 54416.246  i      104    30          12   48
+
+
+# Mar 18, 2012: (RK)
+# catch 4-sigma outliers using more precise SALT2.Guy10 model as reference.
+# May 17, 2012: fix MJD-truncation bug (now has .001 day accuracy)
+
+IGNORE:   1371  53648.297  r    (chi2=  20.5  Tobs= 15.2  IFILT=3  TYPE=120)
+IGNORE:  12907  54025.383  u    (chi2=  27.4  Tobs= 29.4  IFILT=1  TYPE=120)
+IGNORE:  13327  54036.188  g    (chi2=  22.6  Tobs= 35.3  IFILT=2  TYPE=120)
+IGNORE:  13327  54052.184  g    (chi2=  37.5  Tobs= 51.3  IFILT=2  TYPE=120)
+IGNORE:  13327  54055.180  g    (chi2=  60.5  Tobs= 54.3  IFILT=2  TYPE=120)
+IGNORE:  13327  54058.180  g    (chi2=  23.3  Tobs= 57.3  IFILT=2  TYPE=120)
+IGNORE:  14279  54052.297  g    (chi2=  18.9  Tobs= 30.3  IFILT=2  TYPE=120)
+IGNORE:  15170  54021.492  g    (chi2=  16.4  Tobs= -5.0  IFILT=2  TYPE=120)
+IGNORE:  17220  54412.266  i    (chi2=  29.4  Tobs= 55.0  IFILT=4  TYPE=120)
+IGNORE:  17790  54415.105  i    (chi2=  27.7  Tobs= 54.9  IFILT=4  TYPE=120)
+IGNORE:  19341  54432.277  i    (chi2=  23.8  Tobs= 38.9  IFILT=4  TYPE=120)
+IGNORE:  19381  54396.336  r    (chi2=  40.5  Tobs=  1.8  IFILT=3  TYPE=120)
+IGNORE:  19381  54403.383  g    (chi2=  19.0  Tobs=  8.8  IFILT=2  TYPE=120)
+IGNORE:  19381  54396.336  i    (chi2=  16    Tobs=  1.8  IFILT=4  TYPE=120)
+IGNORE:  19913  54424.152  g    (chi2=  16.7  Tobs= 17.5  IFILT=2  TYPE=120)
+IGNORE:  15254  54032.113  i    (chi2=  31.9  Tobs= -1.4  IFILT=4  TYPE=119)
+IGNORE:  18903  54382.348  u    (chi2=  16.1  Tobs= -9.2  IFILT=1  TYPE=119)
+IGNORE:  13518  54006.285  z    (chi2=  16.8  Tobs=  8.4  IFILT=5  TYPE=118)
+IGNORE:   2766  53641.469  i    (chi2=  17.3  Tobs= 22.2  IFILT=4  TYPE=105)
+IGNORE:   3161  53703.117  z    (chi2=  16.8  Tobs= 60.3  IFILT=5  TYPE=105)
+IGNORE:   3426  53634.227  u    (chi2=  26.1  Tobs= -8.4  IFILT=1  TYPE=105)
+IGNORE:   4065  53670.395  i    (chi2=  22.3  Tobs= 18.1  IFILT=4  TYPE=105)
+IGNORE:   4578  53687.398  z    (chi2=  17.9  Tobs= 43.7  IFILT=5  TYPE=105)
+IGNORE:  13180  54024.332  r    (chi2=  16.2  Tobs= 39.5  IFILT=3  TYPE=105)
+IGNORE:  13998  53989.215  r    (chi2=  16.7  Tobs=  5.0  IFILT=3  TYPE=105)
+IGNORE:  15325  54047.375  i    (chi2=  18.9  Tobs= 20.0  IFILT=4  TYPE=105)
+IGNORE:  15362  54021.316  r    (chi2=  18.0  Tobs=-11.4  IFILT=3  TYPE=105)
+IGNORE:  15553  54032.137  z    (chi2=  22.6  Tobs= -5.4  IFILT=5  TYPE=105)
+IGNORE:  15580  54035.484  r    (chi2=  22.0  Tobs=  0.3  IFILT=3  TYPE=105)
+IGNORE:  15580  54037.391  r    (chi2= 183.0  Tobs=  2.2  IFILT=3  TYPE=105)
+IGNORE:  15813  54030.328  r    (chi2=  69.5  Tobs=  2.1  IFILT=3  TYPE=105)
+IGNORE:  15866  54050.176  u    (chi2=  24.5  Tobs=  8.7  IFILT=1  TYPE=105)
+IGNORE:  16172  54053.418  i    (chi2=  18.7  Tobs= -2.3  IFILT=4  TYPE=105)
+IGNORE:  16434  54053.379  z    (chi2=  29.6  Tobs=  6.0  IFILT=5  TYPE=105)
+IGNORE:  16975  54053.340  z    (chi2=  42.0  Tobs=  0.5  IFILT=5  TYPE=105)
+IGNORE:  18221  54424.190  g    (chi2=  16    Tobs= 59.1  IFILT=2  TYPE=105)
+IGNORE:  18221  54424.190  r    (chi2=  16    Tobs= 59.1  IFILT=3  TYPE=105)
+IGNORE:  18221  54424.188  z    (chi2=  16.2  Tobs= 59.1  IFILT=5  TYPE=105)
+

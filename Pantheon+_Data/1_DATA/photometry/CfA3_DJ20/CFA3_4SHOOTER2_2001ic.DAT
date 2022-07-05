@@ -1,0 +1,33 @@
+SURVEY:  PS1_LOWZ_COMBINED(CFA3S)
+SNID: 2001ic 
+IAUC: 2001ic
+RA:   347.680580 deg
+DECL:     7.569560 deg 
+RA_HOST:   347.676170
+DEC_HOST:     7.567690
+MWEBV: 0.070 (SFD98)
+REDSHIFT_HELIO: 0.044089 +- 9e-06 
+REDSHIFT_CMB: 0.0428019 +- 9e-06 
+VPEC: -316.7746 +- 250.0
+HOSTGAL_LOGMASS: 11.3990 +- 0.582
+PRIVATE(COSMO): 1
+SEARCH_PEAKMJD: 52245.316
+FILTERS:  abcdefghijklmnopqrstuvwxyzABCDEFGHIJK  # UBVRI -> abcde       
+ 
+# ========================================
+# FLUXCAL = 10^[ -0.4*mag + 11 ] 
+#
+ 
+NOBS:    9
+NVAR: 7 
+VARLIST:  MJD  FLT FIELD   FLUXCAL   FLUXCALERR  MAG    MAGERR
+OBS:  52257.16216     b    NULL     3567.796        147.556    18.619     0.044
+OBS:  52266.14810     b    NULL     1267.068        170.406    19.743     0.137
+OBS:  52267.14606     b    NULL     1045.201        143.848    19.952     0.140
+OBS:  52257.16536     c    NULL     6280.584        199.789    18.005     0.034
+OBS:  52266.15127     c    NULL     3426.100        204.681    18.663     0.063
+OBS:  52267.14924     c    NULL     3136.173        156.890    18.759     0.053
+OBS:  52257.16785     d    NULL     6823.387        256.071    17.915     0.040
+OBS:  52258.09845     e    NULL     3667.752        391.070    18.589     0.110
+OBS:  52266.15554     e    NULL     4405.549        402.845    18.390     0.095
+END:

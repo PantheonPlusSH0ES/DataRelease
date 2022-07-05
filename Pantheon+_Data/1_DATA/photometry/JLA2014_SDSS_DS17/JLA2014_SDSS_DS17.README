@@ -1,0 +1,326 @@
+Convert SDSS TEXT files into FITS format for                                    
+     SMPv8+BOSS_2005                                                            
+     SMPv8+BOSS_2006                                                            
+     SMPv8+BOSS_2007                                                            
+ 
+Processed    10258   light curves.
+Wrote        10258   light curves.
+ 
+ 
+# ==========================================================================
+# ==========================================================================
+# DUMP ORIGINAL README for SMPv8+BOSS_2005                                                         
+ 
+BRIEF_DESCRIPTION: photometry from Holtz/v6_reCalib/2005 
+
+Feb 2010: Change FLUXCAL_ERRTOT determination by scaling 
+	  FLUXERR(uJy) instead of translating MAG-MAGERR. 
+	  => Pre-explosion errors change by 20 percent. 
+
+
+ ------------------------------------------------
+General info: 
+
+   12600 <= CID  <=  12777 
+    -99 <= TYPE <=    199 
+
+   Created 16  /data/des20.b/data/SNDATA_ROOT/photometry/SMPv8+BOSS_2005_SN* files. 
+
+   Original text files in:
+	  /data/des20.b/data/SNDATA_ROOT/photometry/Holtz/v6_reCalib/2005 
+   are converted with command: 
+     SDSS_get_SMP.exe  --v SMPv8+BOSS_2005 --sdir Holtz/v6_reCalib/2005 --year 2005 --mag asinh   --mincid 12600 --maxcid 12777 --mintype -99
+
+	  2004 total epochs written. 
+
+ WARNINGS: 
+	 HOSTSB_FLUX= 242.699997  uJy for  CID=12603 IFILT=5 
+	 HOSTSB_FLUX= 226.899994  uJy for  CID=12612 IFILT=5 
+	 HOSTSB_FLUX= 318.000000  uJy for  CID=12623 IFILT=5 
+	 HOSTSB_FLUX= 265.399994  uJy for  CID=12707 IFILT=4 
+	 HOSTSB_FLUX= 384.299988  uJy for  CID=12707 IFILT=5 
+
+ ------------------------------------------------
+FULL_DESCRIPTION: 
+
+ ------------------------------------------- 
+           STATISTICS SUMMARY   
+
+  Ncandidates[type   0] =    5  () 
+  Ncandidates[type   5] =   10  () 
+  Ncandidates[type 110] =    1  () 
+  Ncandidates[type ALL] =   16 
+
+  Number of Epochs that are  
+	 Survey Quality     : 941   (QMASK bit 1) 
+	 NOT Survey Quality : 599  
+	 During Bright time : 464   (QMASK bit 2) 
+	 Total              : 2004  
+
+  QMASK bits (lsb=1): 
+       1 => epoch is survey quality (PSF<1.8 & Cloudsig<10.0 & no moon). 
+       2 => epoch is during bright time. 
+ 
+ 
+# ==========================================================================
+# ==========================================================================
+# DUMP ORIGINAL README for SMPv8+BOSS_2006                                                         
+ 
+BRIEF_DESCRIPTION: photometry from Holtz/v6_reCalib/2006 
+
+Feb 2010: Change FLUXCAL_ERRTOT determination by scaling 
+	  FLUXERR(uJy) instead of translating MAG-MAGERR. 
+	  => Pre-explosion errors change by 20 percent. 
+
+
+ ------------------------------------------------
+General info: 
+
+   15778 <= CID  <=  17166 
+    -99 <= TYPE <=    199 
+
+   Created 728  /data/des20.b/data/SNDATA_ROOT/photometry/SMPv8+BOSS_2006_SN* files. 
+
+   Original text files in:
+	  /data/des20.b/data/SNDATA_ROOT/photometry/Holtz/v6_reCalib/2006 
+   are converted with command: 
+     SDSS_get_SMP.exe  --v SMPv8+BOSS_2006 --sdir Holtz/v6_reCalib/2006 --year 2006 --mag asinh   --mincid 15778 --maxcid 17166 --mintype -99
+
+	 86149 total epochs written. 
+
+ WARNINGS: 
+	 SKYERR= 1169.000000. Check CID=15821, MJD=54047.136, IFILT=5. 
+	 SKYERR= 1252.000000. Check CID=15829, MJD=54047.136, IFILT=5. 
+	 SKYERR= 1024.000000. Check CID=15928, MJD=54047.153, IFILT=4. 
+	 SKYERR= 4250.000000. Check CID=16065, MJD=54047.130, IFILT=3. 
+	 SKYERR= 6114.000000. Check CID=16065, MJD=54047.131, IFILT=4. 
+	 SKYERR= 1626.000000. Check CID=16086, MJD=54006.300, IFILT=5. 
+	 SKYERR= 2892.000000. Check CID=16314, MJD=54047.131, IFILT=2. 
+	 SKYERR= 1339.000000. Check CID=16333, MJD=54047.153, IFILT=5. 
+	 SKYERR= 1378.000000. Check CID=16473, MJD=54047.152, IFILT=5. 
+	 SKYERR= 1037.000000. Check CID=16481, MJD=54047.131, IFILT=2. 
+	 SKYERR= 1107.000000. Check CID=16481, MJD=54047.128, IFILT=4. 
+	 SKYERR= 1943.000000. Check CID=16692, MJD=54047.129, IFILT=5. 
+	 SKYERR= 1361.000000. Check CID=16709, MJD=54047.136, IFILT=5. 
+	 SKYERR= 2384.000000. Check CID=16739, MJD=54047.129, IFILT=3. 
+	 SKYERR= 1055.000000. Check CID=16793, MJD=54047.152, IFILT=5. 
+	 SKYERR= 1813.000000. Check CID=16947, MJD=54047.131, IFILT=3. 
+	 SKYERR= 1409.000000. Check CID=16960, MJD=54026.129, IFILT=3. 
+	 SKYERR= 2317.000000. Check CID=16964, MJD=54026.132, IFILT=2. 
+	 SKYERR= 1689.000000. Check CID=16964, MJD=54026.130, IFILT=4. 
+	 HOSTSB_FLUX= 229.300003  uJy for  CID=15856 IFILT=5 
+	 HOSTSB_FLUX= 249.899994  uJy for  CID=15883 IFILT=3 
+	 HOSTSB_FLUX= 384.799988  uJy for  CID=15883 IFILT=4 
+	 HOSTSB_FLUX= 549.799988  uJy for  CID=15883 IFILT=5 
+	 HOSTSB_FLUX= 326.000000  uJy for  CID=15890 IFILT=3 
+	 HOSTSB_FLUX= 397.100006  uJy for  CID=15890 IFILT=4 
+	 HOSTSB_FLUX= 476.299988  uJy for  CID=15890 IFILT=5 
+	 HOSTSB_FLUX= 311.899994  uJy for  CID=16112 IFILT=5 
+	 HOSTSB_FLUX= 370.100006  uJy for  CID=16113 IFILT=2 
+	 HOSTSB_FLUX= 895.500000  uJy for  CID=16113 IFILT=3 
+	 HOSTSB_FLUX= 1294.000000  uJy for  CID=16113 IFILT=4 
+	 HOSTSB_FLUX= 1551.000000  uJy for  CID=16113 IFILT=5 
+	 HOSTSB_FLUX= 238.199997  uJy for  CID=16124 IFILT=5 
+	 HOSTSB_FLUX= 260.299988  uJy for  CID=16143 IFILT=4 
+	 HOSTSB_FLUX= 364.399994  uJy for  CID=16143 IFILT=5 
+	 HOSTSB_FLUX= 269.000000  uJy for  CID=16218 IFILT=3 
+	 HOSTSB_FLUX= 418.500000  uJy for  CID=16218 IFILT=4 
+	 HOSTSB_FLUX= 610.200012  uJy for  CID=16218 IFILT=5 
+	 HOSTSB_FLUX= 202.600006  uJy for  CID=16228 IFILT=5 
+	 HOSTSB_FLUX= 217.899994  uJy for  CID=16245 IFILT=4 
+	 HOSTSB_FLUX= 324.799988  uJy for  CID=16245 IFILT=5 
+	 HOSTSB_FLUX= 282.899994  uJy for  CID=16280 IFILT=4 
+	 HOSTSB_FLUX= 384.399994  uJy for  CID=16280 IFILT=5 
+	 HOSTSB_FLUX= 208.800003  uJy for  CID=16291 IFILT=5 
+	 HOSTSB_FLUX= 204.800003  uJy for  CID=16399 IFILT=5 
+	 HOSTSB_FLUX= 209.000000  uJy for  CID=16401 IFILT=5 
+	 HOSTSB_FLUX= 280.799988  uJy for  CID=16430 IFILT=3 
+	 HOSTSB_FLUX= 427.399994  uJy for  CID=16430 IFILT=4 
+	 HOSTSB_FLUX= 615.200012  uJy for  CID=16430 IFILT=5 
+	 HOSTSB_FLUX= 204.800003  uJy for  CID=16624 IFILT=4 
+	 HOSTSB_FLUX= 295.200012  uJy for  CID=16624 IFILT=5 
+	 HOSTSB_FLUX= 271.500000  uJy for  CID=16752 IFILT=5 
+	 HOSTSB_FLUXERR= 6299000.000000 uJy  for  CID=16835 IFILT=1 
+	 HOSTSB_FLUXERR= 5954000.000000 uJy  for  CID=16835 IFILT=2 
+	 HOSTSB_FLUXERR= 6060000.000000 uJy  for  CID=16835 IFILT=3 
+	 HOSTSB_FLUXERR= 5987000.000000 uJy  for  CID=16835 IFILT=4 
+	 HOSTSB_FLUXERR= 5999000.000000 uJy  for  CID=16835 IFILT=5 
+	 HOSTSB_FLUX= 341.399994  uJy for  CID=16868 IFILT=4 
+	 HOSTSB_FLUX= 630.799988  uJy for  CID=16868 IFILT=5 
+	 HOSTSB_FLUX= 263.200012  uJy for  CID=16892 IFILT=5 
+	 HOSTSB_FLUXERR= 6299000.000000 uJy  for  CID=16956 IFILT=1 
+	 HOSTSB_FLUXERR= 5954000.000000 uJy  for  CID=16956 IFILT=2 
+	 HOSTSB_FLUXERR= 6060000.000000 uJy  for  CID=16956 IFILT=3 
+	 HOSTSB_FLUXERR= 5987000.000000 uJy  for  CID=16956 IFILT=4 
+	 HOSTSB_FLUXERR= 5999000.000000 uJy  for  CID=16956 IFILT=5 
+	 HOSTSB_FLUX= 788.200012  uJy for  CID=16966 IFILT=2 
+	 HOSTSB_FLUX= 1307.000000  uJy for  CID=16966 IFILT=3 
+	 HOSTSB_FLUX= 1524.000000  uJy for  CID=16966 IFILT=4 
+	 HOSTSB_FLUX= 1484.000000  uJy for  CID=16966 IFILT=5 
+
+ ------------------------------------------------
+FULL_DESCRIPTION: 
+
+ ------------------------------------------- 
+           STATISTICS SUMMARY   
+
+  Ncandidates[type   0] =  195  () 
+  Ncandidates[type   4] =   19  () 
+  Ncandidates[type   5] =  154  () 
+  Ncandidates[type 101] =   66  () 
+  Ncandidates[type 102] =    2  () 
+  Ncandidates[type 103] =   55  () 
+  Ncandidates[type 104] =   17  () 
+  Ncandidates[type 105] =    6  () 
+  Ncandidates[type 106] =   99  () 
+  Ncandidates[type 110] =   36  () 
+  Ncandidates[type 111] =    1  () 
+  Ncandidates[type 112] =    1  () 
+  Ncandidates[type 113] =    5  () 
+  Ncandidates[type 119] =    1  () 
+  Ncandidates[type 120] =   71  () 
+  Ncandidates[type ALL] =  728 
+
+  Number of Epochs that are  
+	 Survey Quality     : 23178   (QMASK bit 1) 
+	 NOT Survey Quality : 62971  
+	 During Bright time : 0   (QMASK bit 2) 
+	 Total              : 86149  
+
+  QMASK bits (lsb=1): 
+       1 => epoch is survey quality (PSF<1.8 & Cloudsig<10.0 & no moon). 
+       2 => epoch is during bright time. 
+ 
+ 
+# ==========================================================================
+# ==========================================================================
+# DUMP ORIGINAL README for SMPv8+BOSS_2007                                                         
+ 
+BRIEF_DESCRIPTION: photometry from Holtz/v6_reCalib/2007 
+
+Feb 2010: Change FLUXCAL_ERRTOT determination by scaling 
+	  FLUXERR(uJy) instead of translating MAG-MAGERR. 
+	  => Pre-explosion errors change by 20 percent. 
+
+
+ ------------------------------------------------
+General info: 
+
+   20167 <= CID  <=  22300 
+    -99 <= TYPE <=    199 
+
+   Created 1023  /data/des20.b/data/SNDATA_ROOT/photometry/SMPv8+BOSS_2007_SN* files. 
+
+   Original text files in:
+	  /data/des20.b/data/SNDATA_ROOT/photometry/Holtz/v6_reCalib/2007 
+   are converted with command: 
+     SDSS_get_SMP.exe  --v SMPv8+BOSS_2007 --sdir Holtz/v6_reCalib/2007 --year 2007 --mag asinh   --mincid 20167 --maxcid 22300 --mintype -99
+
+	 100955 total epochs written. 
+
+ WARNINGS: 
+	 SKYERR= 1291.000000. Check CID=20191, MJD=54432.322, IFILT=5. 
+	 SKYERR= 2316.000000. Check CID=20278, MJD=54432.336, IFILT=2. 
+	 SKYERR= 7881.000000. Check CID=20279, MJD=54432.376, IFILT=2. 
+	 SKYERR= 1938.000000. Check CID=20298, MJD=54431.307, IFILT=4. 
+	 SKYERR= 1364.000000. Check CID=20299, MJD=54432.322, IFILT=5. 
+	 SKYERR= 6371.000000. Check CID=20306, MJD=54432.380, IFILT=4. 
+	 SKYERR= 2359.000000. Check CID=20307, MJD=54432.382, IFILT=4. 
+	 SKYERR= 4365.000000. Check CID=20307, MJD=54432.384, IFILT=5. 
+	 SKYERR= 1676.000000. Check CID=20319, MJD=54432.335, IFILT=2. 
+	 SKYERR= 3023.000000. Check CID=20319, MJD=54432.331, IFILT=3. 
+	 SKYERR= 2170.000000. Check CID=20319, MJD=54432.334, IFILT=5. 
+	 SKYERR= 3885.000000. Check CID=20320, MJD=54432.363, IFILT=2. 
+	 SKYERR= 18590.000000. Check CID=20320, MJD=54432.359, IFILT=3. 
+	 SKYERR= 7038.000000. Check CID=20320, MJD=54432.362, IFILT=5. 
+	 SKYERR= 1173.000000. Check CID=20363, MJD=54431.304, IFILT=2. 
+	 SKYERR= 3846.000000. Check CID=20364, MJD=54431.313, IFILT=3. 
+	 SKYERR= 1195.000000. Check CID=20364, MJD=54431.314, IFILT=4. 
+	 SKYERR= 2038.000000. Check CID=20364, MJD=54431.315, IFILT=5. 
+	 SKYERR= 3157.000000. Check CID=20368, MJD=54432.347, IFILT=3. 
+	 SKYERR= 2015.000000. Check CID=20386, MJD=54403.396, IFILT=4. 
+	 SKYERR= 2801.000000. Check CID=20386, MJD=54403.397, IFILT=5. 
+	 SKYERR= 1340.000000. Check CID=20562, MJD=54431.305, IFILT=3. 
+	 SKYERR= 3575.000000. Check CID=20562, MJD=54431.306, IFILT=4. 
+	 SKYERR= 3334.000000. Check CID=20725, MJD=54432.350, IFILT=2. 
+	 SKYERR= 1256.000000. Check CID=20752, MJD=54432.324, IFILT=3. 
+	 SKYERR= 2892.000000. Check CID=20752, MJD=54432.327, IFILT=5. 
+	 SKYERR= 2818.000000. Check CID=20755, MJD=54432.343, IFILT=4. 
+	 SKYERR= 12630.000000. Check CID=20757, MJD=54432.354, IFILT=5. 
+	 SKYERR= 3846.000000. Check CID=20759, MJD=54403.397, IFILT=4. 
+	 SKYERR= 6231.000000. Check CID=20765, MJD=54431.310, IFILT=3. 
+	 SKYERR= 1814.000000. Check CID=20806, MJD=54431.313, IFILT=3. 
+	 SKYERR= 1109.000000. Check CID=20807, MJD=54432.312, IFILT=5. 
+	 SKYERR= 3936.000000. Check CID=20809, MJD=54432.339, IFILT=3. 
+	 SKYERR= 1440.000000. Check CID=20809, MJD=54432.340, IFILT=4. 
+	 SKYERR= 10600.000000. Check CID=20811, MJD=54432.353, IFILT=3. 
+	 SKYERR= 1738.000000. Check CID=20815, MJD=54432.377, IFILT=3. 
+	 SKYERR= 3204.000000. Check CID=20817, MJD=54431.313, IFILT=2. 
+	 SKYERR= 2520.000000. Check CID=20817, MJD=54431.310, IFILT=4. 
+	 SKYERR= 1274.000000. Check CID=20821, MJD=54403.397, IFILT=5. 
+	 SKYERR= 1741.000000. Check CID=20914, MJD=54390.442, IFILT=5. 
+	 SKYERR= 1725.000000. Check CID=21023, MJD=54432.335, IFILT=2. 
+	 SKYERR= 1380.000000. Check CID=21028, MJD=54432.325, IFILT=3. 
+	 SKYERR= 1599.000000. Check CID=21029, MJD=54432.331, IFILT=3. 
+	 SKYERR= 1468.000000. Check CID=21029, MJD=54432.332, IFILT=4. 
+	 SKYERR= 3929.000000. Check CID=21029, MJD=54432.333, IFILT=5. 
+	 SKYERR= 1113.000000. Check CID=21033, MJD=54432.312, IFILT=5. 
+	 SKYERR= 2366.000000. Check CID=21042, MJD=54421.109, IFILT=4. 
+	 SKYERR= 1469.000000. Check CID=21352, MJD=54432.341, IFILT=4. 
+	 SKYERR= 1526.000000. Check CID=21352, MJD=54432.343, IFILT=5. 
+	 HOSTSB_FLUX= 250.500000  uJy for  CID=20259 IFILT=3 
+	 HOSTSB_FLUX= 372.399994  uJy for  CID=20259 IFILT=4 
+	 HOSTSB_FLUX= 426.000000  uJy for  CID=20259 IFILT=5 
+	 HOSTSB_FLUX= 234.699997  uJy for  CID=20261 IFILT=5 
+	 HOSTSB_FLUX= 276.100006  uJy for  CID=20433 IFILT=4 
+	 HOSTSB_FLUX= 377.399994  uJy for  CID=20433 IFILT=5 
+	 HOSTSB_FLUX= 221.199997  uJy for  CID=20439 IFILT=5 
+	 HOSTSB_FLUX= 262.200012  uJy for  CID=20452 IFILT=5 
+	 HOSTSB_FLUX= 225.800003  uJy for  CID=20707 IFILT=5 
+	 HOSTSB_FLUX= 235.500000  uJy for  CID=20846 IFILT=5 
+	 HOSTSB_FLUX= 219.800003  uJy for  CID=20906 IFILT=5 
+	 HOSTSB_FLUX= 234.300003  uJy for  CID=21170 IFILT=5 
+	 HOSTSB_FLUX= 244.199997  uJy for  CID=21208 IFILT=5 
+	 HOSTSB_FLUX= 266.200012  uJy for  CID=21393 IFILT=5 
+	 HOSTSB_FLUX= 275.700012  uJy for  CID=21471 IFILT=3 
+	 HOSTSB_FLUX= 334.399994  uJy for  CID=21471 IFILT=4 
+	 HOSTSB_FLUX= 353.399994  uJy for  CID=21471 IFILT=5 
+	 HOSTSB_FLUX= 212.100006  uJy for  CID=21479 IFILT=4 
+	 HOSTSB_FLUX= 276.700012  uJy for  CID=21479 IFILT=5 
+	 HOSTSB_FLUX= 217.000000  uJy for  CID=21567 IFILT=5 
+	 HOSTSB_FLUX= 282.299988  uJy for  CID=21807 IFILT=3 
+	 HOSTSB_FLUX= 419.899994  uJy for  CID=21807 IFILT=4 
+	 HOSTSB_FLUX= 593.000000  uJy for  CID=21807 IFILT=5 
+	 HOSTSB_FLUX= 213.300003  uJy for  CID=22035 IFILT=4 
+	 HOSTSB_FLUX= 292.100006  uJy for  CID=22035 IFILT=5 
+
+ ------------------------------------------------
+FULL_DESCRIPTION: 
+
+ ------------------------------------------- 
+           STATISTICS SUMMARY   
+
+  Ncandidates[type   0] =  344  () 
+  Ncandidates[type   4] =   59  () 
+  Ncandidates[type   5] =   19  () 
+  Ncandidates[type 101] =  263  () 
+  Ncandidates[type 102] =    4  () 
+  Ncandidates[type 103] =   77  () 
+  Ncandidates[type 104] =   35  () 
+  Ncandidates[type 105] =    4  () 
+  Ncandidates[type 106] =   97  () 
+  Ncandidates[type 110] =   70  () 
+  Ncandidates[type 112] =    3  () 
+  Ncandidates[type 113] =    4  () 
+  Ncandidates[type 120] =   44  () 
+  Ncandidates[type ALL] = 1023 
+
+  Number of Epochs that are  
+	 Survey Quality     : 0   (QMASK bit 1) 
+	 NOT Survey Quality : 100955  
+	 During Bright time : 0   (QMASK bit 2) 
+	 Total              : 100955  
+
+  QMASK bits (lsb=1): 
+       1 => epoch is survey quality (PSF<1.8 & Cloudsig<10.0 & no moon). 
+       2 => epoch is during bright time. 

@@ -1,0 +1,15 @@
+# Combined data files with command:
+#    /project/rkessler/SN/SNANA/SNANA_CURRENT/util/combine_dataVersions.py COMBINE.INPUT 
+# Host      = midway-login2
+# User      = dscolnic
+# Directory = /project/rkessler/SN/SNDATA_ROOT/INTERNAL/PS1/LOWZ
+# Time      = Sat Mar 11 17:00:45 2017
+#cut out 2006ef from cfa3 because it was causing duplicate problems
+#SN: 2007jg 139 65 1 NULL 1 0.03658 0.00000 0.0375, SN: 2005ir 198 5 1 NULL 1 0.07525 0.00000 0.07559
+#removed those two also
+120 data files from PS1s_CFA3_KEPLERCAM_DS17     UBVri -> abcde 
+  75 data files from PS1s_CFA4_p1_DS17            UBVri -> fghij 
+  19 data files from PS1s_CFA4_p2_DS17            BVri -> klmn 
+  85 data files from PS1s_CSPDR2_V_DS17           uBomngri -> opqrstuv 
+  22 data files from PS1s_CFA1_JRK07_DS16         UBVRI -> wxyzA 
+  44 data files from PS1s_CFA2_JRK07_DS16         UBVRI -> BCDEF 

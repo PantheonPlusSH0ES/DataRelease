@@ -1,0 +1,33 @@
+SURVEY:  PS1_LOWZ_COMBINED(CFA4p2)
+PHOTOMETRY_VERSION: CFA4
+SNTYPE: 1
+SNID: 2009li 
+IAUC: 2009li
+RA:     5.714170 deg
+DECL:     6.969940 deg 
+RA_HOST:     5.707620
+DEC_HOST:     6.964280
+MWEBV: 0.026700000 MW E(B-V) (SFD98)
+REDSHIFT_HELIO: 0.040515 +- 1.2e-05 
+REDSHIFT_CMB: 0.0392933 +- 1.2e-05 
+VPEC: -184.3456 +- 250.0
+HOSTGAL_LOGMASS: 11.3300 +- 0.433
+PRIVATE(COSMO): 1
+FILTERS: abcdefghijklmnopqrstuvwxyzABCDEFGHIJK  # BVri -> pqrs
+SEARCH_PEAKMJD: 55156.492
+NOBS: 12
+NVAR:   6
+VARLIST:  MJD  FLT FIELD   FLUXCAL   FLUXCALERR    MAG     MAGERR
+OBS:      55153.2     p      md      4897.79    338.927    18.2750    0.0692000
+OBS:      55160.3     p      md      3973.74    488.770    18.5020    0.123000
+OBS:      55210.1     p      md      565.979    22.1298    20.6180    0.0391000
+OBS:      55153.2     q      md      6245.97    163.020    18.0110    0.0261000
+OBS:      55160.3     q      md      5883.01    122.367    18.0760    0.0208000
+OBS:      55210.1     q      md      1014.85    20.2969    19.9840    0.0200000
+OBS:      55153.2     r      md      6723.57    145.229    17.9310    0.0216000
+OBS:      55160.3     r      md      8402.34    172.248    17.6890    0.0205000
+OBS:      55210.1     r      md      1385.48    42.9499    19.6460    0.0310000
+OBS:      55153.2     s      md      5520.77    223.591    18.1450    0.0405000
+OBS:      55160.3     s      md      7027.49    144.766    17.8830    0.0206000
+OBS:      55210.1     s      md      1407.34    25.3322    19.6290    0.0180000
+END: 

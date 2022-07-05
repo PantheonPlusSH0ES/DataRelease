@@ -1,0 +1,18 @@
+SURVEY:  LOWZ                
+SNID:    1980N         
+IAUC:    1980N                 
+RA:   50.75133 deg
+DECL:   -37.21386 deg 
+RA_HOST:   50.67383 deg
+DEC_HOST:   -37.20822 deg
+MWEBV: 0.021 MW E(B-V) (SFD98)
+REDSHIFT_HELIO: 0.005871 +- 3.3e-05 
+REDSHIFT_CMB: 0.0055148709 +- 3.3e-05
+VPEC: -318.9932 +- 250.0
+SEARCH_PEAKMJD:  44585.609
+FILTERS: UBVRI
+# ====================================== 
+# TERSE LIGHT CURVE OUTPUT 
+# 
+NOBS: 116
+NVAR:   7

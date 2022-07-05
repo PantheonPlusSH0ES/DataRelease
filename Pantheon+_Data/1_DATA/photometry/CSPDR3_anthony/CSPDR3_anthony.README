@@ -1,0 +1,58 @@
+DOCUMENTATION:
+    PURPOSE: CSPDR3 light curves translated to SNANA format
+    REF:
+    - AUTHOR: K. Krisciunas et al., 2017 (DR release paper)
+      ADS:    https://ui.adsabs.harvard.edu/abs/2017AJ....154..211K
+    - AUTHOR: CSP Collaboration
+      URL: https://csp.obs.carnegiescience.edu/news-items/csp-dr3-photometry-released
+    INTENT:  Nominal
+    USAGE_KEY:  VERSION_PHOTOMETRY
+    USAGE_CODE: snlc_fit.exe
+    VALIDATE_SCIENCE: used in Freedman 2019 H0 analysis
+    METADATA:
+    - REDSHIFT_CMB: exact formula
+    - REDSHIFT_ERR: arbitrarily set to 0.0001  (not in DR)
+    - VPEC:         based on Carrick 2015
+    - PEAKMJD:      MJD of brightest observation.
+    - MWEBV:        SFD98 x 0.86 correction from SF2011. 
+    - LOGMASS:      from ??
+    NOTES:
+    - translated with SNANA script translate_CSPDR3.py    
+    VERSIONS:
+    - DATE:  2020-04-14
+      AUTHORS: R. Kessler, D. Jones
+DOCUMENTATION_END:
+
+
+ 2020-04-14 
+ Translated 134 CSP data files from 
+   https://csp.obs.carnegiescience.edu/data 
+ to SNANA format using /project2/rkessler/PRODUCTS/SNANA/SNANA/util/translate_CSPDR3.py
+
+ If using these data, please reference
+   https://ui.adsabs.harvard.edu/abs/2017AJ....154..211K
+
+ Extra quantities in SNANA data files that are not in DR3:
+   REDSHIFT_FINAL computed from CMB dipole.
+   zERR    = 0.0001 
+   VPEC    is from LV2011 map. 
+   PEAKMJD is from brightest observation.
+   MWEBV   is from SFD98 x 0.86 correction from SF2011. 
+   LOGMASS is from  From XXX
+
+FILTER MAP: 
+   SNANA u -> CSP u 
+   SNANA g -> CSP g 
+   SNANA r -> CSP r 
+   SNANA i -> CSP i 
+   SNANA B -> CSP B 
+   SNANA n -> CSP V 
+   SNANA m -> CSP V0 
+   SNANA o -> CSP V1 
+   SNANA J -> CSP J 
+   SNANA j -> CSP Jrc2 
+   SNANA Y -> CSP Y 
+   SNANA y -> CSP Ydw 
+   SNANA H -> CSP H 
+
+END:
