@@ -1,0 +1,14 @@
+There are two directories here:
+
+./cosmosis_likelihoods
+./chains
+
+In ./cosmosis_likelihoods there are the two codes used in cosmosis: 
+   ./cosmosis_likelihoods/Pantheon+SH0ES_cosmosis_likelihood.py
+   ./cosmosis_likelihoods/Pantheon+_only_cosmosis_likelihood.py
+The difference here is whether or not to use SH0ES Cepheids (a constraint on H0 and M) in the cosmology constraint.
+
+In ./chains there are two directories:
+   ./Pantheon+Only # does not use SH0ES Cepheids and does not include constraints on H0 or M.
+   ./Pantheon+SH0ES # uses SH0ES Cepheids and includes constraints on H0 and M.
+       
