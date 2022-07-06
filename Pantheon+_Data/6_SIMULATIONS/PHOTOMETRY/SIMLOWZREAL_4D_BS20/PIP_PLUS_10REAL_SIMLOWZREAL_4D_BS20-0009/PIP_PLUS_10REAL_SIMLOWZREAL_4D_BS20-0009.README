@@ -1,0 +1,13 @@
+DOCUMENTATION:
+  GENVERSION: PIP_PLUS_10REAL_SIMLOWZREAL_4D_BS20-0009 
+
+#                   NLC_GEN   NLC_WRITE  NSPEC_WRITE  CPU(minutes)
+  STAT_SUMMARY: 
+  - TOTAL             35558        320         0        6.2
+
+  INPUT_FILES:
+  - MASTER    PIP_PLUS_10REAL_SIMLOWZREAL_4D_BS20.input 
+  - SNIa      sn_ia_salt2_g10_lowz.input 
+
+  SUBMIT_DIR:  /scratch/midway2/rkessler/PIPPIN_OUTPUT/PLUS_10REAL/1_SIM/SIMLOWZREAL_4D_BS20
+DOCUMENTATION_END:

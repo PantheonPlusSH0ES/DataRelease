@@ -1,0 +1,114 @@
+#######################################################
+#
+# Simulate CFA3-Keplercam: 
+# start with files in ~/salt2-training/magSmear_paper
+#
+# Apr 24 2013: set NTOT = 4400 and remove NGEN_UNIT key from MASTER-input file.
+#
+#########################################################
+
+
+#SIMLIB_FILE:  /home/s1/rkessler/JLA/sim_muBias/LOWZ/CFA3_KEPLERCAM.SIMLIB 
+#SIMLIB_FILE:  /project/rkessler/dscolnic/mb_bias/LOWZ/CFA3_KEPLERCAM.SIMLIB
+SIMLIB_FILE: $PS1_ROOT/simlib/PS1_LOWZ_COMBINED.SIMLIB
+
+#SIMLIB_NREPEAT:  50
+USE_SIMLIB_REDSHIFT:  0
+USE_SIMLIB_PEAKMJD:   1
+NEWMJD_DIF: 0.002
+SOLID_ANGLE:  3.14  ! PI = 1/4 of sky
+#!#!#!#!CasdfLEARPROMPT:  0
+RANSEED:      28473   # random number seed
+FORMAT_MASK:  32        # 2=text  32=FITS
+
+CIDOFF:     59993
+#NGENTOT_LC:    80000
+#NGENTOT_LC   10000
+#NGENTOT_LC: 100000
+NGENTOT_LC: 200000
+GENVERSION: DS17_LOWZ_G10_sys
+GENSOURCE:  RANDOM   
+GENMODEL:   SALT2.JLA-B14
+GENMAG_SMEAR_MODELNAME:  G10
+
+KCOR_FILE:  $PS1_ROOT/LOWZ/kcor_PS1_LOWZ_COMBINED.fits
+EFFERR_STOPGEN: 0.0000000001
+
+# selection criteria for generation
+GENFILTERS: bcdeghijlmnopqrsuvwxyzACDEFHIJK
+
+GENRANGE_PEAKMJD:  49200.0  55500.0 
+GENSIGMA_SEARCH_PEAKMJD:  1.0         # sigma-smearing for  SEARCH_PEAKMJD
+
+GENRANGE_REDSHIFT:  0.007    0.08 #CHANGED lower bound from 0.009 to 0.012 to not overlap with calibrators
+GENSIGMA_REDSHIFT:  0.000001
+GENSIGMA_VPEC: 300
+VPEC_ERR: 250
+#GENSIGMA_VPEC: 0
+
+# DNDZ: POWERLAW  2.6E-5  2.2
+# Use rate assumption from Housell 2017 (WFIRST sims)
+GENOPT_GLOBAL: DNDZ POWERLAW2 2.5E-5  1.5 0.0 1.0    # from Didlay 2008
+#!GENOPT_GLOBAL: DNDZ POWERLAW2 9.7E-5 -0.5 1.0 3.0    # high-z extenstion from Lou
+
+GENRANGE_TREST:   -20.0  60.0     # rest epoch relative to peak (days)
+
+OPT_MWEBV:      1
+GENSIGMA_MWEBV_RATIO: 0.16
+
+
+SMEARFLAG_FLUX:    1   # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1   # smear zero-point with zptsig
+
+
+# ---------------------------
+#GENPEAK_SALT2x1:     0.44
+#GENRANGE_SALT2x1:   -4.0  +4.0     # x1 (stretch) range
+#GENSIGMA_SALT2x1:    3.12   0.724     # bifurcated sigmas
+
+GENPEAK_SALT2x1:     0.55
+GENRANGE_SALT2x1:   -5.0  +4.0     # x1 (stretch) range
+GENSIGMA_SALT2x1:    1.0  0.45      # bifurcated sigmas
+
+GENPROB2_SALT2x1:     0.55
+GENPEAK2_SALT2x1:   -1.5     # x1 (stretch) range
+GENSIGMA2_SALT2x1:    0.5  0.5      # bifurcated sigmas
+
+
+GENPEAK_SALT2c:     -0.055
+GENRANGE_SALT2c:   -0.4   0.4     # color range
+GENSIGMA_SALT2c:    0.023   0.15     # bifurcated sigmas
+
+
+# SALT2 alpha and beta
+
+GENMEAN_SALT2ALPHA:   0.14
+
+GENMEAN_SALT2BETA:   3.1
+
+SEARCHEFF_SPEC_FILE:  $PS1_ROOT/models/searcheff/SEARCHEFF_SPEC_LOWZ_r.DAT
+###SEARCHEFF_SPEC_FILE: SEARCHEFF_LOWZ.DAT
+
+# -------------------------------
+APPLY_SEARCHEFF_OPT:  3
+#APPLY_SEARCHEFF_OPT:  1
+APPLY_CUTWIN_OPT:     1
+CUTWIN_NEPOCH:   5 3.              # require 5 epochs (no S/N requirement)
+#CUTWIN_SNRMAX:   6 BVr 2 -20. 60.   # require 2 of griz with S/N > 6
+CUTWIN_TRESTMIN: -20  10
+CUTWIN_TRESTMAX:   9  40
+CUTWIN_MWEBV:      0 .20
+
+# -----------------------
+# cosmological params for lightcurve generation and redshift distribution
+OMEGA_MATTER:  0.3
+OMEGA_LAMBDA:  0.7
+W0_LAMBDA:    -1.00
+H0:            70.0
+
+HOSTLIB_FILE: $PS1_ROOT/simlib/DS_empty.HOSTLIB
+HOSTLIB_STOREPAR: LOGMASS
+HOSTLIB_DZTOL: 0.03 0 0.
+
+# -----------------------
+SIMGEN_DUMPALL:  7  CID Z MJD0 S2mb  S2c S2x1  SIM_SEARCHEFF_MASK

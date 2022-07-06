@@ -1,0 +1,129 @@
+  
+########################################################
+#
+# Input file for $SNANA_DIR/bin/snlc_sim.exe
+#
+#
+#########################################################
+
+
+NGENTOT_LC:    500000             # number of SN lightcurves to generate 
+GENVERSION: DB18_PS15_G10         # SNDATA version to generate
+GENSOURCE:  RANDOM   
+##GENMODEL:   SALT2.JLA-B14
+#####C##LEARPROMPT:    0
+
+SIMLIB_FILE: $PS1_ROOT/simlib/PS1MD_FULL_fluxcorr.simlib
+
+CIDOFF: 70000
+KCOR_FILE:  $PS1_ROOT/kcor/PS1/PS1_DS15/kcor_PS1.fits
+APPLY_SEARCHEFF_OPT: 3
+#SEARCHEFF_SPEC_FILE: /scratch/midway2/djbrout/djbrout_workingdir/djbrout/nocolorterm_study/speceff/spec_dave_r_e6.txt
+SEARCHEFF_SPEC_FILE: $SNDATA_ROOT/models/searcheff/SEARCHEFF_SPEC_PS1_Pantheon.DAT
+
+GENMAG_SMEAR_MODELNAME: G10
+# selection criteria for generation
+GENFILTERS:       griz
+GENRANGE_RA:      -1.0     +1.0   deg
+GENRANGE_DECL:    -1.258    +1.258  deg
+GENSIGMA_SEARCH_PEAKMJD:  1.0         # sigma-smearing for  SEARCH_PEAKMJD (days)
+
+GENRANGE_PEAKMJD:  55080.0  56660.0
+SOLID_ANGLE: 0.022 # 1 field, 7 sq degreees
+FUDGE_MAGERR: 0.005
+
+LENSING_PROBMAP_FILE:  $SNDATA_ROOT/models/lensing/LENSING_PROBMAP_LogNormal+MICECATv1.DAT
+LENSING_DMUSCALE: 1.375
+
+GENRANGE_REDSHIFT:  0.04    0.77
+GENSIGMA_REDSHIFT:  0.0005
+
+GENRANGE_TREST:   -20.0    80.0     # rest epoch relative to peak (days)
+
+###GasdfENMEAN_RV:         3.1               # mean RV to generate
+
+OPT_MWEBV: 1
+
+
+RANSEED: 58473       # random number seed
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+
+
+FORMAT_MASK: 32 # terse format
+APPLY_CUTWIN_OPT: 1
+CUTWIN_TRESTMIN: -25 +5 # at least 1 epoch before -5 d (rest-frame)
+CUTWIN_TRESTMAX: +5 +1000000
+CUTWIN_SNRMAX:   5 griz 2 -20. 80.  # require 1 of griz with S/N > 5
+
+GENMEAN_SALT2x1:     0.37
+GENRANGE_SALT2x1:   -4.0  +4.0     # x1 (stretch) range
+GENSIGMA_SALT2x1:    0.963   0.514     # bifurcated sigmas
+
+
+GENMEAN_SALT2c:     -0.077
+GENRANGE_SALT2c:   -0.4   0.4     # color range
+GENSIGMA_SALT2c:    0.029   0.121     # bifurcated sigmas
+
+
+
+
+
+
+
+
+
+
+######### SAME AS DES ##################################################
+GENMEAN_SALT2ALPHA:   0.15
+GENSIGMA_SALT2ALPHA:  0.0  0.0   # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2ALPHA:  0.10 0.24  # grid for biasCor sample
+GENGRID_SALT2ALPHA:   2
+
+GENMEAN_SALT2BETA:   3.1
+GENSIGMA_SALT2BETA:  0.0  0.0  # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2BETA:  2.7  3.5  # grid for COH & G10 0biasCor samples
+GENGRID_SALT2BETA:   2
+#######################################################################
+
+
+
+
+
+
+
+
+#GENRANGE_SALT2ALPHA:  0.09  0.19
+#GENMEAN_SALT2ALPHA:   0.14
+#GENGRID_SALT2ALPHA:   2
+
+#GENMEAN_SALT2BETA:   3.0
+#GENRANGE_SALT2BETA:  2.0  4.0
+#GENGRID_SALT2BETA:  2
+
+# cosmological params for lightcurve generation and redshift distribution
+OMEGA_MATTER:  0.3
+OMEGA_LAMBDA:  0.7
+W0_LAMBDA:    -1.00
+H0:           70.0   
+
+
+HOSTLIB_STOREPAR: LOGMASS
+HOSTLIB_DZTOL: 0.1 0 0.
+HOSTLIB_FILE: $PS1_ROOT/simlib/PS1Phot_absmag_bright.HOSTLIB
+###HOSTLIB_FILE: $SDSS_USERS/BAP37/MASS_paper/PS1/NN_forDan/PS1Phot_absmag.HOSTLIB #BRodies hostlib with mass in it
+
+HOSTLIB_MSKOPT:   258
+###HOSTLIB_DZTOL: 0.03 0 0
+HOSTNOISE_FILE:  $PS1_ROOT/simlib/PS1MD_SBNOISEMODEL.DAT
+#SEARCHEFF_PIPELINE_FILE: $SNDATA_ROOT/models/searcheff/SEARCHEFF_PIPELINE_PS1_Pantheon.DAT
+SEARCHEFF_PIPELINE_LOGIC_FILE: $SNDATA_ROOT/models/searcheff/SEARCHEFF_PIPELINE_PS1_Pantheon.DAT
+
+
+SIMGEN_DUMP:  5  CID Z  PEAKMJD S2c S2x1
+
+
+
+#DNDZ: POWERLAW  2.6E-5  2.2    # SNLS result

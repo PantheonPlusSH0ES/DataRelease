@@ -1,0 +1,117 @@
+
+# Apr 6 2013: relax cuts to match Paris analysis
+
+
+
+SIMLIB_FILE: $SNDATA_ROOT/simlib/SNLS/SNLS_3year.SIMLIB.COADD
+SOLID_ANGLE: 0.001
+
+NGENTOT_LC:    350000
+GENVERSION: DB18_SNLS_G10
+GENSOURCE:  RANDOM 
+##GENMODEL:   SALT2.JLA-B14
+GENMAG_SMEAR_MODELNAME: G10
+
+
+KCOR_FILE:  $PS1_ROOT/kcor/PS1/PS1_DS15/kcor_SNLS.fits
+
+CIDOFF: 2000000
+SNTYPES_Ia:  1  10
+
+#DNDZ: POWERLAW  2.6E-5  2.2    # SNLS result
+
+# selection criteria for generation
+GENFILTERS:        griz
+GENRANGE_RA:      -360.0    +360.0   deg
+GENRANGE_DECL:    -360.0    +360.0  deg
+GENRANGE_PEAKMJD:  52900.0  54050.0   
+GENSIGMA_SEARCH_PEAKMJD:  1.0     # sigma-smearing for  SEARCH_PEAKMJD (days)
+
+GENRANGE_REDSHIFT:  0.05  1.39
+GENSIGMA_REDSHIFT:  0.000001
+
+LENSING_PROBMAP_FILE:  $SNDATA_ROOT/models/lensing/LENSING_PROBMAP_LogNormal+MICECATv1.DAT
+LENSING_DMUSCALE: 1.375
+
+# =======================================================
+# SALT2 gen params
+
+
+
+
+
+
+######### SAME AS DES ##################################################
+GENMEAN_SALT2ALPHA:   0.15
+GENSIGMA_SALT2ALPHA:  0.0  0.0   # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2ALPHA:  0.10 0.24  # grid for biasCor sample
+GENGRID_SALT2ALPHA:   2
+
+GENMEAN_SALT2BETA:   3.1
+GENSIGMA_SALT2BETA:  0.0  0.0  # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2BETA:  2.7  3.5  # grid for COH & G10 0biasCor samples
+GENGRID_SALT2BETA:   2
+#######################################################################
+
+
+
+
+
+
+
+#GENRANGE_SALT2ALPHA:  0.09  0.19
+#GENMEAN_SALT2ALPHA:   0.14
+#GENGRID_SALT2ALPHA:   2
+
+#GENMEAN_SALT2BETA:   3.0
+#GENRANGE_SALT2BETA:  2.0 4.0
+#GENGRID_SALT2BETA:  2
+
+GENMEAN_SALT2x1:     0.964
+GENRANGE_SALT2x1:   -4.0  +4.0     # x1 (stretch) range
+GENSIGMA_SALT2x1:    1.23   0.28     # bifurcated sigmas
+
+GENMEAN_SALT2c:     -0.065
+GENRANGE_SALT2c:   -0.3   0.3     # color range
+GENSIGMA_SALT2c:   0.044 0.12     # bifurcated sigmas
+# ---------------------------
+
+SEARCHEFF_SPEC_FILE: /scratch/midway2/djbrout/djbrout_workingdir/djbrout/nocolorterm_study/speceff/SEARCHEFF_SPEC_SNLS.DAT
+
+# ------------------------
+
+###CasdfLEARPROMPT: 0
+RANSEED:      28473   # random number seed
+SMEARFLAG_FLUX:    1   # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1   # smear zero-point with zptsig
+GENRANGE_TREST:   -20.0  60.0     # rest epoch relative to peak (days)
+FORMAT_MASK:      32   # 2=text  32=FITS
+
+# search eff and cuts
+
+APPLY_SEARCHEFF_OPT:  3
+APPLY_CUTWIN_OPT:     1
+CUTWIN_NEPOCH:   5 -5.              # require 5 epochs (no S/N requirement)
+CUTWIN_SNRMAX:     2.  griz 2 -20. 60.  # require 2 of griz with S/N > xxx
+CUTWIN_TRESTMIN: -20  10
+CUTWIN_TRESTMAX:   0  40
+CUTWIN_MWEBV:      0  .9
+
+# cosmological params for lightcurve generation and redshift distribution
+OMEGA_MATTER:  0.3
+OMEGA_LAMBDA:  0.7
+W0_LAMBDA:    -1.00
+H0:            70.0
+
+# ---------------
+
+#EXTINC_MILKYWAY:      1
+#GENSIGMA_MWEBV_RATIO: 0.16
+
+HOSTLIB_FILE: $PS1_ROOT/simlib/generic.hostlib
+HOSTLIB_STOREPAR: LOGMASS
+HOSTLIB_DZTOL: 0.50 0 0.
+
+SIMGEN_DUMP:  6  CID Z MU MJD0 TMIN LOGMASS
+
+

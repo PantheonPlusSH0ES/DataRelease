@@ -1,0 +1,29 @@
+# Generate 10 data sets with 10k each after fitting, cuts and NN cut.
+
+PATH_SNDATA_SIM:  $SCRATCH_SIMDIR
+
+# Use rate assumption from Housell 2017 (WFIRST sims)
+DNDZ: POWERLAW2 2.5E-5  1.5 0.0 1.0    # from Didlay 2008
+DNDZ: POWERLAW2 9.7E-5 -0.5 1.0 3.0    # high-z extenstion from Lou
+
+
+GENMAG_SMEAR_MODELNAME: G10
+GENMODEL:   SALT2.JLA-B14
+GENTYPE: 1
+# specify sim-input files for snlc_sim.exe
+INPUT_FILE_INCLUDE:  SIMGEN_PS1_infile.input
+
+
+GENSIGMA_VPEC: 300
+VPEC_ERR: 250
+
+#NGEN_UNIT:  80
+CIDOFF: 70000
+
+# define required global items to ensure uniformity among all jobs
+H0: 70
+ZRANGE:      0.03  0.77
+GENPREFIX:   PS1_DATA          # prefix of all data filenames
+FORMAT_MASK: 48           # 2=TERSE    16=RanCID  32=FITS-FORMAT
+
+

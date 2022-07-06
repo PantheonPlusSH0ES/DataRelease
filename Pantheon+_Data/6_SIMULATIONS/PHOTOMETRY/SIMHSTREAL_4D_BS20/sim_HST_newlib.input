@@ -1,0 +1,87 @@
+  
+########################################################
+#
+# Input file for $SNANA_DIR/bin/snlc_sim.exe
+#
+#
+#########################################################
+
+NGENTOT_LC: 1000
+NGEN_UNIT: 1
+GENVERSION: DS_CANDELs_newlib         # SNDATA version to generate
+GENSOURCE:  RANDOM   
+
+
+SOLID_ANGLE: 0.00001
+
+DNDZ: POWERLAW2 2.5E-5  1.5 0.0 1.0    # from Didlay 2008
+DNDZ: POWERLAW2 9.7E-5 -0.5 1.0 3.0    # high-z extenstion from Lou
+
+GENMODEL:   SALT2.JLA-B14
+GENTYPE: 1
+
+
+SIMLIB_FILE: $PS1_ROOT/simlib/PS1_HST_COMBINED.SIMLIB
+USE_SIMLIB_PEAKMJD: 1
+
+CIDOFF: 50000
+KCOR_FILE:  $PS1_ROOT/kcor/HST/kcor_PS1_HST_COMBINED.fits
+#APPLY_SEARCHEFF_OPT: 3
+#SEARCHEFF_SPEC_FILE: hst_searcheff2.txt 
+SEARCHEFF_PIPELINE_FILE: NONE
+
+GENMAG_SMEAR: 0.1
+
+# selection criteria for generation
+GENFILTERS:       FGHIKLvwxyzABegqfoplctuCDE
+#GENRANGE_RA:      -1.0     +1.0   deg  # SDSS stripe 82 ???
+#GENRANGE_DECL:    -1.258    +1.258  deg# SDSS stripe 82 ???
+
+GENRANGE_PEAKMJD:  54500.000  57950.000    # 53615.0  53704.0# Sep 1 - Nov 30 2005
+GENSIGMA_SEARCH_PEAKMJD:  1.0         # sigma-smearing for  SEARCH_PEAKMJD (days)
+
+GENRANGE_REDSHIFT: 0.8 2.5
+GENSIGMA_REDSHIFT:  0.0005
+
+GENRANGE_TREST:   -20.0    80.0     # rest epoch relative to peak (days)
+CUTWIN_TRESTMIN: -19 -5
+CUTWIN_TRESTMAX: +5 +80
+
+APPLY_CUTWIN_OPT: 1
+CUTWIN_T0GAPMAX: 0 10
+CUTWIN_NOBSDIF: 3 999
+CUTWIN_NEPOCH: 2 +5
+#CUTWIN_SNRMAX: 10 HJ 2 -20 60
+##GENMEAN_RV:         3.1               # mean RV to generate
+
+OPT_MWEBV: 1
+
+RANSEED: 128473       # random number seed
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+#SMEARFLAG_HOSTGAL: 1  # include host-gal noise
+
+
+FORMAT_MASK: 32 # terse format
+
+GENMEAN_SALT2ALPHA: .14
+GENMEAN_SALT2BETA:  3.1
+
+GENMEAN_SALT2x1:     0.35
+GENRANGE_SALT2x1:   -5.0  +4.0     # x1 (stretch) range
+GENSIGMA_SALT2x1:    1.0   0.5     # bifurcated sigmas
+
+GENMEAN_SALT2c:     -0.09
+GENRANGE_SALT2c:   -0.25   0.25     # color range
+GENSIGMA_SALT2c:    0.02   0.13     # bifurcated sigmas
+
+
+# cosmological params for lightcurve generation and redshift distribution
+OMEGA_MATTER:  0.3
+OMEGA_LAMBDA:  0.7
+W0_LAMBDA:    -1.00
+H0:           70.0   
+
+SIMGEN_DUMP:  5  Z  PEAKMJD S2c S2x1 SNRMAX1

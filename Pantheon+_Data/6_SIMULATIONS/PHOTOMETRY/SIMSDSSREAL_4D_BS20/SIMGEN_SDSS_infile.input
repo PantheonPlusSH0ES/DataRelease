@@ -1,0 +1,114 @@
+
+NGENTOT_LC:   500000
+
+GENVERSION: DB18_SDSS_G10
+GENSOURCE:  RANDOM   
+##GENMODEL:   SALT2.JLA-B14
+GENMAG_SMEAR_MODELNAME:  G10
+
+SIMLIB_FILE:     $SNDATA_ROOT/simlib/SDSS/SDSS_3year.SIMLIB
+xxHOSTLIB_FILE:  SDSS.HOSTLIB
+xxHOSTLIB_GENRANGE_NSIGZ: -2. +2.
+
+RANSEED:        23459
+CIDOFF:         700000
+###CLEARPROMPT:    0
+EXPOSURE_TIME:  1
+FORMAT_MASK:    48  ! 2=TEXT  32=FITS
+
+GENFILTERS:   ugriz
+KCOR_FILE:    $SNDATA_ROOT/kcor/SDSS/SDSS_Doi2010/kcor_SDSS_Bessell90_BD17.fits
+
+# selection criteria for generation
+GENRANGE_RA:      -50.0     +59.0   deg
+GENRANGE_DECL:    -1.258    +1.258  deg
+GENRANGE_PEAKMJD:  53600.0  54450.0
+GENSIGMA_SEARCH_PEAKMJD:  3.0      
+
+GENRANGE_REDSHIFT:  0.02   0.45
+GENSIGMA_REDSHIFT:  0.0005
+#DNDZ: POWERLAW  2.6E-5  2.2    # SNLS result
+SNTYPES_Ia:  120  106
+GENRANGE_TREST:   -20.0  70.0     # rest epoch relative to peak (days)
+
+LENSING_PROBMAP_FILE:  $SNDATA_ROOT/models/lensing/LENSING_PROBMAP_LogNormal+MICECATv1.DAT
+LENSING_DMUSCALE: 1.375
+
+# SALT2 population params from arxiv:1209.2482
+
+GENMEAN_SALT2x1:     1.14
+GENRANGE_SALT2x1:   -4.0  +4.0     # x1 (stretch) range
+GENSIGMA_SALT2x1:    1.65   0.0     # bifurcated sigmas
+
+
+GENMEAN_SALT2c:     -0.038
+GENRANGE_SALT2c:   -0.4   0.4     # color range
+GENSIGMA_SALT2c:    0.048   0.079     # bifurcated sigmas
+
+
+
+
+
+
+######### SAME AS DES ##################################################
+GENMEAN_SALT2ALPHA:   0.15
+GENSIGMA_SALT2ALPHA:  0.0  0.0   # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2ALPHA:  0.10 0.24  # grid for biasCor sample
+GENGRID_SALT2ALPHA:   2
+
+GENMEAN_SALT2BETA:   3.1
+GENSIGMA_SALT2BETA:  0.0  0.0  # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2BETA:  2.7  3.5  # grid for COH & G10 0biasCor samples
+GENGRID_SALT2BETA:   2
+#######################################################################
+
+
+
+
+
+#GENRANGE_SALT2ALPHA:  0.09  0.19
+#GENMEAN_SALT2ALPHA:   0.14
+#GENGRID_SALT2ALPHA:   2
+
+#GENMEAN_SALT2BETA:   3.0
+#GENRANGE_SALT2BETA:  2.0  4.0
+#GENGRID_SALT2BETA:  2
+
+
+# galactic extinction
+#EXTINC_MILKYWAY:    1                 # 0,1 => MW extinction off,on
+
+# smear flags: 0=off, 1=on
+SMEARFLAG_FLUX:    1  # photo-stat smearing of signal, sky, etc ...
+SMEARFLAG_ZEROPT:  1  # smear zero-point with zptsig
+
+# determine what to output: 0=> no output;  1=>make output
+
+# 1=> software trigger   3=software & spec trigger
+APPLY_SEARCHEFF_OPT: 3   # 0=calc search eff mask, but do not apply
+SEARCHEFF_SPEC_FILE:  $SNDATA_ROOT/models/searcheff/SEARCHEFF_SPEC_SDSS.DAT
+# apply loose cuts to reduce sample size, but make sure
+# that final analysis cuts are more strict.
+APPLY_CUTWIN_OPT:  1
+CUTWIN_NEPOCH:   5 -5.              # require 5 epochs (no S/N requirement)
+CUTWIN_SNRMAX:   4 gri  2 -20. 40.  # require 2 of gri with S/N > 4
+
+
+# cosmological params for lightcurve generation and redshift distribution
+OMEGA_MATTER:  0.3
+OMEGA_LAMBDA:  0.7
+W0_LAMBDA:    -1.00
+H0:           70.0   
+
+HOSTLIB_FILE: $PS1_ROOT/simlib/generic.hostlib
+HOSTLIB_STOREPAR: LOGMASS
+HOSTLIB_DZTOL: 0.50 0 0.
+
+
+SIMGEN_DUMP:  32
+   CID GENTYPE  SNTYPE  LOGMASS  GENZ
+   LIBID RA DECL MWEBV MWEBVMAP MU MJD0 
+   MAGT0_g MAGT0_r MAGT0_i MAGT0_z 
+   SNRMAX_g SNRMAX_r SNRMAX_i SNRMAX_z SNRMAX SNRMAX2 SNRMAX3 
+   NOBS TRESTMIN TRESTMAX TGAPMAX  
+   S2alpha S2beta S2x0 S2x1 S2c

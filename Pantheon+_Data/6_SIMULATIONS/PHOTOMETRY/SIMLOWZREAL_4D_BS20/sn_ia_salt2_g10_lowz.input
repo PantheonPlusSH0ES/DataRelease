@@ -1,0 +1,38 @@
+INPUT_FILE_INCLUDE:  SIMGEN_LOWZ_single.INPUT
+
+GENMODEL:   SALT2.JLA-B14
+
+
+GENTYPE: 1
+GENMAG_SMEAR_MODELNAME: G10
+DNDZ: POWERLAW2  2.6E-5  1.5 0.01 0.10 # Dilday 2008
+DNDZ: POWERLAW2 2.6E-5  0.0  0.0001 0.01 # Brout Flat Calibrators 2021 
+
+
+GENSIGMA_VPEC: 300
+VPEC_ERR: 250
+
+# ---------------------------
+# double peak x1 params from Pantheon Appendix C
+GENPEAK_SALT2x1:     0.55
+GENRANGE_SALT2x1:   -5.0  +4.0     # x1 (stretch) range
+GENSIGMA_SALT2x1:    1.0  0.45      # bifurcated sigmas
+GENPROB2_SALT2x1:     0.55
+GENPEAK2_SALT2x1:    -1.5           # x1 (stretch) range
+GENSIGMA2_SALT2x1:    0.5  0.5      # bifurcated sigmas
+
+# from low-z row in SK16
+GENPEAK_SALT2c:     -0.055
+GENRANGE_SALT2c:   -0.4   0.4     # color range
+GENSIGMA_SALT2c:    0.023   0.15     # bifurcated sigmas
+
+# SALT2 alpha and beta
+GENMEAN_SALT2ALPHA:   0.15
+GENSIGMA_SALT2ALPHA:  0.0  0.0   # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2ALPHA:  0.10 0.24  # grid for biasCor sample
+GENGRID_SALT2ALPHA:   2
+
+GENMEAN_SALT2BETA:   3.1
+GENSIGMA_SALT2BETA:  0.0  0.0  # override to 1E8 for 5D biasCor sample
+GENRANGE_SALT2BETA:  2.7  3.5  # grid for COH & G10 0biasCor samples
+GENGRID_SALT2BETA:   2

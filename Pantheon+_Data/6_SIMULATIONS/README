@@ -1,0 +1,11 @@
+Overview of simulations 
+  - 10 realizations of Pantheon+ samples
+  - Generated in LambdaCDM
+  - Generated with BS21 scatter model
+
+PHOTOMETRY/
+  - Light curve photometry
+  - Generated with SALT2
+ 
+LCFITS/
+  - Light curve fit parameters
