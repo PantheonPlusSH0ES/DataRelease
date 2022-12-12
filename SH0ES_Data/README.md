@@ -23,3 +23,7 @@ https://arxiv.org/pdf/2203.06681.pdf
 -The new optical-only Cepheid data from SH0ES in the Riess et al (2022) and Yuan et al. (2022) for the original 19 hosts from R16 as well as the new NGC 4258 and LMC data - `optical_wes_R22_for19fromR16.dat`   Note that the optical Wesenheit errors are over-estimated by ~15% due to the cotrrelation between V and I background errors.
 
 The new NIR Cepheid data from SH0ES in the Riess et al (2022) and Yuan et al. (2022) for the original 19 hosts from R16 as well as the new NGC 4258 and LMC data - `R22_orig19_NIR.out`
+
+
+Dec 12, 2022:
+Table 2 has been uploaded (and associated readme)
