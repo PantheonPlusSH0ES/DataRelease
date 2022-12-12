@@ -1,0 +1,8 @@
+This is the full data Table 2 given in the SH0ES paper, Riess et al. (2022)
+Those interested in refitting the distance ladder are recommend not to use this table but rather
+use the previously available fits files that include this data already packaged (y data vector) with respect to the equations (L matrix file)
+that relate them.  Further, the errors listed in table 2 do not include the covariance (off-diagonal) which also
+should be taken from the fits file (C matrix).  Also note that the errors given are for the complete NIR Wesenheit magnitudes
+so they may not be directly appropriate for any reformulation of these magnitudes.
+Alternative selections from this data or uses likely will require a new characterization of uncertainties
+based on custom artificial stars tests to mimic a new selection or use.
