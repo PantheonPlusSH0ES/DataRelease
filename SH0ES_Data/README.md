@@ -11,6 +11,8 @@ alll_shoes_ceph_topantheonwt6.0_112221.fits=L, equation matrix
 
 ally_shoes_ceph_topantheonwt6.0_112221.fits=y, data vector
 
+NOTE: an initial slope term of -3.285 was used for the calculation so that the free parameter slope (which will appear as a small ~0 number) must be added back to -3.285 to recover the true slope term 
+
 
 
 Jan-2022: We are first making publicly available the new measurements of Cepheids in the optical and NIR as described in Riess et al. 2022 and Yuan et al. 2022
